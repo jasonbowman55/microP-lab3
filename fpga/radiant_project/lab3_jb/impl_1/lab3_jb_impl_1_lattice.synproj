@@ -41,6 +41,8 @@
 -ver "C:/lscc/radiant/2024.1/ip/pmi/pmi_iCE40UP.v"
 -lib pmi -vhd "C:/lscc/radiant/2024.1/ip/pmi/pmi_iCE40UP.vhd"
 -sver "C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv"
+"C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv"
+"C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv"
 
 
 -path "C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb"
