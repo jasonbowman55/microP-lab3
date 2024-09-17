@@ -8,21 +8,26 @@ module top (
 	input logic [3:0] row,
 	input logic [2:0] col,
 	output logic [6:0] seg,
-	output logic [1:0] osc
+	output logic [1:0] osc,
+	output logic [3:0] row_select
 	);
 // internal counter variable instantiation
 	logic [24:0] counter;
+	logic [3:0] row_select;
 	
-// HSOSC logic used to increment the counter variable, allowing selection of toggle speed between displays
+// HSOSC logic used to increment the counter & rowSelect variable, allowing selection of toggle speed between displays and row scanning
 HSOSC #(.CLKHF_DIV(2'b01)) 
 	hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
 
 always_ff @(posedge int_osc) begin
     if (reset == 0)
 		counter <= 24'b0;
+		row_select = 4'b0001;
     else
         counter <= counter + 1'b1;
 end
+
+
 
 // controls display toggle speed and updates corresponding inputs for binary-to-hexadecimal combinational logic
 always_ff @(posedge int_osc) begin
@@ -47,6 +52,20 @@ endmodule
 
 
 module button_decoder (
+	input logic [3:0] row_select,
 	input logic [3:0] row,
 	input logic [2:0] col,
+	output logic [6:0] seg
+	);
+	
+	// cycle through the rows, outputting the current state of the button array
+	always_comb begin
+		case(rowSelect)
+			//row1
+			2'b00:
+				case(col)
+					
+	
+endmodule
+	
 	
