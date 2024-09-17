@@ -33,7 +33,7 @@ end
 // instantiated submodules
 button_decoder MOD1 (reset, col, r_sel, button);
 
-seven_seg_decoder MOD2 (reset, button, int_osc, counter, button_press, osc, seg, newseg, prevseg);
+seven_seg_decoder MOD2 (reset, button, seg, osc);
 
 count_osc_sel_button MOD3 (reset, col, int_osc, counter, osc, button_press, r_sel);
 
