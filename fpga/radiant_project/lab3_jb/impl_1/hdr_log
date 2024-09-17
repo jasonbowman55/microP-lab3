@@ -5,11 +5,12 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Sep 16 16:25:09 2024
+Mon Sep 16 23:57:36 2024
 
 
 Command Line:  C:\Lattice Radiant\ispfpga\bin\nt64\synthesis.exe -f lab3_jb_impl_1_lattice.synproj -logfile lab3_jb_impl_1_lattice.srp -gui -msgset C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb/promote.xml 
 
+The -top option is not used.
 Synthesis options:
 The -a option is iCE40UP.
 The -t option is SG48.
@@ -38,7 +39,6 @@ The -p option is iCE40UP5K.
 
 INFO <35001786> - synthesis: User-Selected Strategy Settings
 Optimization goal = Area
-Top-level module name = top.
 Target frequency = 200.000000 MHz.
 Maximum fanout = 1000.
 Timing path count = 3 (default)
@@ -72,6 +72,7 @@ The -syn option is FALSE.
 -path C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb (searchpath added)
 -path C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb/impl_1 (searchpath added)
 Mixed language design
+CRITICAL <35001476> - synthesis: A top-level module has not been specified for the mixed language design.
 Verilog design file = C:/Lattice Radiant/ip/pmi/pmi_iCE40UP.v
 Verilog design file = C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv
 VHDL library = pmi
@@ -125,4 +126,41 @@ INFO <35901328> - synthesis: c:/lattice radiant/ip/pmi/pmi_ice40up.v(16): analyz
 INFO <35901328> - synthesis: c:/lattice radiant/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file c:/lattice radiant/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
 INFO <35901328> - synthesis: c:/lattice radiant/ip/pmi/pmi_ice40up.v(17): analyzing included file c:/lattice radiant/ip/pmi/pmi_dsp.v. VERI-1328
 Analyzing Verilog file c:/users/spenc/onedrive/desktop/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/systemverilog.sv. VERI-1482
-ERROR <35901138> - synthesis: c:/users/spenc/onedrive/desktop/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/systemverilog.sv(52): unexpected EOF. VERI-1138
+Analyzing VHDL file c:/lattice radiant/ip/pmi/pmi_ice40up.vhd. VHDL-1481
+Analyzing VHDL file c:/lattice radiant/ip/pmi/pmi_ice40up.vhd
+
+INFO <35921014> - synthesis: c:/lattice radiant/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
+WARNING <35001200> - synthesis: Setting top as the top-level module. To specify the top-level module explicitly, go to View->Set Views->Hierarchy or Project->Active Implementation->Set Top-Level Unit.
+INFO <35921504> - synthesis: The default VHDL library search path is now "C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb/impl_1". VHDL-1504
+Top module language type = Verilog.
+Top module name (Verilog, mixed language): top
+INFO <35901018> - synthesis: c:/users/spenc/onedrive/desktop/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/systemverilog.sv(6): compiling module top. VERI-1018
+INFO <35901018> - synthesis: c:/users/spenc/onedrive/desktop/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/systemverilog.sv(53): compiling module button_decoder. VERI-1018
+INFO <35901018> - synthesis: c:/users/spenc/onedrive/desktop/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/systemverilog.sv(67): compiling module seven_seg_decoder. VERI-1018
+INFO <35901018> - synthesis: c:/users/spenc/onedrive/desktop/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/systemverilog.sv(129): compiling module count_osc_sel_button. VERI-1018
+INFO <35901018> - synthesis: C:/Lattice Radiant/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC(CLKHF_DIV=2'b01). VERI-1018
+                                                         
+
+
+### Number of Logic Cells: 5280
+
+
+### Number of RAM Blocks: 30
+
+
+### Number of DSP Blocks: 8
+
+
+### Number of PLLs: 1
+
+
+### Number of IO Pins: 56
+
+
+##########################################################
+
+
+                                                         
+
+
+ERROR <35001655> - synthesis: Multiple Non-Tristate drivers exist for net button_press.
