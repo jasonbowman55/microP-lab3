@@ -21,7 +21,7 @@
 -fix_gated_clocks 1
 -loop_limit 1950
 
-
+-decode_unreachable_states
 
 
 
@@ -36,16 +36,17 @@
 -use_io_insertion 1
 
 -resolve_mixed_drivers 0
--sdc "C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/impl_1.sdc"
--path "C:/lscc/radiant/2024.1/ispfpga/ice40tp/data" "C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/impl_1" "C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb"
--ver "C:/lscc/radiant/2024.1/ip/pmi/pmi_iCE40UP.v"
--lib pmi -vhd "C:/lscc/radiant/2024.1/ip/pmi/pmi_iCE40UP.vhd"
--sver "C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv"
-"C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv"
-"C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv"
+-sdc "C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/impl_1.sdc"
+-path "C:/Lattice Radiant/ispfpga/ice40tp/data" "C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb/impl_1" "C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb"
+-ver "C:/Lattice Radiant/ip/pmi/pmi_iCE40UP.v"
+-lib pmi -vhd "C:/Lattice Radiant/ip/pmi/pmi_iCE40UP.vhd"
+-sver "C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv"
+"C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv"
+"C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv"
+"C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv"
 
 
--path "C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb"
+-path "C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb"
 -udb "lab3_jb_impl_1_rtl.udb"
 -output_hdl "lab3_jb_impl_1.vm"
 

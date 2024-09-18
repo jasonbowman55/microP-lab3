@@ -1,5 +1,6 @@
 module syncronizer (
 	input logic reset,
+	output logic int_osc,
 	output logic [24:0] counter
 	);
 	
@@ -10,10 +11,10 @@ HSOSC #(.CLKHF_DIV(2'b01))
 ///////////////////////////////////////////////////////////
 	
 	
-// Counter block /////////////////////////
+// Counter block //////////////////////////
 always_ff @(posedge int_osc) begin
     if (!reset)
-		counter <= 24'b0;
+		counter <= 25'b0;
     else
         counter <= counter + 1'b1;
 end

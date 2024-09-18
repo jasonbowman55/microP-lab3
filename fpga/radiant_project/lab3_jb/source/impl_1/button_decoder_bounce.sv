@@ -2,17 +2,33 @@ module button_decoder_bounce (
 	input logic reset,
 	input logic [3:0] col,
 	input logic [24:0] counter,
+	input logic int_osc,
 	output logic en,
 	output logic [3:0] r_sel,
 	output logic [3:0] button
 	);
 
+// defining state variables /////
+	logic [7:0] state, nextstate;
+	
+	parameter S0 = 8'b00000001;
+	parameter S1 = 8'b00000010;
+	parameter S2 = 8'b00000100;
+	parameter S3 = 8'b00001000;
+	parameter S4 = 8'b00010000;
+	parameter S5 = 8'b00100000;
+	parameter S6 = 8'b01000000;
+	parameter S7 = 8'b10000000;
+/////////////////////////////////
 
 // output logic at given state
-	assign r_sel = 4'b0001 (state == S0) | (state ==S4)
-	assign r_sel = 4'b0010 (state == S1) | (state ==S5)
-	assign r_sel = 4'b0100 (state == S2) | (state ==S6)
-	assign r_sel = 4'b1000 (state == S3) | (state ==S7)
+	always_comb begin
+		r_sel = (state == S0 || state == S4) ? 4'b0001 :
+				(state == S1 || state == S5) ? 4'b0010 :
+				(state == S2 || state == S6) ? 4'b0100 :
+				(state == S3 || state == S7) ? 4'b1000 :
+				4'b0000; // Default value
+	end
 ///////////////////////////////
 	
 	
@@ -32,7 +48,7 @@ module button_decoder_bounce (
 
 
 // logic to determine what button is pressed
-	always_comb
+	always_comb begin
 		case(state)
 			S4:
 				case(col)
@@ -68,16 +84,16 @@ module button_decoder_bounce (
 
 
 // Debouncer ////////////////////////////
-always_ff @(posedge counter[1]) begin
-    // counter[#] controlls toggle speed
-	if (|col) begin
-		en = 1'b1;
+	always_ff @(posedge int_osc) begin
+		// counter[#] controlls toggle speed
+		if (|col) begin
+			en = 1'b1;
+		end
+		else begin
+			en = 1'b0;
+		end
 	end
-    else begin
-		en = 1'b0;
-    end
-end
-/////////////////////////////////////////
+	/////////////////////////////////////////
 
 
 endmodule

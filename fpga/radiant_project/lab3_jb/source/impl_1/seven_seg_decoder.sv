@@ -2,6 +2,7 @@ module seven_seg_decoder (
 	input logic reset,
 	input logic [3:0] button,
 	input logic [24:0] counter,
+	input logic int_osc,
 	input logic en,
 	output logic [6:0] seg,
 	output logic [1:0] osc
@@ -40,11 +41,12 @@ logic [6:0] prevseg;
 
 // setting and saving prevseg to be the old newseg whenever there is a button press
 	always_ff @(posedge int_osc) begin
-		if (en) begin
-			prevseg = newseg;
+		if (!reset) begin
+			prevseg <= 7'b0000001;
+			newseg <= 7'b0000001;
 		end
-		else begin
-			prevseg = prevseg;
+		else if (en) begin
+			prevseg <= newseg;
 		end
 	end
 //////////////////////////////////////////////////////////////////////////////////
@@ -53,11 +55,13 @@ logic [6:0] prevseg;
 // osc based on counter /////////////////
 always_ff @(posedge int_osc) begin
     // counter[#] controlls toggle speed
-	if (!int_counter[12]) begin
+	if (counter[12]) begin
 		osc <= 2'b01;
+		seg <= newseg;
 	end
     else begin
 		osc <= 2'b10;
+		seg <= prevseg;
     end
 end
 /////////////////////////////////////////
