@@ -13,7 +13,7 @@
             <Options VerilogStandard="System Verilog"/>
         </Source>
         <Source name="source/impl_1/syncronizer.sv" type="Verilog" type_short="Verilog">
-            <Options VerilogStandard="System Verilog"/>
+            <Options VerilogStandard="System Verilog" top_module="syncronizer"/>
         </Source>
         <Source name="source/impl_1/impl_1.pdc" type="Physical Constraints File" type_short="PDC">
             <Options/>
