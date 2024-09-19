@@ -1,0 +1,93 @@
+# Compile of SystemVerilog.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of syncronizer.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.top
+# vsim -gui work.top 
+# Start time: 12:56:27 on Sep 19,2024
+# Loading sv_std.std
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# ** Warning: (vsim-3015) [PCDPC] - Port size (25) does not match connection size (1) for port 'counter'. The port definition is at: C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/button_decoder_bounce.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /top/MOD1 File: C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/SystemVerilog.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'button'. The port definition is at: C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/button_decoder_bounce.sv(8).
+#    Time: 0 ps  Iteration: 0  Instance: /top/MOD1 File: C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/SystemVerilog.sv Line: 16
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'button'. The port definition is at: C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/seven_seg_decoder.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /top/MOD3 File: C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/SystemVerilog.sv Line: 18
+# ** Warning: (vsim-3015) [PCDPC] - Port size (25) does not match connection size (1) for port 'counter'. The port definition is at: C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/seven_seg_decoder.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /top/MOD3 File: C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/SystemVerilog.sv Line: 18
+# ** Warning: (vsim-3015) [PCDPC] - Port size (25) does not match connection size (1) for port 'counter'. The port definition is at: C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/syncronizer.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /top/MOD4 File: C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/SystemVerilog.sv Line: 20
+force top.col 4'b0001
+force top.reset 1'b1
+run 100
+add wave -position end sim:/top/*
+run 100
+quit -sim
+vsim -gui work.syncronizer
+# End time: 13:01:00 on Sep 19,2024, Elapsed time: 0:04:33
+# Errors: 0, Warnings: 7
+# vsim -gui work.syncronizer 
+# Start time: 13:01:00 on Sep 19,2024
+# Loading sv_std.std
+# Loading work.syncronizer
+add wave -position end sim:/syncronizer/*
+force syncronizer.
+# ** UI-Msg: (vish-4001) Incorrect number of arguments.
+# Usage: force <object_name> {<value> [[@]<time_info>][, <value> [[@]<time_info>]...} [-freeze | -drive | -deposit] [-cancel [@]<time_info>] [-repeat [@]<time_info>]
+force syncronizer.reset 1'b1
+run 200
+run 200
+run 200
+
+run 200
+quit -sim
+# End time: 13:04:56 on Sep 19,2024, Elapsed time: 0:03:56
+# Errors: 0, Warnings: 1
+vsim -gui work.syncronizer
+# vsim -gui work.syncronizer 
+# Start time: 13:05:01 on Sep 19,2024
+# Loading sv_std.std
+# Loading work.syncronizer
+quit -sim
+# End time: 13:05:18 on Sep 19,2024, Elapsed time: 0:00:17
+# Errors: 0, Warnings: 1
+# Compile of SystemVerilog.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of syncronizer.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.syncronizer
+# vsim -gui work.syncronizer 
+# Start time: 13:05:28 on Sep 19,2024
+# Loading sv_std.std
+# Loading work.syncronizer
+add wave -position end sim:/syncronizer/*
+force syncronizer.reset 1'b1
+run 300
+# Compile of SystemVerilog.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of syncronizer.sv was successful.
+# 4 compiles, 0 failed with no errors.
+quit -sim
+vsim -gui work.syncronizer
+# End time: 13:06:35 on Sep 19,2024, Elapsed time: 0:01:07
+# Errors: 0, Warnings: 3
+# vsim -gui work.syncronizer 
+# Start time: 13:06:35 on Sep 19,2024
+# Loading sv_std.std
+# Loading work.syncronizer
+add wave -position end sim:/syncronizer/*
+# Compile of SystemVerilog.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of syncronizer.sv was successful.
+# 4 compiles, 0 failed with no errors.
+force syncronizer.reset 1'b1
+run 300
+# End time: 13:07:10 on Sep 19,2024, Elapsed time: 0:00:35
+# Errors: 0, Warnings: 2

@@ -1,0 +1,111 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim
+vbutton_decoder_bounce
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1726776403
+!i10b 1
+!s100 OdVDa2@Y6dFZGXQg]c6Nd1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IcBkHYPcS4j=2^jO2oF4X92
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1726774737
+8C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/button_decoder_bounce.sv
+FC:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/button_decoder_bounce.sv
+!i122 47
+L0 1 103
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1726776403.000000
+!s107 C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/button_decoder_bounce.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/button_decoder_bounce.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+vseven_seg_decoder
+R1
+R2
+!i10b 1
+!s100 ILF`<BUQgY>2R2Mam875V1
+R3
+Imi7Ec_a9?T@m_E_24O]0D2
+R4
+S1
+R0
+w1726775093
+8C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/seven_seg_decoder.sv
+FC:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/seven_seg_decoder.sv
+!i122 46
+L0 1 67
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/seven_seg_decoder.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/seven_seg_decoder.sv|
+!i113 1
+R7
+R8
+vsyncronizer
+R1
+R2
+!i10b 1
+!s100 fIe`_8V_:Jh2ZliWeGiZK0
+R3
+ITS41fdFR=MaEVN[lORD_?0
+R4
+S1
+R0
+w1726776376
+8C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/syncronizer.sv
+FC:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/syncronizer.sv
+!i122 48
+L0 1 30
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/syncronizer.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/syncronizer.sv|
+!i113 1
+R7
+R8
+vtop
+R1
+R2
+!i10b 1
+!s100 >^5Nnz<<CZ87_`^G7_:?82
+R3
+IoJaz7n8hCcTK]EDhCe@CH2
+R4
+S1
+R0
+w1726774734
+8C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/SystemVerilog.sv
+FC:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/SystemVerilog.sv
+!i122 45
+L0 6 19
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/SystemVerilog.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/SystemVerilog.sv|
+!i113 1
+R7
+R8
