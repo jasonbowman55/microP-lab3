@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.1.0.34.2
 
-Wed Sep 18 11:46:58 2024
+Sat Sep 21 14:08:16 2024
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -8,7 +8,7 @@ Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
 
-Command line:    timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt lab3_jb_impl_1.twr lab3_jb_impl_1.udb -gui -msgset C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/radiant_project/lab3_jb/promote.xml
+Command line:    timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt lab3_jb_impl_1.twr lab3_jb_impl_1.udb -gui -msgset C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/promote.xml
 
 -----------------------------------------
 Design:          top
@@ -88,19 +88,9 @@ create_clock,
 create_generated_clock,
 ...
 
--------------------------------------------------------------------
-     Listing 5 Start or End Points      |           Type           
--------------------------------------------------------------------
-reset                                   |                     input
-col[3]                                  |                     input
-col[2]                                  |                     input
-col[1]                                  |                     input
-col[0]                                  |                     input
--------------------------------------------------------------------
-                                        |                          
-Number of I/O ports without constraint  |                         5
-                                        |                          
--------------------------------------------------------------------
+--------------------------------------------------
+There is no end point satisfying reporting criteria
+
 
 Nets without clock definition
 Define a clock on a top level port or a generated clock on a clock divider pin associated with this net(s).

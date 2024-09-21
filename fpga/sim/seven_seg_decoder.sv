@@ -42,15 +42,7 @@ logic [6:0] prevseg;
 // setting and saving prevseg to be the old newseg whenever there is a button press
 	always_ff @(posedge int_osc) begin
 		if (!reset) begin
-			prevseg <= 7'b0000001; //DELETED LINE FOR NEWSEWG
-		end
-		else if (counter[12]) begin
-			osc <= 2'b01;
-			seg <= newseg;
-		end
-		else if (!counter[12]) begin
-			osc <= 2'b10;
-			seg <= prevseg;
+			prevseg <= 7'b0000001;
 		end
 		else if (en) begin
 			prevseg <= newseg;
@@ -60,7 +52,17 @@ logic [6:0] prevseg;
 
 
 // osc based on counter /////////////////
-//DELETED AND INTEGRATED WITH THE ONE ABOVE
+always_ff @(posedge int_osc) begin
+    // counter[#] controlls toggle speed
+	if (counter[12]) begin
+		osc <= 2'b01;
+		seg <= newseg;
+	end
+    else begin
+		osc <= 2'b10;
+		seg <= prevseg;
+    end
+end
 /////////////////////////////////////////
 
 

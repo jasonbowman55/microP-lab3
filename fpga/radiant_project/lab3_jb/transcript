@@ -13,4 +13,210 @@
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# Loading project lab3_sim
+# Loading project tasty
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.syncronizer -L iCE40UP
+# vsim -gui work.syncronizer -L iCE40UP 
+# Start time: 14:20:45 on Sep 21,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.syncronizer(fast)
+# Loading iCE40UP.HSOSC(fast)
+add wave -position end sim:/syncronizer/*
+force syncronizer.reset 1'b1
+run 100
+force syncronizer.reset 1'b0
+run 100
+run 100
+run 100
+# Load canceled
+# Load canceled
+vsim -gui -L iCE40UP work.syncronizer -Lf iCE40UP
+# End time: 14:22:06 on Sep 21,2024, Elapsed time: 0:01:21
+# Errors: 0, Warnings: 5
+# vsim -gui -L iCE40UP work.syncronizer -Lf iCE40UP 
+# Start time: 14:22:06 on Sep 21,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.syncronizer(fast)
+# Loading iCE40UP.HSOSC(fast)
+add wave -position end sim:/syncronizer/*
+force syncronizer.reset 1'b1
+run 100
+run 100
+force syncronizer.reset 1'b0
+run 100
+run 100
+force syncronizer.int_osc 1'b1
+run 100
+force syncronizer.int_osc 1'b0
+run 100
+force syncronizer.int_osc 1'b1
+run 100
+force syncronizer.int_osc 1'b0
+run 100
+force syncronizer.int_osc 1'b1
+run 100
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv failed with 1 errors.
+# Compile of SystemVerilog.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui -L iCE40UP -Lf iCE40UP work.syncronizer
+# End time: 14:27:23 on Sep 21,2024, Elapsed time: 0:05:17
+# Errors: 0, Warnings: 3
+# vsim -gui -L iCE40UP -Lf iCE40UP work.syncronizer 
+# Start time: 14:27:23 on Sep 21,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.syncronizer(fast)
+# Loading iCE40UP.HSOSC(fast)
+add wave -position end sim:/syncronizer/*
+force syncronizer.reset 1'b1
+run 100
+run 100
+run 100
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui -L iCE40UP -Lf iCE40UP work.syncronizer
+# End time: 14:30:39 on Sep 21,2024, Elapsed time: 0:03:16
+# Errors: 0, Warnings: 3
+# vsim -gui -L iCE40UP -Lf iCE40UP work.syncronizer 
+# Start time: 14:30:39 on Sep 21,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.syncronizer(fast)
+add wave -position end sim:/syncronizer/*
+force syncronizer.reset 1'b1
+run 100
+run 100
+force syncronizer.reset 1'b0
+run 100
+force syncronizer.reset 1'b1
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+
+run 100
+
+run 100
+run 100
+
+run 100
+
+run 100
+
+run 100
+force syncronizer.reset 1'b1
+force syncronizer.reset 1'b1
+force syncronizer.reset 1'b1
+force syncronizer.reset 1'b1
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+run 100
+vsim -gui -L iCE40UP -Lf iCE40UP work.button_decoder_bounce
+# End time: 14:32:26 on Sep 21,2024, Elapsed time: 0:01:47
+# Errors: 0, Warnings: 1
+# vsim -gui -L iCE40UP -Lf iCE40UP work.button_decoder_bounce 
+# Start time: 14:32:27 on Sep 21,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.button_decoder_bounce(fast)
+force syncronizer.reset 1'b0
+# ** UI-Msg (Error) (suppressible): (vsim-4008) Object 'syncronizer.reset' not found.
+# 
+force button_decoder_bounce.reset 1'b0
+run 100
+add wave -position end sim:/button_decoder_bounce/*
+reset -f
+# Invalid parameter(s)
+# RESET { SESSION }
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.button_decoder_bounce(fast)
+force button_decoder_bounce.reset 1'b0
+run 100
+force button_decoder_bounce.reset 1'b1
+run 100
+vsim -gui -L iCE40UP -Lf iCE40UP work.button_decoder_bounce work.syncronizer
+# End time: 14:34:03 on Sep 21,2024, Elapsed time: 0:01:36
+# Errors: 0, Warnings: 1
+# vsim -gui -L iCE40UP -Lf iCE40UP work.button_decoder_bounce work.syncronizer 
+# Start time: 14:34:03 on Sep 21,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.button_decoder_bounce(fast)
+# Loading work.syncronizer(fast)
+add wave -position end sim:/syncronizer/*
+add wave -position end sim:/button_decoder_bounce/*
+force syncronizer.reset 1'b0
+run 100
+force syncronizer.reset 1'b1
+run 100
+force button_decoder_bounce.reset 1'b1
+run 100
+force button_decoder_bounce.col 4'b0001
+run 100
+# Load canceled
+# Load canceled
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui -L iCE40UP -Lf iCE40UP work.top
+# End time: 14:40:12 on Sep 21,2024, Elapsed time: 0:06:09
+# Errors: 0, Warnings: 2
+# vsim -gui -L iCE40UP -Lf iCE40UP work.top 
+# Start time: 14:40:12 on Sep 21,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv(20): (vopt-2241) Connection width does not match width of port 'counter'. The port definition is at: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv(4).
+# ** Warning: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv(18): (vopt-2241) Connection width does not match width of port 'button'. The port definition is at: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv(3).
+# ** Warning: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv(18): (vopt-2241) Connection width does not match width of port 'counter'. The port definition is at: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv(4).
+# ** Warning: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv(16): (vopt-2241) Connection width does not match width of port 'counter'. The port definition is at: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv(4).
+# ** Warning: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv(16): (vopt-2241) Connection width does not match width of port 'button'. The port definition is at: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv(8).
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=5.
+# Loading sv_std.std
+# Loading work.top(fast)
+add wave -position end sim:/top/*
+force top.reset 1'b0
+run 100
+force top.reset 1'b1
+run 100
+force top.col 4'b0001
+run 100
+run 1000
+force top.col 4'b0100
+run 1000
+# End time: 14:45:58 on Sep 21,2024, Elapsed time: 0:05:46
+# Errors: 0, Warnings: 6

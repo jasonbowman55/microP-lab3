@@ -43,7 +43,6 @@ logic [6:0] prevseg;
 	always_ff @(posedge int_osc) begin
 		if (!reset) begin
 			prevseg <= 7'b0000001;
-			newseg <= 7'b0000001;
 		end
 		else if (en) begin
 			prevseg <= newseg;

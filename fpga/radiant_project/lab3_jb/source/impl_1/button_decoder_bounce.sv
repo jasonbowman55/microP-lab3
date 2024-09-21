@@ -9,43 +9,60 @@ module button_decoder_bounce (
 	);
 
 // defining state variables /////
-	logic [7:0] state, nextstate;
+	logic [3:0] state, nextstate;
 	
-	parameter S0 = 8'b00000001;
-	parameter S1 = 8'b00000010;
-	parameter S2 = 8'b00000100;
-	parameter S3 = 8'b00001000;
-	parameter S4 = 8'b00010000;
-	parameter S5 = 8'b00100000;
-	parameter S6 = 8'b01000000;
-	parameter S7 = 8'b10000000;
+	parameter S0 = 4'b0000;
+	parameter S1 = 4'b0001;
+	parameter S2 = 4'b0010;
+	parameter S3 = 4'b0011;
+	parameter S4 = 4'b0100;
+	parameter S5 = 4'b0101;
+	parameter S6 = 4'b0110;
+	parameter S7 = 4'b0111;
+	parameter S8 = 4'b1000;
+	parameter S9 = 4'b1001;
+	parameter S10 = 4'b1010;
+	parameter S11 = 4'b1011;
 /////////////////////////////////
-
-// output logic at given state
-	always_comb begin
-		r_sel = (state == S0 || state == S4) ? 4'b0001 :
-				(state == S1 || state == S5) ? 4'b0010 :
-				(state == S2 || state == S6) ? 4'b0100 :
-				(state == S3 || state == S7) ? 4'b1000 :
-				4'b0000; // Default value
-	end
-///////////////////////////////
-	
 	
 /// Cycling through states
 	always_comb
 		case(state)
 			S0: if(|col) nextstate = S4;
 				else nextstate = S1;
+			S4: nextstate = S8;
+			S8: if (|col) nextstate = S8;
+				else nextstate = S0;
+					
 			S1: if(|col) nextstate = S5;
 				else nextstate = S2;
+			S5: nextstate = S9;
+			S9: if (|col) nextstate = S9;
+				else nextstate = S1;
+					
 			S2: if(|col) nextstate = S6;
 				else nextstate = S3;
+			S6: nextstate = S10;
+			S10: if (|col) nextstate = S10;
+				else nextstate = S2;
+					
 			S3: if(|col) nextstate = S7;
 				else nextstate = S0;
+			S7: nextstate = S11;
+			S11: if (|col) nextstate = S11;
+				else nextstate = S3;
 		endcase
 //////////////////////////
 
+// output logic at given state
+	always_comb begin
+		r_sel = (state == S0 || state == S4 || state == S8) ? 4'b0001 :
+				(state == S1 || state == S5 || state == S9) ? 4'b0010 :
+				(state == S2 || state == S6 || state == S10) ? 4'b0100 :
+				(state == S3 || state == S7 || state == S11) ? 4'b1000 :
+				4'b0000; // Default value
+	end
+///////////////////////////////
 
 // logic to determine what button is pressed
 	always_comb begin

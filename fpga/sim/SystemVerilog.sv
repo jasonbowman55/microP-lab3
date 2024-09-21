@@ -4,6 +4,7 @@
 // This lab combines the knowledge from the two previous labs and employs a 12 buton array of number to display oinb a dual seven semgment display
 
 module top (
+	input logic clk,
 	input logic reset,
 	input logic [3:0] col,
 	output logic [3:0] r_sel,

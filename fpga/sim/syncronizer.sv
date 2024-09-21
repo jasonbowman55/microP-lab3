@@ -6,14 +6,8 @@ module syncronizer (
 	
 	
 // HSOSC instantiation ////////////////////////////////////
-initial begin
-    int_osc = 1'b0;  // Initialize the clock to 0
-end
-
-always begin
-    #50 int_osc = ~int_osc; // Toggle every 50 time units to create clock
-end							 // CREATING A CLOCK SIGNAL FOOR MODEL SIM
-
+HSOSC #(.CLKHF_DIV(2'b01)) 
+	hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
 ///////////////////////////////////////////////////////////
 	
 	
@@ -22,7 +16,7 @@ always_ff @(posedge int_osc) begin
     if (!reset)
 		counter <= 25'b0;
     else
-        counter <= counter + 25'h1;
+        counter <= counter + 1'b1;
 end
 //////////////////////////////////////////
 	

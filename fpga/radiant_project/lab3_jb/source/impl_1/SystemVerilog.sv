@@ -15,10 +15,10 @@ module top (
 // instantiated submodules
 button_decoder_bounce MOD1 (reset, col, counter, int_osc, en, r_sel, button);
 
-seven_seg_decoder MOD3 (reset, button, counter, int_osc, en, seg, osc);
+seven_seg_decoder MOD2 (reset, button, counter, int_osc, en, seg, osc);
 
-syncronizer MOD4 (reset, int_osc, counter);
-//////////////////////////
+syncronizer MOD3 (reset, int_osc, counter);
+///////////////////////////
 
 
 endmodule

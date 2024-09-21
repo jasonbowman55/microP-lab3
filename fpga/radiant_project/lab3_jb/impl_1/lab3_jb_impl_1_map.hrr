@@ -5,4 +5,4 @@ Report for cell top
                                   cell	      count    Res Usage(%)
                                   LUT4	          2        100.0
                                LUTGATE	          2        100.0
-                                 IOBUF	         13        100.0
+                                 IOBUF	         18        100.0

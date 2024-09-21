@@ -1,13 +1,13 @@
 // Verilog netlist produced by program LSE :  version Radiant Software (64-bit) 2024.1.0.34.2
-// Netlist written on Thu Sep 19 12:28:10 2024
+// Netlist written on Sat Sep 21 14:49:53 2024
 // Source file index table: 
 // Object locations will have the form @<file_index>(<first_ line>[<left_column>],<last_line>[<right_column>])
 // file 0 "c:/lattice radiant/ip/pmi/pmi_ice40up.v"
 // file 1 "c:/lattice radiant/ip/pmi/pmi_ice40up.vhd"
-// file 2 "c:/users/spenc/onedrive/desktop/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/systemverilog.sv"
-// file 3 "c:/users/spenc/onedrive/desktop/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv"
-// file 4 "c:/users/spenc/onedrive/desktop/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv"
-// file 5 "c:/users/spenc/onedrive/desktop/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv"
+// file 2 "c:/users/spenc/onedrive/documents/desktop/hmc/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/systemverilog.sv"
+// file 3 "c:/users/spenc/onedrive/documents/desktop/hmc/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv"
+// file 4 "c:/users/spenc/onedrive/documents/desktop/hmc/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv"
+// file 5 "c:/users/spenc/onedrive/documents/desktop/hmc/microps/microp-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv"
 // file 6 "c:/lattice radiant/cae_library/simulation/verilog/ice40up/ccu2_b.v"
 // file 7 "c:/lattice radiant/cae_library/simulation/verilog/ice40up/fd1p3bz.v"
 // file 8 "c:/lattice radiant/cae_library/simulation/verilog/ice40up/fd1p3dz.v"
@@ -70,24 +70,24 @@ module top (input reset, input [3:0]col, output [3:0]r_sel, output [6:0]seg,
     wire GND_net, reset_c, col_c_3, col_c_2, col_c_1, col_c_0, VCC_net;
     
     VHI i4 (.Z(VCC_net));
-    (* lineinfo="@2(7[14],7[19])" *) IB reset_pad (.I(reset), .O(reset_c));
     VLO i1 (.Z(GND_net));
-    (* lineinfo="@2(8[20],8[23])" *) IB \col_pad[3]  (.I(col[3]), .O(col_c_3));
-    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[2]  (.I(GND_net), .O(seg[2]));
-    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[1]  (.I(GND_net), .O(seg[1]));
-    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[0]  (.I(VCC_net), .O(seg[0]));
-    (* lineinfo="@2(9[21],9[26])" *) OB \r_sel_pad[0]  (.I(GND_net), .O(r_sel[0]));
-    (* lineinfo="@2(8[20],8[23])" *) IB \col_pad[1]  (.I(col[1]), .O(col_c_1));
-    (* lineinfo="@2(11[21],11[24])" *) OB \osc_pad[1]  (.I(VCC_net), .O(osc[1]));
-    (* lineinfo="@2(8[20],8[23])" *) IB \col_pad[2]  (.I(col[2]), .O(col_c_2));
     (* lineinfo="@2(8[20],8[23])" *) IB \col_pad[0]  (.I(col[0]), .O(col_c_0));
-    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[6]  (.I(GND_net), .O(seg[6]));
-    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[5]  (.I(GND_net), .O(seg[5]));
-    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[4]  (.I(GND_net), .O(seg[4]));
-    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[3]  (.I(GND_net), .O(seg[3]));
+    (* lineinfo="@2(8[20],8[23])" *) IB \col_pad[1]  (.I(col[1]), .O(col_c_1));
+    (* lineinfo="@2(8[20],8[23])" *) IB \col_pad[2]  (.I(col[2]), .O(col_c_2));
+    (* lineinfo="@2(8[20],8[23])" *) IB \col_pad[3]  (.I(col[3]), .O(col_c_3));
+    (* lineinfo="@2(7[14],7[19])" *) IB reset_pad (.I(reset), .O(reset_c));
     (* lineinfo="@2(11[21],11[24])" *) OB \osc_pad[0]  (.I(GND_net), .O(osc[0]));
-    (* lineinfo="@2(9[21],9[26])" *) OB \r_sel_pad[3]  (.I(GND_net), .O(r_sel[3]));
-    (* lineinfo="@2(9[21],9[26])" *) OB \r_sel_pad[2]  (.I(GND_net), .O(r_sel[2]));
+    (* lineinfo="@2(11[21],11[24])" *) OB \osc_pad[1]  (.I(VCC_net), .O(osc[1]));
+    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[0]  (.I(VCC_net), .O(seg[0]));
+    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[1]  (.I(GND_net), .O(seg[1]));
+    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[2]  (.I(GND_net), .O(seg[2]));
+    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[3]  (.I(GND_net), .O(seg[3]));
+    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[4]  (.I(GND_net), .O(seg[4]));
+    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[5]  (.I(GND_net), .O(seg[5]));
+    (* lineinfo="@2(10[21],10[24])" *) OB \seg_pad[6]  (.I(GND_net), .O(seg[6]));
+    (* lineinfo="@2(9[21],9[26])" *) OB \r_sel_pad[0]  (.I(VCC_net), .O(r_sel[0]));
     (* lineinfo="@2(9[21],9[26])" *) OB \r_sel_pad[1]  (.I(GND_net), .O(r_sel[1]));
+    (* lineinfo="@2(9[21],9[26])" *) OB \r_sel_pad[2]  (.I(GND_net), .O(r_sel[2]));
+    (* lineinfo="@2(9[21],9[26])" *) OB \r_sel_pad[3]  (.I(GND_net), .O(r_sel[3]));
     
 endmodule

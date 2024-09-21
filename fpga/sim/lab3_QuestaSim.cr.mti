@@ -1,0 +1,29 @@
+C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/seven_seg_decoder.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/seven_seg_decoder.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module seven_seg_decoder
+
+Top level modules:
+	seven_seg_decoder
+
+} {} {}} C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/button_decoder_bounce.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/button_decoder_bounce.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module seven_seg_decoder
+
+Top level modules:
+	seven_seg_decoder
+
+} {} {}} C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/SystemVerilog.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/SystemVerilog.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module top
+
+Top level modules:
+	top
+
+} {} {}} C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/syncronizer.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim/syncronizer.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module syncronizer
+
+Top level modules:
+	syncronizer
+
+} {} {}}

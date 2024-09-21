@@ -1,0 +1,26 @@
+module syncronizer (
+	input logic reset,
+	output logic int_osc,
+	output logic [24:0] counter
+	);
+	
+	logic [24:0] int_counter;
+	
+// HSOSC instantiation ////////////////////////////////////
+HSOSC #(.CLKHF_DIV(2'b01)) 
+	hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
+///////////////////////////////////////////////////////////
+	
+	
+// Counter block //////////////////////////
+always_ff @(posedge int_osc) begin
+    if (!reset)
+	int_counter <= 25'b0;
+    else
+        int_counter <= int_counter + 1'b1;
+end
+//////////////////////////////////////////
+	
+	assign counter = int_counter;	
+
+endmodule
