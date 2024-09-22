@@ -11,13 +11,18 @@ module top (
 	output logic [1:0] osc
 	);
 
+logic [24:0] counter;
+logic [3:0] col_sync;
+logic [3:0] select;
+logic int_osc;
+logic en;
 
 // instantiated submodules
-button_decoder_bounce MOD1 (reset, col, counter, int_osc, en, r_sel, button);
+button_decoder_bounce MOD1 (reset, col_sync, int_osc, counter, en, r_sel, select, osc);
 
-seven_seg_decoder MOD2 (reset, button, counter, int_osc, en, seg, osc);
+seven_seg_decoder MOD2 (reset, select, int_osc, en, seg);
 
-syncronizer MOD3 (reset, int_osc, counter);
+syncronizer MOD3 (reset, col, int_osc, col_sync, osc, counter);
 ///////////////////////////
 
 

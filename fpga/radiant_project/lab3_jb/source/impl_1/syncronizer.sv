@@ -1,6 +1,9 @@
 module syncronizer (
 	input logic reset,
+	input logic [3:0] col,
 	output logic int_osc,
+	output logic [3:0] col_sync,
+	output logic [1:0] osc,
 	output logic [24:0] counter
 	);
 		
@@ -9,13 +12,27 @@ HSOSC #(.CLKHF_DIV(2'b01))
 	hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
 ///////////////////////////////////////////////////////////
 	
+logic [24:0] counter;
+logic [3:0] n1;
 	
+//
+always_ff @(posedge int_osc) begin
+	if (!reset) begin
+		col_sync <= 4'b0000;
+		n1 <= 4'b0000;
+	end
+	else begin
+		n1 <= col;
+		col_sync <= n1;
+	end
+end
+
 // Counter block //////////////////////////
 always_ff @(posedge int_osc) begin
     if (!reset)
-		counter <= 25'b0000000000000000000000000;
+		counter <= 0;
     else
-        counter <= counter + 25'b0000000000000000000000001;
+        counter <= counter + 1;
 end
 //////////////////////////////////////////
 	

@@ -1,9 +1,44 @@
 ----------------------------------------------------------------------
 Report for cell top.TECH
-Register bits:  0 of 5280 (0.000%)
+Register bits:  38 of 5280 (0.720%)
 I/O cells:      18
                                   Cell usage:
                                cell     count   Res Usage(%)
+                               CCU2         7          100.0
+                            FD1P3XZ        38          100.0
+                         HSOSC_CORE         1          100.0
                                  IB         5          100.0
+                              IOL_B         2          100.0
+                               LUT4        80          100.0
                                  OB        13          100.0
-                              TOTAL        18
+SUB MODULES
+              button_decoder_bounce         1
+                  seven_seg_decoder         1
+                        syncronizer         1
+                              TOTAL       149
+----------------------------------------------------------------------
+Report for cell syncronizer.v1
+Instance Path : MOD3
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         7          100.0
+                            FD1P3XZ        21           55.3
+                         HSOSC_CORE         1          100.0
+                               LUT4         4            5.0
+                              TOTAL        33
+----------------------------------------------------------------------
+Report for cell seven_seg_decoder.v1
+Instance Path : MOD2
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4         7            8.8
+                              TOTAL         7
+----------------------------------------------------------------------
+Report for cell button_decoder_bounce.v1
+Instance Path : MOD1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ        17           44.7
+                              IOL_B         2          100.0
+                               LUT4        68           85.0
+                              TOTAL        87

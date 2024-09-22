@@ -3,6 +3,41 @@ Report for cell top
    Instance path: top
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	          2        100.0
-                               LUTGATE	          2        100.0
+                                 IOLGC	       2.00        100.0
+                                  LUT4	        107        100.0
+                               LUTGATE	         93        100.0
+                                LUTCCU	         14        100.0
+                                 IOREG	          2        100.0
                                  IOBUF	         18        100.0
+                                PFUREG	         38        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                 button_decoder_bounce	          1        63.6
+                     seven_seg_decoder	          1         6.5
+                           syncronizer	          1        16.8
+---------------------------------------------------
+Report for cell syncronizer
+   Instance path: top/MOD3
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         18        16.8
+                               LUTGATE	          4         4.3
+                                LUTCCU	         14        100.0
+                                PFUREG	         21        55.3
+---------------------------------------------------
+Report for cell seven_seg_decoder
+   Instance path: top/MOD2
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	          7         6.5
+                               LUTGATE	          7         7.5
+---------------------------------------------------
+Report for cell button_decoder_bounce
+   Instance path: top/MOD1
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                 IOLGC	       2.00        100.0
+                                  LUT4	         68        63.6
+                               LUTGATE	         68        73.1
+                                 IOREG	          2        100.0
+                                PFUREG	         17        44.7

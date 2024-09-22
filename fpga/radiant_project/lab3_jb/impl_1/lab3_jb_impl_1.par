@@ -1,6 +1,6 @@
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-Sat Sep 21 14:08:14 2024
+Sun Sep 22 15:54:05 2024
 
 Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -hsp m -exp parPathBased=ON \
 	lab3_jb_impl_1_map.udb lab3_jb_impl_1.udb 
@@ -9,23 +9,23 @@ Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -hsp m -exp parPathBased=ON \
 Level/       Number       Estimated       Timing       Estimated Worst    Timing          Run      Run
 Cost [udb]   Unrouted     Worst Slack     Score        Slack(hold)        Score(hold)     Time     Status
 ----------   --------     -----------     ------       ---------------    -----------     ----     ------
-5_1   *      0            -               -            -                  -               02       Completed
+5_1   *      0            26.746          0            1.743              0               05       Completed
 
 * : Design saved.
 
-Total (real) run time for 1-seed: 2 secs 
+Total (real) run time for 1-seed: 5 secs 
 
 par done!
 
 Lattice Place and Route Report for Design "lab3_jb_impl_1_map.udb"
-Sat Sep 21 14:08:14 2024
+Sun Sep 22 15:54:05 2024
 
 PAR: Place And Route Radiant Software (64-bit) 2024.1.0.34.2.
 Command Line: par -w -t 1 -cores 1 -hsp m -exp parPathBased=ON \
 	lab3_jb_impl_1_map.udb lab3_jb_impl_1_par.dir/5_1.udb 
 
 Loading lab3_jb_impl_1_map.udb ...
-Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/Lattice Radiant/ispfpga.
+Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2024.1/ispfpga.
 Package Status:                     Preliminary    Version 1.5.
 Performance Hardware Data Status:   Advanced       Version 1.0.
 
@@ -38,22 +38,22 @@ Package: SG48
 Performance Grade:   High-Performance_1.2V
 
 Constraint Summary
-   Total number of constraints: 18
+   Total number of constraints: 19
    Total number of constraints dropped: 0
 
-Number of Signals: 2
-Number of Connections: 13
+Number of Signals: 165
+Number of Connections: 422
 Device utilization summary:
 
-   SLICE (est.)       2/2640         <1% used
-     LUT              2/5280         <1% used
-     REG              0/5280          0% used
+   SLICE (est.)      59/2640          2% used
+     LUT            107/5280          2% used
+     REG             38/5280          1% used
    PIO               18/56           32% used
                      18/36           50% bonded
-   IOLOGIC            0/56            0% used
+   IOLOGIC            2/56            4% used
    DSP                0/8             0% used
    I2C                0/2             0% used
-   HFOSC              0/1             0% used
+   HFOSC              1/1           100% used
    LFOSC              0/1             0% used
    LEDDA_IP           0/1             0% used
    RGBA_DRV           0/1             0% used
@@ -73,32 +73,33 @@ Pin Constraint Summary:
 Finished Placer Phase 0 (HIER). CPU time: 0 secs , REAL time: 0 secs 
 
 
-................
+.................
 Finished Placer Phase 0 (AP).  CPU time: 0 secs , REAL time: 0 secs 
 
 Starting Placer Phase 1. CPU time: 0 secs , REAL time: 0 secs 
 ..  ..
 ....................
 
-Placer score = 1760.
+Placer score = 16345.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE              2/2640         <1% used
+   SLICE             59/2640          2% used
 
-Finished Placer Phase 1. CPU time: 1 secs , REAL time: 0 secs 
+Finished Placer Phase 1. CPU time: 2 secs , REAL time: 3 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  3520
-Finished Placer Phase 2.  CPU time: 1 secs , REAL time: 0 secs 
+Placer score =  18356
+Finished Placer Phase 2.  CPU time: 2 secs , REAL time: 3 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
+  PRIMARY "int_osc" from comp "MOD3.hf_osc" on site "HFOSC_R1C32", clk load = 23, ce load = 0, sr load = 0
 
-  PRIMARY  : 0 out of 8 (0%)
+  PRIMARY  : 1 out of 8 (12%)
 
 --------------- End of Clock Report ---------------
 
@@ -118,19 +119,14 @@ I/O Bank Usage Summary:
 | 2        | 8 / 8 (100%)  | 3.3V       |            |            |
 +----------+---------------+------------+------------+------------+
 
-Total Placer CPU time: 1 secs , REAL time: 0 secs 
+Total Placer CPU time: 2 secs , REAL time: 3 secs 
 
 
-Checksum -- place: e3f74a50a2b009f69747f008e25a633cbddc7bf2
+Checksum -- place: 61c6702f89d8358c17fae2ef07ae01eeef4c8e
 Writing design to file lab3_jb_impl_1_par.dir/5_1.udb ...
 
 
------------------------------------------------------------------
-INFO - par: ASE feature is off due to non timing-driven settings.  
------------------------------------------------------------------
-
-
-Start NBR router at 14:08:15 09/21/24
+Start NBR router at 15:54:08 09/22/24
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -148,34 +144,45 @@ Note: NBR uses a different method to calculate timing slacks. The
 Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
-0 connections routed (of 13 total) (0.00%)
+1 global clock signals routed
+76 connections routed (of 405 total) (18.77%)
+---------------------------------------------------------
+Clock routing summary:
+Primary clocks (1 used out of 8 available):
+#4  Signal "int_osc"
+       Clock   loads: 23    out of    23 routed (100.00%)
+---------------------------------------------------------
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
 
-Start NBR section for initial routing at 14:08:16 09/21/24
+Start NBR section for initial routing at 15:54:09 09/22/24
 Level 4, iteration 1
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
+8(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 26.598ns/0.000ns; real time: 0 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 14:08:16 09/21/24
+Start NBR section for normal routing at 15:54:09 09/22/24
 Level 4, iteration 1
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 0 secs 
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 26.479ns/0.000ns; real time: 0 secs 
 
-Start NBR section for post-routing at 14:08:16 09/21/24
+Start NBR section for setup/hold timing optimization with effort level 3 at 15:54:09 09/22/24
+
+Start NBR section for post-routing at 15:54:10 09/22/24
 
 End NBR router with 0 unrouted connection(s)
 
-Checksum -- route: 47c7c1851da4458ffba874a796990a50604450cd
+Checksum -- route: 3455f72eab18f88bc6fd2f8bce3eb14535ea140
 
-Total CPU time 0 secs 
-Total REAL time: 0 secs 
+Total CPU time 1 secs 
+Total REAL time: 2 secs 
 Completely routed.
-End of route.  13 routed (100.00%); 0 unrouted.
+End of route.  405 routed (100.00%); 0 unrouted.
 
 Writing design to file lab3_jb_impl_1_par.dir/5_1.udb ...
 
@@ -185,17 +192,17 @@ All signals are completely routed.
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Estimated worst slack<setup/<ns>> = <n/a>
-PAR_SUMMARY::Timing score<setup/<ns>> = <n/a>
-PAR_SUMMARY::Estimated worst slack<hold/<ns>> = <n/a>
-PAR_SUMMARY::Timing score<hold/<ns>> = <n/a>
+PAR_SUMMARY::Estimated worst slack<setup/<ns>> = 26.746
+PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
+PAR_SUMMARY::Estimated worst slack<hold/<ns>> = 1.743
+PAR_SUMMARY::Timing score<hold/<ns>> = 0.000
 PAR_SUMMARY::Number of errors = 0
 
 Note: user must run 'timing' for timing closure signoff.
 
-Total CPU  Time: 1 secs 
-Total REAL Time: 2 secs 
-Peak Memory Usage: 106.35 MB
+Total CPU  Time: 4 secs 
+Total REAL Time: 5 secs 
+Peak Memory Usage: 126.09 MB
 
 
 par done!
