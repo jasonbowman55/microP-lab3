@@ -7,24 +7,25 @@ Device:  iCE40UP5K
 Package: SG48
 Performance Grade:  High-Performance_1.2V
 
-Mapper:    version Radiant Software (64-bit) 2024.1.0.34.2
-Mapped on: Sun Sep 22 15:54:02 2024
+Mapper:    version Radiant Software (64-bit) 2024.1.1.259.1
+Mapped on: Sun Sep 22 20:59:37 2024
 
 Design Information
 ------------------
 
-Command line:   map -pdc C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_proje
-     ct/lab3_jb/source/impl_1/impl_1.pdc -i lab3_jb_impl_1_syn.udb -o
-     lab3_jb_impl_1_map.udb -mp lab3_jb_impl_1.mrp -hierrpt -gui -msgset C:/User
-     s/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/promote.xml
+Command line:   map -pdc C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/m
+     icroP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/impl_1.pdc -i
+     lab3_jb_impl_1_syn.udb -o lab3_jb_impl_1_map.udb -mp lab3_jb_impl_1.mrp
+     -hierrpt -gui -msgset C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs
+     /microP-lab3/fpga/radiant_project/lab3_jb/promote.xml
 
 Design Summary
 --------------
 
-   Number of slice registers:  38 out of  5280 (1%)
+   Number of slice registers:  44 out of  5280 (1%)
    Number of I/O registers:      2 out of   117 (2%)
-   Number of LUT4s:           107 out of  5280 (2%)
-      Number of logic LUT4s:              81
+   Number of LUT4s:           103 out of  5280 (2%)
+      Number of logic LUT4s:              77
       Number of inserted feedthru LUT4s:  12
       Number of ripple logic:              7 (14 LUT4s)
    Number of IO sites used:   18 out of 39 (46%)
@@ -49,17 +50,16 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net int_osc: 34 loads, 34 rising, 0 falling (Driver: Pin
+      Net int_osc: 40 loads, 40 rising, 0 falling (Driver: Pin
      MOD3.hf_osc/CLKHF)
    Number of Clock Enables:  2
       Net osc_pad[0].vcc: 1 loads, 0 SLICEs
-      Net button_0__N_32: 4 loads, 4 SLICEs
-   Number of LSRs:  1
-      Net n343: 15 loads, 15 SLICEs
+      Net MOD1.en: 8 loads, 8 SLICEs
+   Number of LSRs:  2
+      Net n344: 20 loads, 20 SLICEs
+      Net MOD1.n342: 4 loads, 4 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net state[0]: 22 loads
-      Net state[1]: 22 loads
-      Net MOD1.state[2]_2: 15 loads
+      Net n344: 20 loads
 
                                     Page 1
 
@@ -69,13 +69,15 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net n343: 15 loads
-      Net button_0__N_32: 12 loads
-      Net col_sync[0]: 11 loads
-      Net col_sync[1]: 11 loads
-      Net col_sync[2]: 11 loads
-      Net col_sync[3]: 11 loads
-      Net MOD1.state[4]_2: 11 loads
+      Net MOD1.state[0]: 17 loads
+      Net MOD1.state[1]: 16 loads
+      Net MOD1.state[2]: 14 loads
+      Net MOD1.state[3]: 13 loads
+      Net MOD1.state[4]: 13 loads
+      Net col_sync[0]: 10 loads
+      Net col_sync[1]: 10 loads
+      Net col_sync[2]: 10 loads
+      Net col_sync[3]: 10 loads
 
 
 
@@ -125,8 +127,6 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+-------+-------+-----------+
 | seg[6]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| r_sel[0]            | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 
                                     Page 2
 
@@ -136,6 +136,8 @@ IO (PIO) Attributes
 
 IO (PIO) Attributes (cont)
 --------------------------
+| r_sel[0]            | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
 | r_sel[1]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | r_sel[2]            | OUTPUT    |           |       |       |           |
@@ -163,9 +165,9 @@ ASIC Components
 
 Instance Name: MOD3/hf_osc
          Type: HFOSC
-Instance Name: MOD1/osc_i1
-         Type: IOLOGIC
 Instance Name: MOD1/osc_i2
+         Type: IOLOGIC
+Instance Name: MOD1/osc_i1
          Type: IOLOGIC
 
 Constraint Summary
@@ -179,10 +181,8 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 64 MB
-Checksum -- map: 38023dd97c5838ddeb6f4c63724a8e7fab5438b0
-
-
+   Peak Memory Usage: 65 MB
+Checksum -- map: d7d5e83ca579b7650c3ad781e311b198540f96d
 
 
 

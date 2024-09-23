@@ -20,9 +20,9 @@ logic en;
 // instantiated submodules
 button_decoder_bounce MOD1 (reset, col_sync, int_osc, counter, en, r_sel, select, osc);
 
-seven_seg_decoder MOD2 (reset, select, int_osc, en, seg);
+seven_seg_decoder MOD2 (select, seg);
 
-syncronizer MOD3 (reset, col, int_osc, col_sync, osc, counter);
+syncronizer MOD3 (reset, col, int_osc, col_sync, counter);
 ///////////////////////////
 
 

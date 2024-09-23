@@ -25,36 +25,21 @@ R1
 !i10f 100
 cModel Technology
 Z4 dC:/Users/spenc/OneDrive/Desktop/microPs/microP-lab3/fpga/sim
-T_opt
-!s110 1726954347
-VKi;SV1HHU=i3Vo=]91Lho0
+T_opt1
+!s110 1726954444
+V;:R`z7<_P?A7zM]X[QaX>1
 Z5 04 21 4 work button_decoder_bounce fast 0
-=1-d85ed30b0771-66ef3b6b-187-2a4
+04 11 4 work syncronizer fast 0
+=1-d85ed30b0771-66ef3bcb-368-1518
 R1
-!s12f OEM25U1 
+!s12f OEM25U2 
 Z6 !s12b OEM100
 Z7 !s124 OEM100
 Z8 !s135 nogc
 Z9 o-quiet -auto_acc_if_foreign -work work -L iCE40UP -Lf iCE40UP
 Z10 tCvgOpt 0
-n@_opt
-Z11 OL;O;2024.2;79
-R4
-T_opt1
-!s110 1726954444
-V;:R`z7<_P?A7zM]X[QaX>1
-R5
-04 11 4 work syncronizer fast 0
-=1-d85ed30b0771-66ef3bcb-368-1518
-R1
-!s12f OEM25U2 
-R6
-R7
-R8
-R9
-R10
 n@_opt1
-R11
+Z11 OL;O;2024.2;79
 R4
 T_opt2
 !s110 1726954812
@@ -70,6 +55,7 @@ R9
 R10
 n@_opt2
 R11
+R4
 vbutton
 Z12 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
 Z13 !s110 1726949091
@@ -98,23 +84,23 @@ R10
 vbutton_decoder_bounce
 2C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv
 Z20 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z21 !s110 1726954788
+Z21 !s110 1727063320
 !i10b 1
-!s100 [=:VS99jzLkNN8SKkaNGN3
-IEQ9P?zE[h2JkKC^V<l]kS0
+!s100 Uz_[EKdKP>iCNNLXzHGLT3
+IgSjWedIlSh<5A@DDG63mf1
 S1
 R16
-w1726951367
+Z22 w1727063006
 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv
 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv
-!i122 36
-L0 1 122
+!i122 40
+L0 1 169
 R15
-Z22 OL;L;2024.2;79
+Z23 OL;L;2024.2;79
 r1
 !s85 0
 31
-Z23 !s108 1726954788.000000
+!s108 1727063319.000000
 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv|
 !i113 0
@@ -134,7 +120,7 @@ w1726949089
 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/seg.sv
 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/seg.sv
 !i122 14
-Z25 L0 1 69
+L0 1 69
 R17
 r1
 !s85 0
@@ -150,21 +136,21 @@ vseven_seg_decoder
 R20
 R21
 !i10b 1
-!s100 Y=;F:33=f8E;S5<iFWio:2
-IOO[dhFhz?Q@f[Df;VRScS3
+!s100 F]JnW0ZLS8D@^;N^ASeNb1
+IbNOB9XYQS5Pg`Y:3h<JM70
 S1
 R16
-w1726950148
+R22
 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv
 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv
-!i122 37
-R25
+!i122 41
+L0 1 28
 R15
-R22
+R23
 r1
 !s85 0
 31
-R23
+Z25 !s108 1727063320.000000
 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv|
 !i113 0
@@ -200,21 +186,21 @@ vsyncronizer
 R20
 R21
 !i10b 1
-!s100 WT5H@liN;nZ<4]5<mg_aN2
-IA@7zXjTJK6UELzHmT@Qm_3
+!s100 4?>4X7Q<BNfYnQ<2@eA7m1
+Il9<m^jVHQIIlW^:J3IcK^3
 S1
 R16
-w1726954224
+w1727063203
 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv
 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv
-!i122 38
-L0 1 30
+!i122 42
+L0 1 39
 R15
-R22
+R23
 r1
 !s85 0
 31
-R23
+R25
 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv|
 !i113 0
@@ -225,21 +211,21 @@ vtop
 R20
 R21
 !i10b 1
-!s100 910[37eZTIl==f`5QK^A61
-ILH^N5:7=P^biRAi@PiF[91
+!s100 eDg3mBZ6<de6TPE_EkQVF2
+I:l>4XT7g3h8mc?RP>47Go2
 S1
 R16
-w1726954768
+R22
 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv
 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv
-!i122 39
-L0 6 19
+!i122 43
+L0 6 24
 R15
-R22
+R23
 r1
 !s85 0
 31
-R23
+R25
 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv|
 !i113 0

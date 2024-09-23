@@ -1,16 +1,8 @@
 module seven_seg_decoder (
-	input logic reset,
 	input logic [3:0] select,
-	input logic int_osc,
-	input logic en,
 	output logic [6:0] seg
 	);
-	
-// Instantiate internal segment variables
-
-/////////////////////////////////////////
-
-// update newseg ///////////////////////
+// update seg ///////////////////////
 	always_comb begin
 		case(select)
 			4'h0: seg = 7'b0000001;
@@ -32,9 +24,5 @@ module seven_seg_decoder (
 			default: seg = 7'b1111111;
 		endcase
 	end
-/////////////////////////////////////////
-
-
-
-
+/////////////////////////////////////
 endmodule
