@@ -13,22 +13,64 @@
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# Loading project 9_22_sim
+project open C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/lab3_QuestaSim
+# Loading project lab3_QuestaSim
 # Compile of button_decoder_bounce.sv was successful.
 # Compile of seven_seg_decoder.sv was successful.
 # Compile of syncronizer.sv was successful.
 # Compile of SystemVerilog.sv was successful.
-# 4 compiles, 0 failed with no errors.
-vsim -gui work.button_decoder_bounce work.seven_seg_decoder work.syncronizer work.top
-# vsim -gui work.button_decoder_bounce work.seven_seg_decoder work.syncronizer work.top 
-# Start time: 20:49:40 on Sep 22,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv(11): Module 'HSOSC' is not defined.
-#  For instance 'hf_osc' at path 'top.MOD3'
-# ** Error: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv(11): Module 'HSOSC' is not defined.
-#  For instance 'hf_osc' at path 'syncronizer'
-# Optimization failed
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=0.
-# Error loading design
-# End time: 20:49:41 on Sep 22,2024, Elapsed time: 0:00:01
-# Errors: 2, Warnings: 5
+# Compile of testbench1.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.testbench1 -voptargs=+acc
+# vsim -gui work.testbench1 -voptargs="+acc" 
+# Start time: 16:56:26 on Sep 23,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.testbench1(fast)
+# Loading work.SystemVerilog(fast)
+# Loading work.button_decoder_bounce(fast)
+# Loading work.seven_seg_decoder(fast)
+# Loading work.syncronizer(fast)
+add wave -position end sim:/testbench1/duttop/*
+run -all
+# Break key hit
+# Break in Module testbench1 at C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv line 17
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.testbench1(fast)
+# Loading work.SystemVerilog(fast)
+# Loading work.button_decoder_bounce(fast)
+# Loading work.seven_seg_decoder(fast)
+# Loading work.syncronizer(fast)
+run
+add wave -position end sim:/testbench1/#ALWAYS#14/*
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.testbench1(fast)
+# Loading work.SystemVerilog(fast)
+# Loading work.button_decoder_bounce(fast)
+# Loading work.seven_seg_decoder(fast)
+# Loading work.syncronizer(fast)
+run
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of testbench1.sv failed with 1 errors.
+# End time: 17:06:47 on Sep 23,2024, Elapsed time: 0:10:21
+# Errors: 0, Warnings: 5

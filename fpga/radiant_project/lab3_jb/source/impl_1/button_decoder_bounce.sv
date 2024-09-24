@@ -1,7 +1,7 @@
 module button_decoder_bounce (
 	input logic reset,
 	input logic [3:0] col_sync,
-	input logic int_osc,
+	input logic clk,
 	input logic [24:0] counter,
 	output logic en,
 	output logic [3:0] r_sel,
@@ -42,9 +42,11 @@ module button_decoder_bounce (
 ///////////////////////////////////
 
 // next state = nextstate on every clk edge
-	always_ff @(posedge int_osc)
-		if (!reset) state <= S0;
-		else 		state <= nextstate;
+	always_ff @(posedge clk)
+		if (!reset) 
+			state <= S0;
+		else 	
+			state <= nextstate;
 ///////////////////////////////////////////
 
 /// Cycling through states dead states between row scan
@@ -139,43 +141,49 @@ module button_decoder_bounce (
 /////////////////////////////////////////////
 
 // assigning new seg vals when pressed //////
-	always_ff @(posedge int_osc) begin
+	always_ff @(posedge clk) begin
 		// counter[#] controlls toggle speed
-		if (en) begin
+		if (!reset) begin
+			left <= 4'b0000;
+			right <= 4'b0000;
+		end else if (left != button) begin
 			left <= right;
 			right <= button;
+		end else begin
+			left <= left;
+			right <= right;
 		end
 	end
 /////////////////////////////////////////////
 
+ //debouncer counter /////////////////////////////
+	//always_ff @(posedge int_osc) begin
+		//if (!reset)
+			//count_de_bounce <= 5'h0;
+		//else
+			//count_de_bounce <= count_de_bounce + 1;
+	//end
+/////////////////////////////////////////////
+
+ //debouncer ///////////////////////////
+	//always_ff @(posedge int_osc) begin
+		//if (count_de_bounce == 5'b11111)
+			//en <= 1'b1;
+		//else
+			//en <= 1'b0;
+	//end
+////////////////////////////////////
+
 // time multiplexer /////////////////////
-	always_ff @(posedge int_osc) begin
+	//always_ff @(posedge int_osc) begin
 		// counter[#] controlls toggle speed
-		if (counter[12]) begin
-			select <= right;
-			osc <= 2'b01; // right seg on
-		end else begin
-			select <= left;
-			osc <= 2'b10; // left seg on
-		end
-	end
+		//if (counter[12]) begin
+			//select <= right;
+			//osc <= 2'b01; // right seg on
+		//end else begin
+			//select <= left;
+			//osc <= 2'b10; // left seg on
+		//end
+	//end
 /////////////////////////////////////////
-
-// debouncer counter /////////////////////////////
-	always_ff @(posedge int_osc) begin
-		if (!reset)
-			count_de_bounce <= 5'h0;
-		else
-			count_de_bounce <= count_de_bounce + 1;
-	end
-///////////////////////////////////////////////////
-
-// debouncer ///////////////////////////
-	always_ff @(posedge int_osc) begin
-		if (count_de_bounce == 5'b11111)
-			en <= 1'b1;
-		else
-			en <= 1'b0;
-	end
-////////////////////////////////////////
 endmodule

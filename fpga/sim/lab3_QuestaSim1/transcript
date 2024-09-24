@@ -1,0 +1,97 @@
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 17:09:02 on Sep 23,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.SystemVerilog
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+add wave -position end sim:/testbench1/duttop/*
+run
+add wave -position end sim:/testbench1/#ALWAYS#14/*
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testbench1
+# Loading work.SystemVerilog
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+quit -sim
+# End time: 18:59:05 on Sep 23,2024, Elapsed time: 1:50:03
+# Errors: 0, Warnings: 1
+vsim -gui work.testbench2
+# vsim -gui work.testbench2 
+# Start time: 18:59:23 on Sep 23,2024
+# Refreshing C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/work.testbench2
+# ** Error (suppressible): (vlog-12110) The -novopt option has no effect on this product. -novopt option is now deprecated and will be removed in future releases.
+# ** Error: vlog failed.
+# subinvocation of vlog failed; return status = 1.
+# ** Error: (vsim-3171) Could not find machine code for 'C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/work.testbench2'.
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 18:59:23 on Sep 23,2024, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 18:59:51 on Sep 23,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.SystemVerilog
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+add wave -position end sim:/testbench1/duttop/*
+add wave -position end sim:/testbench1/#INITIAL#30/*
+run
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testbench1
+# Loading work.SystemVerilog
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 

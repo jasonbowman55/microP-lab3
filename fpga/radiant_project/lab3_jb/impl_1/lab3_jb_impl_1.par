@@ -1,6 +1,6 @@
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-Sun Sep 22 20:59:44 2024
+Mon Sep 23 11:42:58 2024
 
 Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -hsp m -exp parPathBased=ON \
 	lab3_jb_impl_1_map.udb lab3_jb_impl_1.udb 
@@ -9,16 +9,16 @@ Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -hsp m -exp parPathBased=ON \
 Level/       Number       Estimated       Timing       Estimated Worst    Timing          Run      Run
 Cost [udb]   Unrouted     Worst Slack     Score        Slack(hold)        Score(hold)     Time     Status
 ----------   --------     -----------     ------       ---------------    -----------     ----     ------
-5_1   *      0            27.754          0            1.743              0               05       Completed
+5_1   *      0            29.348          0            1.743              0               04       Completed
 
 * : Design saved.
 
-Total (real) run time for 1-seed: 5 secs 
+Total (real) run time for 1-seed: 4 secs 
 
 par done!
 
 Lattice Place and Route Report for Design "lab3_jb_impl_1_map.udb"
-Sun Sep 22 20:59:44 2024
+Mon Sep 23 11:42:58 2024
 
 PAR: Place And Route Radiant Software (64-bit) 2024.1.1.259.1.
 Command Line: par -w -t 1 -cores 1 -hsp m -exp parPathBased=ON \
@@ -31,7 +31,7 @@ Performance Hardware Data Status:   Advanced       Version 1.0.
 
 
 
-Design:  top
+Design:  SystemVerilog
 Family:  iCE40UP
 Device:  iCE40UP5K
 Package: SG48
@@ -41,16 +41,16 @@ Constraint Summary
    Total number of constraints: 19
    Total number of constraints dropped: 0
 
-Number of Signals: 167
-Number of Connections: 433
+Number of Signals: 62
+Number of Connections: 165
 Device utilization summary:
 
-   SLICE (est.)      54/2640          2% used
-     LUT            103/5280          2% used
-     REG             44/5280          1% used
+   SLICE (est.)      24/2640          1% used
+     LUT             43/5280          1% used
+     REG             13/5280         <1% used
    PIO               18/56           32% used
                      18/36           50% bonded
-   IOLOGIC            2/56            4% used
+   IOLOGIC            0/56            0% used
    DSP                0/8             0% used
    I2C                0/2             0% used
    HFOSC              1/1           100% used
@@ -80,24 +80,24 @@ Starting Placer Phase 1. CPU time: 0 secs , REAL time: 0 secs
 ..  ..
 ....................
 
-Placer score = 17502.
+Placer score = 10671.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE             54/2640          2% used
+   SLICE             24/2640         <1% used
 
-Finished Placer Phase 1. CPU time: 3 secs , REAL time: 4 secs 
+Finished Placer Phase 1. CPU time: 2 secs , REAL time: 3 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  21084
-Finished Placer Phase 2.  CPU time: 3 secs , REAL time: 4 secs 
+Placer score =  12086
+Finished Placer Phase 2.  CPU time: 2 secs , REAL time: 3 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
-  PRIMARY "int_osc" from comp "MOD3.hf_osc" on site "HFOSC_R1C32", clk load = 26, ce load = 0, sr load = 0
+  PRIMARY "int_osc" from comp "MOD3.hf_osc" on site "HFOSC_R1C32", clk load = 7, ce load = 0, sr load = 0
 
   PRIMARY  : 1 out of 8 (12%)
 
@@ -119,14 +119,14 @@ I/O Bank Usage Summary:
 | 2        | 8 / 8 (100%)  | 3.3V       |            |            |
 +----------+---------------+------------+------------+------------+
 
-Total Placer CPU time: 3 secs , REAL time: 4 secs 
+Total Placer CPU time: 2 secs , REAL time: 3 secs 
 
 
-Checksum -- place: 173292c9eadfb0f7a502c6389121e9038f2e7216
+Checksum -- place: b46840acbe97a4b66d47bf63228452a8c7965ba3
 Writing design to file lab3_jb_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 20:59:48 09/22/24
+Start NBR router at 11:43:01 09/23/24
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -145,50 +145,47 @@ Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
 1 global clock signals routed
-85 connections routed (of 407 total) (20.88%)
+20 connections routed (of 155 total) (12.90%)
 ---------------------------------------------------------
 Clock routing summary:
 Primary clocks (1 used out of 8 available):
 #4  Signal "int_osc"
-       Clock   loads: 26    out of    26 routed (100.00%)
+       Clock   loads: 7     out of     7 routed (100.00%)
 ---------------------------------------------------------
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
 
-Start NBR section for initial routing at 20:59:49 09/22/24
+Start NBR section for initial routing at 11:43:01 09/23/24
 Level 4, iteration 1
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-7(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 27.642ns/0.000ns; real time: 0 secs 
+4(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 29.348ns/0.000ns; real time: 0 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 20:59:49 09/22/24
+Start NBR section for normal routing at 11:43:02 09/23/24
 Level 4, iteration 1
-2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 27.523ns/0.000ns; real time: 0 secs 
-Level 4, iteration 2
 1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 27.523ns/0.000ns; real time: 0 secs 
-Level 4, iteration 3
+Estimated worst slack/total negative slack<setup>: 29.348ns/0.000ns; real time: 0 secs 
+Level 4, iteration 2
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 27.523ns/0.000ns; real time: 0 secs 
+Estimated worst slack/total negative slack<setup>: 29.348ns/0.000ns; real time: 0 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 20:59:49 09/22/24
+Start NBR section for setup/hold timing optimization with effort level 3 at 11:43:02 09/23/24
 
-Start NBR section for post-routing at 20:59:49 09/22/24
+Start NBR section for post-routing at 11:43:02 09/23/24
 
 End NBR router with 0 unrouted connection(s)
 
-Checksum -- route: 5b91cd0a8cafd0e1912d2555678466e1c27069a8
+Checksum -- route: 4ef7f4b31f8707cb9c47fb8c45224b84ef665e8
 
 Total CPU time 1 secs 
 Total REAL time: 0 secs 
 Completely routed.
-End of route.  407 routed (100.00%); 0 unrouted.
+End of route.  155 routed (100.00%); 0 unrouted.
 
 Writing design to file lab3_jb_impl_1_par.dir/5_1.udb ...
 
@@ -198,7 +195,7 @@ All signals are completely routed.
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Estimated worst slack<setup/<ns>> = 27.754
+PAR_SUMMARY::Estimated worst slack<setup/<ns>> = 29.348
 PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
 PAR_SUMMARY::Estimated worst slack<hold/<ns>> = 1.743
 PAR_SUMMARY::Timing score<hold/<ns>> = 0.000
@@ -206,9 +203,9 @@ PAR_SUMMARY::Number of errors = 0
 
 Note: user must run 'timing' for timing closure signoff.
 
-Total CPU  Time: 4 secs 
-Total REAL Time: 5 secs 
-Peak Memory Usage: 126.86 MB
+Total CPU  Time: 3 secs 
+Total REAL Time: 4 secs 
+Peak Memory Usage: 125.07 MB
 
 
 par done!

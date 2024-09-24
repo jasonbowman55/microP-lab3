@@ -1,42 +1,27 @@
 ---------------------------------------------------
-Report for cell top
-   Instance path: top
+Report for cell SystemVerilog
+   Instance path: SystemVerilog
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                 IOLGC	       2.00        100.0
-                                  LUT4	        103        100.0
-                               LUTGATE	         89        100.0
-                                LUTCCU	         14        100.0
-                                 IOREG	          2        100.0
+                                  LUT4	         43        100.0
+                               LUTGATE	         43        100.0
                                  IOBUF	         18        100.0
-                                PFUREG	         44        100.0
+                                PFUREG	         13        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                 button_decoder_bounce	          1        63.1
-                     seven_seg_decoder	          1         6.8
-                           syncronizer	          1        13.6
+                 button_decoder_bounce	          1        65.1
+                           syncronizer	          1         0.0
 ---------------------------------------------------
 Report for cell syncronizer
-   Instance path: top/MOD3
+   Instance path: SystemVerilog/MOD3
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         14        13.6
-                                LUTCCU	         14        100.0
-                                PFUREG	         21        47.7
----------------------------------------------------
-Report for cell seven_seg_decoder
-   Instance path: top/MOD2
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	          7         6.8
-                               LUTGATE	          7         7.9
+                                PFUREG	          8        61.5
 ---------------------------------------------------
 Report for cell button_decoder_bounce
-   Instance path: top/MOD1
+   Instance path: SystemVerilog/MOD1
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                 IOLGC	       2.00        100.0
-                                  LUT4	         65        63.1
-                               LUTGATE	         65        73.0
-                                 IOREG	          2        100.0
-                                PFUREG	         23        52.3
+                                  LUT4	         28        65.1
+                               LUTGATE	         28        65.1
+                                PFUREG	          5        38.5
