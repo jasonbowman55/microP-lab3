@@ -13,8 +13,8 @@ module testbench1 ();
 
 	always
  	  begin
- 	    clk = 1'b1; #5;
  	    clk = 1'b0; #5;
+ 	    clk = 1'b1; #5;
  	  end
 
 
@@ -28,6 +28,7 @@ module testbench1 ();
 	end
 
 	initial begin
+		col = 4'b0000; #1000;
 		col = 4'b0001; #500;
 		col = 4'b0010; #500;
 		col = 4'b0100; #500;

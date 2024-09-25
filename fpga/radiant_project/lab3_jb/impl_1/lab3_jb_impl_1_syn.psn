@@ -17,5 +17,5 @@ Writing output file 'lab3_jb_impl_1_syn.udb'.
 POSTSYN finished successfully.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 41 MB
-Checksum -- postsyn: 87d99a7be24a193df333add4ce558dc36ee7767
+Peak Memory Usage: 42 MB
+Checksum -- postsyn: edf251bc224e67d1c25ef96b6dfa0d01cef75193

@@ -8,7 +8,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.1.1.259.1
-Mapped on: Mon Sep 23 23:15:14 2024
+Mapped on: Tue Sep 24 17:51:41 2024
 
 Design Information
 ------------------
@@ -22,11 +22,11 @@ Command line:   map -pdc C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/m
 Design Summary
 --------------
 
-   Number of slice registers:  58 out of  5280 (1%)
+   Number of slice registers:  52 out of  5280 (1%)
    Number of I/O registers:      2 out of   117 (2%)
-   Number of LUT4s:           243 out of  5280 (5%)
-      Number of logic LUT4s:             217
-      Number of inserted feedthru LUT4s:  12
+   Number of LUT4s:           218 out of  5280 (4%)
+      Number of logic LUT4s:             199
+      Number of inserted feedthru LUT4s:   5
       Number of ripple logic:              7 (14 LUT4s)
    Number of IO sites used:   18 out of 39 (46%)
       Number of IO sites used for general PIO: 18
@@ -50,16 +50,16 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net clk: 54 loads, 54 rising, 0 falling (Driver: Pin MOD3.hf_osc/CLKHF)
-   Number of Clock Enables:  2
+      Net clk: 48 loads, 48 rising, 0 falling (Driver: Pin hf_osc/CLKHF)
+   Number of Clock Enables:  3
       Net VCC_net: 1 loads, 0 SLICEs
+      Net MOD4.n256: 4 loads, 4 SLICEs
       Net MOD1.n252: 4 loads, 4 SLICEs
    Number of LSRs:  1
-      Net n150: 39 loads, 39 SLICEs
+      Net n174: 38 loads, 38 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net n150: 39 loads
-      Net MOD1.state[4]: 24 loads
-      Net MOD1.state[5]: 20 loads
+      Net n174: 38 loads
+      Net MOD1.state[6]: 20 loads
 
                                     Page 1
 
@@ -69,13 +69,14 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net MOD1.state[6]: 19 loads
-      Net MOD1.state[7]: 19 loads
-      Net MOD1.state[11]: 18 loads
-      Net MOD1.state[2]: 17 loads
+      Net MOD1.state[0]: 19 loads
+      Net MOD1.state[4]: 19 loads
+      Net MOD1.state[5]: 17 loads
       Net MOD1.state[13]: 16 loads
       Net MOD1.state[9]: 16 loads
-      Net MOD1.state[0]: 15 loads
+      Net MOD1.state[11]: 15 loads
+      Net MOD1.state[1]: 15 loads
+      Net MOD1.state[2]: 15 loads
 
 
 
@@ -126,7 +127,6 @@ IO (PIO) Attributes
 | seg[6]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | r_sel[0]            | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 
                                     Page 2
 
@@ -136,6 +136,7 @@ IO (PIO) Attributes
 
 IO (PIO) Attributes (cont)
 --------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
 | r_sel[1]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | r_sel[2]            | OUTPUT    |           |       |       |           |
@@ -152,7 +153,7 @@ OSC Summary
 -----------
 
 OSC 1:                                 Pin/Node Value
-  OSC Instance Name:                            MOD3/hf_osc
+  OSC Instance Name:                            hf_osc
   Power UP:                            NODE     VCC_net
   Enable Signal:                       NODE     VCC_net
   OSC Output:                          NODE     clk
@@ -161,12 +162,12 @@ OSC 1:                                 Pin/Node Value
 ASIC Components
 ---------------
 
+Instance Name: hf_osc
+         Type: HFOSC
 Instance Name: osc_i1
          Type: IOLOGIC
 Instance Name: osc_i2
          Type: IOLOGIC
-Instance Name: MOD3/hf_osc
-         Type: HFOSC
 
 Constraint Summary
 ------------------
@@ -180,8 +181,7 @@ Run Time and Memory Usage
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
    Peak Memory Usage: 67 MB
-Checksum -- map: 3fdf8dc1a765b87f9c05390a55098fd076982e
-
+Checksum -- map: 3af7b07541da05015a1fbfa2ddcbba25950847eb
 
 
 

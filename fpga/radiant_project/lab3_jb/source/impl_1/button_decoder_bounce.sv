@@ -1,7 +1,7 @@
 module button_decoder_bounce (
 	input logic reset,
 	input logic [3:0] col_sync,
-	//input logic clk,
+	input logic clk,
 	input logic [24:0] counter,
 	input logic [4:0] debounce,
 	output logic [3:0] right,
@@ -158,10 +158,10 @@ always_comb
 
 // row scan based on state /////////////////////////////////////////////
 	always_comb begin
-		r_sel = (state == S0 || state == S4 || state == S8) ? 4'b0001 :
-				(state == S1 || state == S5 || state == S9) ? 4'b0010 :
-				(state == S2 || state == S6 || state == S10) ? 4'b0100 :
-				(state == S3 || state == S7 || state == S11) ? 4'b1000 :
+		r_sel = (state == S0 || state == S4 || state == S8) ? 4'b1110 :
+				(state == S1 || state == S5 || state == S9) ? 4'b1101 :
+				(state == S2 || state == S6 || state == S10) ? 4'b1011 :
+				(state == S3 || state == S7 || state == S11) ? 4'b0111 :
 				4'b0000; // Default value
 	end
 ////////////////////////////////////////////////////////////////////////

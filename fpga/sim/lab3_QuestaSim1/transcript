@@ -365,3 +365,245 @@ add wave -position end sim:/button_decoder_bounce/#ALWAYS#13/*
 quit -sim
 # End time: 23:41:42 on Sep 23,2024, Elapsed time: 0:00:50
 # Errors: 0, Warnings: 2
+# Compile of button_decoder_bounce.sv failed with 1 errors.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 1 failed with 1 error.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 17:11:10 on Sep 24,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+add wave -position end sim:/testbench1/dut/*
+add wave -position end sim:/testbench1/#ALWAYS#14/*
+run 2000
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'MOD4'.  Expected 4, found 3.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut/MOD4 File: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv Line: 52
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (4) for port 'clk'. The port definition is at: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/debouncer.sv(3).
+#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut/MOD4 File: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv Line: 52
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'col_sync'. The port definition is at: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/debouncer.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut/MOD4 File: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv Line: 52
+# ** Warning: (vsim-3722) C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv(52): [TFMPC] - Missing connection for port 'debounce'.
+run 2000
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+add wave -position end sim:/testbench1/dut/MOD4/*
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+restart -f
+run 2000
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+restart -f
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+run 3000
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+quit -sim
+# End time: 17:16:05 on Sep 24,2024, Elapsed time: 0:04:55
+# Errors: 0, Warnings: 2
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 17:16:17 on Sep 24,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+add wave -position end sim:/testbench1/dut/MOD4/*
+run 3000
+add wave -position end sim:/testbench1/dut/MOD3/*
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run 3000
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+quit -sim
+vsim -gui work.testbench1
+# End time: 17:17:36 on Sep 24,2024, Elapsed time: 0:01:19
+# Errors: 0, Warnings: 1
+# vsim -gui work.testbench1 
+# Start time: 17:17:36 on Sep 24,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+add wave -position end sim:/testbench1/dut/*
+add wave -position end sim:/testbench1/dut/MOD1/*
+add wave -position end sim:/testbench1/dut/MOD2/*
+add wave -position end sim:/testbench1/dut/MOD3/*
+add wave -position end sim:/testbench1/dut/MOD4/*
+run 3000
+quit -sim
+# End time: 17:19:39 on Sep 24,2024, Elapsed time: 0:02:03
+# Errors: 0, Warnings: 1
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 17:21:21 on Sep 24,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+add wave -position end sim:/testbench1/dut/*
+add wave -position end sim:/testbench1/dut/MOD1/*
+add wave -position end sim:/testbench1/dut/MOD2/*
+add wave -position end sim:/testbench1/dut/MOD3/*
+add wave -position end sim:/testbench1/dut/MOD4/*
+run 3000
+quit -sim
+# End time: 17:26:47 on Sep 24,2024, Elapsed time: 0:05:26
+# Errors: 0, Warnings: 2
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 17:26:52 on Sep 24,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+add wave -position end sim:/testbench1/dut/MOD3/*
+add wave -position end sim:/testbench1/dut/MOD1/*
+run 3000
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testbench1
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+run 4000
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+quit -sim
+# End time: 17:47:12 on Sep 24,2024, Elapsed time: 0:20:20
+# Errors: 0, Warnings: 1
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 17:47:30 on Sep 24,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+add wave -position end sim:/testbench1/dut/MOD3/*
+add wave -position end sim:/testbench1/dut/MOD1/*
+run
+# Compile of button_decoder_bounce.sv failed with 1 errors.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 1 failed with 1 error.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testbench1
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+run 4000
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
