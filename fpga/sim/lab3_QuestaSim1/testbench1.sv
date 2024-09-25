@@ -18,7 +18,7 @@ module testbench1 ();
  	  end
 
 
-	SystemVerilog duttop(reset, clk, col, r_sel, seg, osc);
+	top dut(reset, clk, col, r_sel, seg, osc);
 
 
 	initial begin

@@ -6,11 +6,13 @@ module syncronizer (
 	output logic [24:0] counter
 	);
 		
-// HSOSC instantiation ////////////////////////////////////
+// HSOSC instantiation //////////////////////////////////// TAKEN OUT FOR MODEL SIM
 //HSOSC #(.CLKHF_DIV(2'b01)) 
 	//hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
 ///////////////////////////////////////////////////////////
-	
+
+//assign clk = int_osc;
+
 logic [3:0] n1;
 	
 // syncronizing col inputs ////////
@@ -31,7 +33,7 @@ always_ff @(posedge clk) begin
     if (!reset)
 		counter <= 0;
     else
-        counter <= counter + 1;
+        counter <= counter + 25'h1;
 end
 //////////////////////////////////////////
 	

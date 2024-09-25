@@ -1,44 +1,40 @@
 module button_decoder_bounce (
 	input logic reset,
 	input logic [3:0] col_sync,
-	input logic clk,
+	//input logic clk,
 	input logic [24:0] counter,
-	output logic en,
-	output logic [3:0] r_sel,
-	output logic [3:0] select,
-	output logic [1:0] osc
+	input logic [4:0] debounce,
+	output logic [3:0] right,
+	output logic [3:0] left,
+	output logic [3:0] r_sel
 	);
 
-// internal logic /////////////////
-	logic [3:0] right;
-	logic [3:0] left;
-	logic [4:0] count_de_bounce;
-///////////////////////////////////
 
 // defining state variables /////
-	logic [4:0] state, nextstate;
+	logic [19:0] state, nextstate;
 	logic [3:0] button;
 	
-	parameter S0 = 5'b00000;
-	parameter S1 = 5'b00001;
-	parameter S2 = 5'b00010;
-	parameter S3 = 5'b00011;
-	parameter S4 = 5'b00100;
-	parameter S5 = 5'b00101;
-	parameter S6 = 5'b00110;
-	parameter S7 = 5'b00111;
-	parameter S8 = 5'b01000;
-	parameter S9 = 5'b01001;
-	parameter S10 =5'b01010;
-	parameter S11 = 5'b01011;
-	parameter S20 = 5'b01100;
-	parameter S21 = 5'b01101;
-	parameter S22 = 5'b01110;
-	parameter S23 = 5'b01111;
-	parameter S24 = 5'b10000;
-	parameter S25 = 5'b10001;
-	parameter S26 = 5'b10010;
-	parameter S27 = 5'b10011;
+	parameter S0 = 20'b00000000000000000001;
+	parameter S1 = 20'b00000000000000000010;
+	parameter S2 = 20'b00000000000000000100;
+	parameter S3 = 20'b00000000000000001000;
+	parameter S4 = 20'b00000000000000010000;
+	parameter S5 = 20'b00000000000000100000;
+	parameter S6 = 20'b00000000000001000000;
+	parameter S7 = 20'b00000000000010000000;
+	parameter S8 = 20'b00000000000100000000;
+	parameter S9 = 20'b00000000001000000000;
+	parameter S10 = 20'b00000000010000000000;
+	parameter S11 = 20'b00000000100000000000;
+	// below are all dead states
+	parameter S12 = 20'b00000001000000000000;
+	parameter S13 = 20'b00000010000000000000;
+	parameter S14 = 20'b00000100000000000000;
+	parameter S15 = 20'b00001000000000000000;
+	parameter S16 = 20'b00010000000000000000;
+	parameter S17 = 20'b00100000000000000000;
+	parameter S18 = 20'b01000000000000000000;
+	parameter S19 = 20'b10000000000000000000;
 ///////////////////////////////////
 
 // next state = nextstate on every clk edge
@@ -49,55 +45,57 @@ module button_decoder_bounce (
 			state <= nextstate;
 ///////////////////////////////////////////
 
-/// Cycling through states dead states between row scan
-	always_comb
-		case(state)
-			// row 1
-			S0: nextstate = S20; //dead states
-			S20: nextstate = S21;
-			S21: if(|col_sync) nextstate = S4;
-				else nextstate = S1;
-			S4: nextstate = S8;
-			S8: if (|col_sync) nextstate = S8;
-				else nextstate = S0;
-			
-			// row 2
-			S1: nextstate = S22; //dead states
-			S22: nextstate = S23;
-			S23: if(|col_sync) nextstate = S5;
-				else nextstate = S2;
-			S5: nextstate = S9;
-			S9: if (|col_sync) nextstate = S9;
-				else nextstate = S1;
-			
-			// row 3
-			S2: nextstate = S24; //dead states
-			S24: nextstate = S25;
-			S25: if(|col_sync) nextstate = S6;
-				else nextstate = S3;
-			S6: nextstate = S10;
-			S10: if (|col_sync) nextstate = S10;
-				else nextstate = S2;
-			
-			// row 4
-			S3: nextstate = S26; //dead states
-			S26: nextstate = S27;
-			S27: if(|col_sync) nextstate = S7;
-				else nextstate = S0;
-			S7: nextstate = S11;
-			S11: if (|col_sync) nextstate = S11;
-				else nextstate = S3;
-		endcase
-////////////////////////////////////////////////////////
+// Cycling through states dead states between row scan
+always_comb
+    case(state)
+        // row 1
+        S0: nextstate = S12; // dead states
+        S12: nextstate = S13;
+        S13: if(|col_sync) nextstate = S4;
+            else nextstate = S1;
+        S4: nextstate = S8;
+        S8: if (|col_sync) nextstate = S8;
+            else nextstate = S0;
 
-// row scan based on state /////////////////////////////////////////////
-	always_comb begin
-		r_sel = (state == S0 || state == S4 || state == S8) ? 4'b0001 :
-				(state == S1 || state == S5 || state == S9) ? 4'b0010 :
-				(state == S2 || state == S6 || state == S10) ? 4'b0100 :
-				(state == S3 || state == S7 || state == S11) ? 4'b1000 :
-				4'b0000; // Default value
-	end
+        // row 2
+        S1: nextstate = S14; // dead states
+        S14: nextstate = S15;
+        S15: if(|col_sync) nextstate = S5;
+            else nextstate = S2;
+        S5: nextstate = S9;
+        S9: if (|col_sync) nextstate = S9;
+            else nextstate = S1;
+
+        // row 3
+        S2: nextstate = S16; // dead states
+        S16: nextstate = S17;
+        S17: if(|col_sync) nextstate = S6;
+            else nextstate = S3;
+        S6: nextstate = S10;
+        S10: if (|col_sync) nextstate = S10;
+            else nextstate = S2;
+
+        // row 4
+        S3: nextstate = S18; // dead states
+        S18: nextstate = S19;
+        S19: if(|col_sync) nextstate = S7;
+            else nextstate = S0;
+        S7: nextstate = S11;
+        S11: if (|col_sync) nextstate = S11;
+            else nextstate = S3;
+
+        // Default handling for all dead states
+        S12: nextstate = S12; // Stay in current state
+        S13: nextstate = S13; // Stay in current state
+        S14: nextstate = S14; // Stay in current state
+        S15: nextstate = S15; // Stay in current state
+        S16: nextstate = S16; // Stay in current state
+        S17: nextstate = S17; // Stay in current state
+        S18: nextstate = S18; // Stay in current state
+        S19: nextstate = S19; // Stay in current state
+
+        default: nextstate = state; // Stay in the current state if unrecognized
+    endcase
 ////////////////////////////////////////////////////////////////////////
 
 // logic to determine what button is pressed
@@ -147,43 +145,25 @@ module button_decoder_bounce (
 			left <= 4'b0000;
 			right <= 4'b0000;
 		end else if (left != button) begin
-			left <= right;
-			right <= button;
+			if (debounce == 5'b11111) begin
+				left <= right;
+				right <= button;
+			end
 		end else begin
 			left <= left;
-			right <= right;
+			right <= button;
 		end
 	end
 /////////////////////////////////////////////
 
- //debouncer counter /////////////////////////////
-	//always_ff @(posedge int_osc) begin
-		//if (!reset)
-			//count_de_bounce <= 5'h0;
-		//else
-			//count_de_bounce <= count_de_bounce + 1;
-	//end
-/////////////////////////////////////////////
+// row scan based on state /////////////////////////////////////////////
+	always_comb begin
+		r_sel = (state == S0 || state == S4 || state == S8) ? 4'b0001 :
+				(state == S1 || state == S5 || state == S9) ? 4'b0010 :
+				(state == S2 || state == S6 || state == S10) ? 4'b0100 :
+				(state == S3 || state == S7 || state == S11) ? 4'b1000 :
+				4'b0000; // Default value
+	end
+////////////////////////////////////////////////////////////////////////
 
- //debouncer ///////////////////////////
-	//always_ff @(posedge int_osc) begin
-		//if (count_de_bounce == 5'b11111)
-			//en <= 1'b1;
-		//else
-			//en <= 1'b0;
-	//end
-////////////////////////////////////
-
-// time multiplexer /////////////////////
-	//always_ff @(posedge int_osc) begin
-		// counter[#] controlls toggle speed
-		//if (counter[12]) begin
-			//select <= right;
-			//osc <= 2'b01; // right seg on
-		//end else begin
-			//select <= left;
-			//osc <= 2'b10; // left seg on
-		//end
-	//end
-/////////////////////////////////////////
 endmodule
