@@ -53,11 +53,7 @@ always_comb
         S12: nextstate = S13;
         S13: if(|col_sync) nextstate = S4;
             else nextstate = S1;
-        S4: begin
-		left = right;
-		right = button;
-		nextstate = S8;
-	    end
+        S4: nextstate = S8;
         S8: if (|col_sync) nextstate = S8;
             else nextstate = S0;
 
@@ -66,11 +62,7 @@ always_comb
         S14: nextstate = S15;
         S15: if(|col_sync) nextstate = S5;
             else nextstate = S2;
-        S5: begin
-		left = right;
-		right = button;
-		nextstate = S9;
-	    end
+        S5: nextstate = S9;
         S9: if (|col_sync) nextstate = S9;
             else nextstate = S1;
 
@@ -79,11 +71,7 @@ always_comb
         S16: nextstate = S17;
         S17: if(|col_sync) nextstate = S6;
             else nextstate = S3;
-        S6: begin
-		left = right;
-		right = button;
-		nextstate = S10;
-	    end
+        S6: nextstate = S10;
         S10: if (|col_sync) nextstate = S10;
             else nextstate = S2;
 
@@ -92,21 +80,39 @@ always_comb
         S18: nextstate = S19;
         S19: if(|col_sync) nextstate = S7;
             else nextstate = S0;
-        S7: begin
-		left = right;
-		right = button;
-		nextstate = S11;
-	    end
+        S7: nextstate = S11;
         S11: if (|col_sync) nextstate = S11;
             else nextstate = S3;
 
         default: begin
-		nextstate = S0; 
-		left = 4'b0;      
-		right = 4'b0;     
+		nextstate = S0;   
 		end
     endcase
 /////////////////////////////////////////////////////////////////////////
+
+	always_comb begin
+		case(state)
+			S4:begin
+			left = right;
+			right = button;
+			end
+			
+			S5:begin
+			left = right;
+			right = button;
+			end
+			
+			S6:begin
+			left = right;
+			right = button;
+			end
+			
+			S7:begin
+			left = right;
+			right = button;
+			end
+		endcase
+	end
 
 // logic to determine what button is pressed/
 	always_comb begin
