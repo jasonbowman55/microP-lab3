@@ -15,7 +15,7 @@ always_ff @(posedge clk) begin
 		n1 <= 4'b0000;
 	end
 	else begin
-		n1 <= col;
+		n1 <= !col;
 		col_sync <= n1;
 	end
 end
@@ -24,7 +24,7 @@ end
 // Counter block //////////////////////////
 always_ff @(posedge clk) begin
     if (!reset)
-		counter <= 0;
+	counter <= 25'h0; //CHANGE
     else
         counter <= counter + 25'h1;
 end

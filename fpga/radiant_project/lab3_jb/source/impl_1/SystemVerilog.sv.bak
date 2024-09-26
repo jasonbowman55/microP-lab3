@@ -15,10 +15,10 @@ module top (
 logic [24:0] counter;
 logic [3:0] col_sync;
 logic [3:0] select;
-logic [4:0] debounce;
+logic [1:0] debounce;
 logic [3:0] right;
 logic [3:0] left;
-logic en;
+
 //logic clk; TAKEN OUT FOR MODEL SIM
 
 // HSOSC instantiation //////////////////////////////////// TAKEN OUT FOR MODEL SIM
@@ -34,7 +34,7 @@ always_ff @(posedge clk) begin
 		osc[0] <= 1; // turn on left display
 		osc[1] <= 0;
 	end
-    else begin
+    else if (counter[12] == 1) begin //CHANGE
         select <= left; // Select right DIP-switch input
 		osc[0] <= 0;
 		osc[1] <= 1; // turn on right display

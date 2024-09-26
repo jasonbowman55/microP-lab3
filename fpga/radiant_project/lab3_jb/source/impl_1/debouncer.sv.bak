@@ -1,14 +1,21 @@
 module debouncer (
+	input logic reset,
 	input logic clk,
 	input logic [3:0] col_sync,
-	output logic [4:0] debounce
+	output logic [1:0] debounce
 	);
 	
+
+
 	always_ff @(posedge clk) begin
-		if (|col_sync) begin
-			debounce = debounce + 5'h1;
+		if (!reset) begin
+			debounce = 2'h0;
+		end else if (|col_sync) begin
+			if (debounce < 2'b11) begin
+				debounce = debounce + 2'h1;
+			end
 		end else begin
-			debounce = debounce;
+			debounce = 4'h0;
 		end
 	end
 		

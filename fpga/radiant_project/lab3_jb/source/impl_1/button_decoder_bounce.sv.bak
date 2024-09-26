@@ -3,14 +3,16 @@ module button_decoder_bounce (
 	input logic [3:0] col_sync,
 	input logic clk,
 	input logic [24:0] counter,
-	input logic [4:0] debounce,
-	output logic [3:0] right,
-	output logic [3:0] left,
+	//input logic debounce,
+	output logic [3:0] right_out,
+	output logic [3:0] left_out,
 	output logic [3:0] r_sel
 	);
 
 
 // defining state variables /////
+	logic [3:0] left;
+	logic [3:0] right;
 	logic [19:0] state, nextstate;
 	logic [3:0] button;
 	
@@ -53,7 +55,11 @@ always_comb
         S12: nextstate = S13;
         S13: if(|col_sync) nextstate = S4;
             else nextstate = S1;
-        S4: nextstate = S8;
+        S4: begin
+		left = right;
+		right = button;
+		nextstate = S8;
+	    end
         S8: if (|col_sync) nextstate = S8;
             else nextstate = S0;
 
@@ -62,7 +68,11 @@ always_comb
         S14: nextstate = S15;
         S15: if(|col_sync) nextstate = S5;
             else nextstate = S2;
-        S5: nextstate = S9;
+        S5: begin
+		left = right;
+		right = button;
+		nextstate = S9;
+	    end
         S9: if (|col_sync) nextstate = S9;
             else nextstate = S1;
 
@@ -71,7 +81,11 @@ always_comb
         S16: nextstate = S17;
         S17: if(|col_sync) nextstate = S6;
             else nextstate = S3;
-        S6: nextstate = S10;
+        S6: begin
+		left = right;
+		right = button;
+		nextstate = S10;
+	    end
         S10: if (|col_sync) nextstate = S10;
             else nextstate = S2;
 
@@ -80,7 +94,11 @@ always_comb
         S18: nextstate = S19;
         S19: if(|col_sync) nextstate = S7;
             else nextstate = S0;
-        S7: nextstate = S11;
+        S7: begin
+		left = right;
+		right = button;
+		nextstate = S11;
+	    end
         S11: if (|col_sync) nextstate = S11;
             else nextstate = S3;
 
@@ -96,7 +114,7 @@ always_comb
 
         default: nextstate = state; // Stay in the current state if unrecognized
     endcase
-////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 
 // logic to determine what button is pressed
 	always_comb begin
@@ -136,30 +154,38 @@ always_comb
 			default: button = 4'h0;
 		endcase
 	end
-/////////////////////////////////////////////
-
-// assigning new seg vals when pressed //////
+///////////////////////////////////////////////
 	always_ff @(posedge clk) begin
-		// counter[#] controlls toggle speed
-		if (!reset) begin
-			left <= 4'b0000;
-			right <= 4'b0000;
-		end else if (left != button) begin
-			if (debounce == 5'b11111) begin
-				left <= right;
-				right <= button;
-			end
-		end else begin
-			left <= left;
-			right <= button;
+		if (right != 4'h0) begin
+			right_out = right;
+		end else if (left != 4'h0) begin
+			left_out = left;
 		end
 	end
+
+
+// assigning new seg vals when pressed //////
+	//always_ff @(posedge clk) begin
+		// counter[#] controlls toggle speed
+	//	if (!reset) begin
+	//		left <= 4'h0;
+	//		right <= 4'h0; 
+	//	end else if (left != button) begin
+		//	if (debounce == 1'b1) begin
+		//		left <= right;
+		//		right <= button;
+		//	end
+		//end else begin
+		//	left <= left;
+		//	right <= button;
+		//end
+	//end
 /////////////////////////////////////////////
 
 // row scan based on state /////////////////////////////////////////////
 	always_comb begin
 		r_sel = (state == S0 || state == S4 || state == S8) ? 4'b1110 :
-				(state == S1 || state == S5 || state == S9) ? 4'1101 :
+				(state == S1 || state == S5 || state == S9) ? 4'b1101 :
 				(state == S2 || state == S6 || state == S10) ? 4'b1011 :
 				(state == S3 || state == S7 || state == S11) ? 4'b0111 :
 				4'b0000; // Default value

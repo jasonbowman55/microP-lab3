@@ -10,12 +10,12 @@ Removing unused logic ...
 Starting design annotation....
  
 Constraint Summary:
-   Total number of constraints: 1
+   Total number of constraints: 0
    Total number of constraints dropped: 0
  
 Writing output file 'lab3_jb_impl_1_syn.udb'.
 POSTSYN finished successfully.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 42 MB
-Checksum -- postsyn: edf251bc224e67d1c25ef96b6dfa0d01cef75193
+Peak Memory Usage: 41 MB
+Checksum -- postsyn: 14d9f9bb644d948a36acc11dde3db93280ebfa59

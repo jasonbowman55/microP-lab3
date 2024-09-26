@@ -48,7 +48,6 @@
 
 
 -path "C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb"
--top SystemVerilog
 -udb "lab3_jb_impl_1_rtl.udb"
 -output_hdl "lab3_jb_impl_1.vm"
 

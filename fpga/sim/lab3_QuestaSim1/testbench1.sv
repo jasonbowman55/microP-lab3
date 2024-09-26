@@ -28,7 +28,7 @@ module testbench1 ();
 	end
 
 	initial begin
-		col = 4'b0000; #1000;
+		col = 4'b0000; #1002;
 		col = 4'b0000; #100;
 		col = 4'b0001; #500;
 		col = 4'b0000; #100;
