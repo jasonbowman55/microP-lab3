@@ -13,6 +13,7 @@ module button_decoder_bounce (
 // defining state variables /////
 	logic [19:0] state, nextstate;
 	logic [3:0] button;
+	logic en;
 	
 	parameter S0 = 20'b00000000000000000001;
 	parameter S1 = 20'b00000000000000000010;
@@ -84,35 +85,27 @@ always_comb
         S11: if (|col_sync) nextstate = S11;
             else nextstate = S3;
 
-        default: begin
-		nextstate = S0;   
-		end
+        default: nextstate = S0;   
     endcase
 /////////////////////////////////////////////////////////////////////////
 
 	always_comb begin
 		case(state)
-			S4:begin
-			left = right;
-			right = button;
-			end
-			
-			S5:begin
-			left = right;
-			right = button;
-			end
-			
-			S6:begin
-			left = right;
-			right = button;
-			end
-			
-			S7:begin
-			left = right;
-			right = button;
-			end
+			S4, S5, S6, S7: en = 1'b1;
+			default: en = 1'b0;
 		endcase
 	end
+
+
+//////////////////////////////////////////////
+
+always_ff @(posedge clk) begin
+	if (en) begin
+		left = right;
+		right = button;
+	end
+end
+		
 
 // logic to determine what button is pressed/
 	always_comb begin
@@ -178,7 +171,7 @@ always_comb
 				(state == S1 || state == S5 || state == S9) ? 4'b1101 :
 				(state == S2 || state == S6 || state == S10) ? 4'b1011 :
 				(state == S3 || state == S7 || state == S11) ? 4'b0111 :
-				4'b0000; // Default value
+				4'b1111; // Default value
 	end
 ////////////////////////////////////////////////////////////////////////
 
