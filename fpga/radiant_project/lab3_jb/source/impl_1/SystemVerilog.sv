@@ -35,7 +35,7 @@ always_ff @(posedge clk) begin
 		osc[1] <= 0;
 	end
     else if (counter[12] == 1) begin //CHANGE
-        select <= left; // Select right DIP-switch input
+        	select <= left; // Select right DIP-switch input
 		osc[0] <= 0;
 		osc[1] <= 1; // turn on right display
     end

@@ -43,13 +43,13 @@ end
 
 
 // instantiated submodules
-button_decoder_bounce MOD1 (reset, col_sync, clk, counter, debounce, right, left, r_sel);
+button_decoder_bounce MOD1 (reset, col_sync, clk, counter, right, left, r_sel);
 
 seven_seg_decoder MOD2 (select, seg);
 
 syncronizer MOD3 (reset, col, clk, col_sync, counter);
 
-debouncer MOD4 (reset, clk, col_sync, debounce);
+//debouncer MOD4 (reset, clk, col_sync, debounce);
 ///////////////////////////
 
 

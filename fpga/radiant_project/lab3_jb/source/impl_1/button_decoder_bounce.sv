@@ -4,15 +4,13 @@ module button_decoder_bounce (
 	input logic clk,
 	input logic [24:0] counter,
 	//input logic debounce,
-	output logic [3:0] right_out,
-	output logic [3:0] left_out,
+	output logic [3:0] right,
+	output logic [3:0] left,
 	output logic [3:0] r_sel
 	);
 
 
 // defining state variables /////
-	logic [3:0] left;
-	logic [3:0] right;
 	logic [19:0] state, nextstate;
 	logic [3:0] button;
 	
@@ -102,15 +100,10 @@ always_comb
         S11: if (|col_sync) nextstate = S11;
             else nextstate = S3;
 
-        // Default handling for all dead states
-        S12, S13, S14, S15, S16, S17, S18, S19: begin
-            nextstate = state; // Stay in current state
-        end
-
         default: begin
-		nextstate = state; // Default to current state
-		left = 4'b0;       // Default to retain current value
-		right = 4'b0;     // Default to retain current value
+		nextstate = S0; 
+		left = 4'b0;      
+		right = 4'b0;     
 		end
     endcase
 /////////////////////////////////////////////////////////////////////////
@@ -154,15 +147,6 @@ always_comb
 		endcase
 	end
 ///////////////////////////////////////////////
-always_ff @(posedge clk) begin
-
-    if (right != 4'h0) begin
-        right_out <= right;
-    end else if (left != 4'h0) begin
-        left_out <= left;
-    end
-end
-
 
 // assigning new seg vals when pressed //////
 	//always_ff @(posedge clk) begin

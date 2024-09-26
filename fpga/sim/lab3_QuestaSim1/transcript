@@ -1160,3 +1160,157 @@ vsim -gui work.testbench1
 add wave -position end sim:/testbench1/dut/*
 add wave -position end sim:/testbench1/dut/MOD1/*
 run
+quit -sim
+# End time: 10:49:30 on Sep 26,2024, Elapsed time: 11:06:38
+# Errors: 0, Warnings: 2
+# Compile of button_decoder_bounce.sv was successful with warnings.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 10:49:40 on Sep 26,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+add wave -position end sim:/testbench1/dut/*
+add wave -position end sim:/testbench1/dut/MOD1/*
+run
+add wave -position insertpoint /testbench1/dut/MOD1/left
+add wave -position insertpoint /testbench1/dut/MOD1/right
+# Compile of button_decoder_bounce.sv was successful with warnings.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+quit -sim
+# End time: 10:52:00 on Sep 26,2024, Elapsed time: 0:02:20
+# Errors: 0, Warnings: 3
+# Compile of button_decoder_bounce.sv was successful with warnings.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 10:52:06 on Sep 26,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+add wave -position end sim:/testbench1/dut/*
+add wave -position end sim:/testbench1/dut/MOD1/*
+run
+quit -sim
+# End time: 10:56:55 on Sep 26,2024, Elapsed time: 0:04:49
+# Errors: 0, Warnings: 2
+# Compile of button_decoder_bounce.sv failed with 1 errors.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 1 failed with 1 error.
+# Compile of button_decoder_bounce.sv failed with 11 errors.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 1 failed with 11 errors.
+# Compile of button_decoder_bounce.sv failed with 11 errors.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 1 failed with 11 errors.
+# Compile of button_decoder_bounce.sv was successful with warnings.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 10:59:59 on Sep 26,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+add wave -position end sim:/testbench1/dut/*
+run
+# Compile of button_decoder_bounce.sv was successful with warnings.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+quit -sim
+# Compile of button_decoder_bounce.sv was successful with warnings.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Load canceled
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+# End time: 11:05:06 on Sep 26,2024, Elapsed time: 0:05:07
+# Errors: 0, Warnings: 7
+# Load canceled
+# Compile of button_decoder_bounce.sv was successful with warnings.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 11:05:24 on Sep 26,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+add wave -position end sim:/testbench1/dut/*
+run
+quit -sim
+quit -sim
+# End time: 11:08:53 on Sep 26,2024, Elapsed time: 0:03:29
+# Errors: 0, Warnings: 2
+# Compile of button_decoder_bounce.sv was successful with warnings.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 11:09:02 on Sep 26,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+add wave -position end sim:/testbench1/dut/*
+run
