@@ -243,3 +243,5 @@ add wave -position end sim:/testbench1/dut/*
 #           Using alternate file: ./wlftwqqm77
 add wave -position end sim:/testbench1/dut/MOD1/*
 run
+# End time: 19:48:39 on Sep 28,2024, Elapsed time: 0:22:49
+# Errors: 0, Warnings: 4
