@@ -29,88 +29,108 @@ assign clk = clk_slow[15];
 	logic [19:0] state, nextstate;
 	logic [3:0] button;
 	
-	parameter S0 = 12'b000000000001;
-	parameter S1 = 12'b000000000010;
-	parameter S2 = 12'b000000000100;
-	parameter S3 = 12'b000000001000;
-	parameter S4 = 12'b000000010000;
-	parameter S5 = 12'b000000100000;
-	parameter S6 = 12'b000001000000;
-	parameter S7 = 12'b000010000000;
-	parameter S8 = 12'b000100000000;
-	parameter S9 = 12'b001000000000;
-	parameter S10 = 12'b010000000000;
-	parameter S11 = 12'b100000000000;
+parameter S0 = 20'b00000000000000000001;
+parameter S1 = 20'b00000000000000000010;
+parameter S2 = 20'b00000000000000000100;
+parameter S3 = 20'b00000000000000001000;
+parameter S4 = 20'b00000000000000010000;
+parameter S5 = 20'b00000000000000100000;
+parameter S6 = 20'b00000000000001000000;
+parameter S7 = 20'b00000000000010000000;
+parameter S8 = 20'b00000000000100000000;
+parameter S9 = 20'b00000000001000000000;
+parameter S10 = 20'b00000000010000000000;
+parameter S11 = 20'b00000000100000000000;
+// below are all dead states
+parameter S12 = 20'b00000001000000000000;
+parameter S13 = 20'b00000010000000000000;
+parameter S14 = 20'b00000100000000000000;
+parameter S15 = 20'b00001000000000000000;
+parameter S16 = 20'b00010000000000000000;
+parameter S17 = 20'b00100000000000000000;
+parameter S18 = 20'b01000000000000000000;
+parameter S19 = 20'b10000000000000000000;
 ///////////////////////////////////
 
 // next state = nextstate on every clk edge
-	always_ff @(posedge clk)
-		if (!reset) 
-			state <= S0;
-		else 	
-			state <= nextstate;	
+always_ff @(posedge clk) begin
+    if (!reset) 
+        state <= S0;
+    else 
+        state <= nextstate;	
+end
 	
-always_comb
+always_comb begin
     case(state)
-        S0: if (r_sel == 4'b1111) begin
-				nextstate = S4;
-			end else begin
-				nextstate = S1;
-			end
-		S4: nextstate = S8;
-		S8: if (r_sel == 4'b1111) begin
-				nextstate = S8;
-			end else begin
-				nextstate = S0;
-			end
-		
-		
-		
-		
-		S1: if (r_sel == 4'b1111) begin
-				nextstate = S5;
-			end else begin
-				nextstate = S2;
-			end
-		S5: nextstate = S9;
-		S9: if (r_sel == 4'b1111) begin
-				nextstate = S9;
-			end else begin
-				nextstate = S1;
-			end
-			
-			
-			
-			
-		S2: if (r_sel == 4'b1111) begin
-				nextstate = S6;
-			end else begin
-				nextstate = S3;
-			end
-		S6: nextstate = S10;
-		S10: if (r_sel == 4'b1111) begin
-				nextstate = S10;
-			end else begin
-				nextstate = S2;
-			end
-			
-			
-			
-			
-		S3: if (r_sel == 4'b1111) begin
-				nextstate = S7;
-			end else begin
-				nextstate = S0;
-			end
-		S7: nextstate = S11;
-		S11: if (r_sel == 4'b1111) begin
-				nextstate = S11;
-			end else begin
-				nextstate = S3;
-			end
-
-        default: nextstate = S0;   
+        S0: 
+            if (r_sel == 4'b1111) 
+                nextstate = S4;
+            else 
+                nextstate = S12;
+        S12: 
+            nextstate = S13;
+        S13: 
+            nextstate = S1;
+        S4: 
+            nextstate = S8;
+        S8: 
+            if (r_sel == 4'b1111) 
+                nextstate = S8;
+            else 
+                nextstate = S0;
+        S1: 
+            if (r_sel == 4'b1111) 
+                nextstate = S5;
+            else 
+                nextstate = S14;
+        S14: 
+            nextstate = S15;
+        S15: 
+            nextstate = S2;
+        S5: 
+            nextstate = S9;
+        S9: 
+            if (r_sel == 4'b1111) 
+                nextstate = S9;
+            else 
+                nextstate = S1;
+        S2: 
+            if (r_sel == 4'b1111) 
+                nextstate = S6;
+            else 
+                nextstate = S16;
+        S16: 
+            nextstate = S17;  // Fixed typo from "nexstate"
+        S17: 
+            nextstate = S3;
+        S6: 
+            nextstate = S10;
+        S10: 
+            if (r_sel == 4'b1111) 
+                nextstate = S10;
+            else 
+                nextstate = S2;
+        S3: 
+            if (r_sel == 4'b1111) 
+                nextstate = S7;
+            else 
+                nextstate = S18;
+        S18: 
+            nextstate = S19;  // Fixed typo from ":" to ";"
+        S19: 
+            nextstate = S0;
+        S7: 
+            nextstate = S11;
+        S11: 
+            if (r_sel == 4'b1111) 
+                nextstate = S11;
+            else 
+                nextstate = S3;
+        default: 
+            nextstate = S0;   
     endcase
+end
+
 
 // row scan based on state /////////////////////////////////////////////
 	always_comb begin

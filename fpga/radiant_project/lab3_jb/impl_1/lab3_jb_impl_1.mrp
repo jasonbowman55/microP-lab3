@@ -8,7 +8,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.1.1.259.1
-Mapped on: Sat Sep 28 18:21:57 2024
+Mapped on: Sat Sep 28 18:43:32 2024
 
 Design Information
 ------------------
@@ -22,11 +22,11 @@ Command line:   map -pdc C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/m
 Design Summary
 --------------
 
-   Number of slice registers:  25 out of  5280 (<1%)
+   Number of slice registers:  37 out of  5280 (1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:            47 out of  5280 (1%)
-      Number of logic LUT4s:              28
-      Number of inserted feedthru LUT4s:   1
+   Number of LUT4s:            81 out of  5280 (2%)
+      Number of logic LUT4s:              59
+      Number of inserted feedthru LUT4s:   4
       Number of ripple logic:              9 (18 LUT4s)
    Number of IO sites used:   6 out of 39 (15%)
       Number of IO sites used for general PIO: 6
@@ -51,15 +51,15 @@ Design Summary
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  2
       Net int_osc: 9 loads, 9 rising, 0 falling (Driver: Pin hf_osc/CLKHF)
-      Net clk_c: 9 loads, 9 rising, 0 falling (Driver: Pin
-     clk_slow_219_226__i16/Q)
+      Net clk_c: 21 loads, 21 rising, 0 falling (Driver: Pin
+     clk_slow_267_274__i16/Q)
    Number of Clock Enables:  1
       Net VCC_net: 1 loads, 0 SLICEs
    Number of LSRs:  2
       Net n4: 9 loads, 9 SLICEs
-      Net state_FSM_illegal: 8 loads, 8 SLICEs
+      Net state_FSM_illegal: 20 loads, 20 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net n4: 9 loads
+      Net state_FSM_illegal: 20 loads
 
                                     Page 1
 
@@ -69,15 +69,15 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net state[2]: 9 loads
-      Net state[1]: 8 loads
-      Net state[6]: 8 loads
-      Net state_FSM_illegal: 8 loads
-      Net state[0]: 7 loads
-      Net n145: 6 loads
-      Net n447: 6 loads
-      Net state[10]: 5 loads
-      Net state[11]: 5 loads
+      Net n153: 16 loads
+      Net n4: 9 loads
+      Net state[1]: 9 loads
+      Net state[9]: 9 loads
+      Net state[10]: 8 loads
+      Net state[2]: 8 loads
+      Net state[5]: 8 loads
+      Net state[8]: 8 loads
+      Net state[3]: 7 loads
 
 
 
@@ -101,15 +101,15 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+-------+-------+-----------+
 | r_sel[3]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| r_sel[2]            | OUTPUT    |           |       |       |           |
+| r_sel[0]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | r_sel[1]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| r_sel[0]            | OUTPUT    |           |       |       |           |
+| reset               | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | clk                 | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| reset               | INPUT     |           |       |       |           |
+| r_sel[2]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 Removed logic
@@ -151,8 +151,8 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 64 MB
-Checksum -- map: e9e2c8738dc8437d173c20b14ca11ec70f8ec23
+   Peak Memory Usage: 65 MB
+Checksum -- map: 670ee4a4e0bef43c7b1239f4f7a28e291d6a399f
 
 
 
