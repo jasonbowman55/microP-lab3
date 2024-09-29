@@ -52,37 +52,37 @@ always_comb
         // row 1
         S0: nextstate = S12; // dead states
         S12: nextstate = S13;
-        S13: if(|col_sync) nextstate = S4;
+        S13: if(r_sel == 4'b1111) nextstate = S4;
             else nextstate = S1;
         S4: nextstate = S8;
-        S8: if (|col_sync) nextstate = S8;
+        S8: if (r_sel == 4'b1111) nextstate = S8;
             else nextstate = S0;
 
         // row 2
         S1: nextstate = S14; // dead states
         S14: nextstate = S15;
-        S15: if(|col_sync) nextstate = S5;
+        S15: if(r_sel == 4'b1111) nextstate = S5;
             else nextstate = S2;
         S5: nextstate = S9;
-        S9: if (|col_sync) nextstate = S9;
+        S9: if (r_sel == 4'b1111) nextstate = S9;
             else nextstate = S1;
 
         // row 3
         S2: nextstate = S16; // dead states
         S16: nextstate = S17;
-        S17: if(|col_sync) nextstate = S6;
+        S17: if(r_sel == 4'b1111) nextstate = S6;
             else nextstate = S3;
         S6: nextstate = S10;
-        S10: if (|col_sync) nextstate = S10;
+        S10: if (r_sel == 4'b1111) nextstate = S10;
             else nextstate = S2;
 
         // row 4
         S3: nextstate = S18; // dead states
         S18: nextstate = S19;
-        S19: if(|col_sync) nextstate = S7;
+        S19: if(r_sel == 4'b1111) nextstate = S7;
             else nextstate = S0;
         S7: nextstate = S11;
-        S11: if (|col_sync) nextstate = S11;
+        S11: if (r_sel == 4'b1111) nextstate = S11;
             else nextstate = S3;
 
         default: nextstate = S0;   

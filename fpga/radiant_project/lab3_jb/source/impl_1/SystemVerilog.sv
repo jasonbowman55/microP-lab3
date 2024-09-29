@@ -5,7 +5,7 @@
 
 module top (
 	input logic reset,
-	input logic clk,
+	//input logic clk,
 	input logic [3:0] col,
 	output logic [3:0] r_sel,
 	output logic [6:0] seg,
@@ -28,8 +28,8 @@ assign debug_clk = clk;
 //logic clk; TAKEN OUT FOR MODEL SIM/
 
 // HSOSC instantiation //////////////////////////////////// TAKEN OUT FOR MODEL SIM
-//HSOSC #(.CLKHF_DIV(2'b01)) 
-//	hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
+HSOSC #(.CLKHF_DIV(2'b01)) 
+	hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
 ///////////////////////////////////////////////////////////
 	always_ff @(posedge int_osc) begin
 		if (!reset) begin
@@ -39,7 +39,7 @@ assign debug_clk = clk;
 		end
 	end
 
-assign clk = clk_slow[15];
+assign clk = clk_slow[9];
 
 always_ff @(posedge clk) begin
     // counter[#] controlls toggle speed

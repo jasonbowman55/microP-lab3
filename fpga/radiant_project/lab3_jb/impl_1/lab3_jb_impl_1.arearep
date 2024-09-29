@@ -1,28 +1,28 @@
 ----------------------------------------------------------------------
 Report for cell top.TECH
-Register bits:  54 of 5280 (1.023%)
+Register bits:  48 of 5280 (0.909%)
 I/O cells:      19
                                   Cell usage:
                                cell     count   Res Usage(%)
-                               CCU2        12          100.0
-                            FD1P3XZ        54          100.0
+                               CCU2         9          100.0
+                            FD1P3XZ        48          100.0
                          HSOSC_CORE         1          100.0
                                  IB         5          100.0
                               IOL_B         2          100.0
-                               LUT4        93          100.0
+                               LUT4        89          100.0
                                  OB        14          100.0
 SUB MODULES
               button_decoder_bounce         1
                   seven_seg_decoder         1
                         syncronizer         1
-                              TOTAL       184
+                              TOTAL       171
 ----------------------------------------------------------------------
 Report for cell syncronizer.v1
 Instance Path : MOD3
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2         3           25.0
-                            FD1P3XZ         5            9.3
+                                FA2         3           33.3
+                            FD1P3XZ         5           10.4
                                LUT4         1            1.1
                               TOTAL         9
 ----------------------------------------------------------------------
@@ -30,13 +30,13 @@ Report for cell seven_seg_decoder.v1
 Instance Path : MOD2
                                   Cell usage:
                                cell     count   Res Usage(%)
-                               LUT4         7            7.5
+                               LUT4         7            7.9
                               TOTAL         7
 ----------------------------------------------------------------------
 Report for cell button_decoder_bounce.v1
 Instance Path : MOD1
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            FD1P3XZ        29           53.7
-                               LUT4        80           86.0
-                              TOTAL       109
+                            FD1P3XZ        29           60.4
+                               LUT4        76           85.4
+                              TOTAL       105

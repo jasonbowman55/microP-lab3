@@ -7,26 +7,27 @@ Device:  iCE40UP5K
 Package: SG48
 Performance Grade:  High-Performance_1.2V
 
-Mapper:    version Radiant Software (64-bit) 2024.1.0.34.2
-Mapped on: Thu Sep 26 16:04:34 2024
+Mapper:    version Radiant Software (64-bit) 2024.1.1.259.1
+Mapped on: Sat Sep 28 18:33:11 2024
 
 Design Information
 ------------------
 
-Command line:   map -pdc C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_proje
-     ct/lab3_jb/source/impl_1/impl_1.pdc -i lab3_jb_impl_1_syn.udb -o
-     lab3_jb_impl_1_map.udb -mp lab3_jb_impl_1.mrp -hierrpt -gui -msgset C:/User
-     s/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/promote.xml
+Command line:   map -pdc C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/m
+     icroP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/impl_1.pdc -i
+     lab3_jb_impl_1_syn.udb -o lab3_jb_impl_1_map.udb -mp lab3_jb_impl_1.mrp
+     -hierrpt -gui -msgset C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs
+     /microP-lab3/fpga/radiant_project/lab3_jb/promote.xml
 
 Design Summary
 --------------
 
-   Number of slice registers:  54 out of  5280 (1%)
+   Number of slice registers:  48 out of  5280 (1%)
    Number of I/O registers:      2 out of   117 (2%)
-   Number of LUT4s:           130 out of  5280 (2%)
-      Number of logic LUT4s:              94
-      Number of inserted feedthru LUT4s:  12
-      Number of ripple logic:             12 (24 LUT4s)
+   Number of LUT4s:           122 out of  5280 (2%)
+      Number of logic LUT4s:              90
+      Number of inserted feedthru LUT4s:  14
+      Number of ripple logic:              9 (18 LUT4s)
    Number of IO sites used:   19 out of 39 (49%)
       Number of IO sites used for general PIO: 19
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -49,17 +50,16 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  2
+      Net int_osc: 6 loads, 6 rising, 0 falling (Driver: Pin hf_osc/CLKHF)
       Net debug_clk_c: 38 loads, 38 rising, 0 falling (Driver: Pin
-     clk_slow_245_259__i16/Q)
-      Net int_osc: 9 loads, 9 rising, 0 falling (Driver: Pin hf_osc/CLKHF)
+     clk_slow_245_260__i10/Q)
    Number of Clock Enables:  2
       Net VCC_net: 1 loads, 0 SLICEs
       Net MOD1.n3: 8 loads, 8 SLICEs
    Number of LSRs:  3
-      Net n4: 12 loads, 12 SLICEs
-      Net MOD1.state_FSM_illegal: 20 loads, 20 SLICEs
+      Net n4: 9 loads, 9 SLICEs
       Net MOD1.state[4]: 1 loads, 1 SLICEs
-   Top 10 highest fanout non-clock nets:
+      Net MOD1.state_FSM_illegal: 20 loads, 20 SLICEs
 
                                     Page 1
 
@@ -69,16 +69,17 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
+   Top 10 highest fanout non-clock nets:
       Net MOD1.state_FSM_illegal: 20 loads
-      Net MOD1.state[5]: 16 loads
-      Net col_sync_c_3: 15 loads
-      Net col_sync_c_2: 14 loads
-      Net MOD1.state[6]: 13 loads
-      Net col_sync_c_1: 12 loads
-      Net MOD1.n5: 12 loads
-      Net MOD1.state[4]: 12 loads
-      Net n4: 12 loads
-      Net col_sync_c_0: 10 loads
+      Net MOD1.state[5]: 15 loads
+      Net MOD1.state[4]: 13 loads
+      Net MOD1.state[6]: 12 loads
+      Net col_sync_c_1: 10 loads
+      Net col_sync_c_3: 10 loads
+      Net MOD1.n54[0]: 10 loads
+      Net col_sync_c_2: 9 loads
+      Net n4: 9 loads
+      Net col_sync_c_0: 8 loads
 
 
 
@@ -126,7 +127,6 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+-------+-------+-----------+
 | seg[4]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| seg[5]              | OUTPUT    |           |       |       |           |
 
                                     Page 2
 
@@ -136,6 +136,7 @@ IO (PIO) Attributes
 
 IO (PIO) Attributes (cont)
 --------------------------
+| seg[5]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | seg[6]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
@@ -184,9 +185,8 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 65 MB
-Checksum -- map: aa198fbed08cd9909157b4ef5e02d74c7ea9946d
-
+   Peak Memory Usage: 66 MB
+Checksum -- map: a5b13ac87a80769fdf19e25a37fe837ff7193d
 
 
 
