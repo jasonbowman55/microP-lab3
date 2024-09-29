@@ -4,38 +4,36 @@ Report for cell top
                      Cell usage:
                                   cell	      count    Res Usage(%)
                                  IOLGC	       2.00        100.0
-                                  LUT4	        124        100.0
-                               LUTGATE	        104        100.0
-                                LUTCCU	         20        100.0
+                                  LUT4	        118        100.0
+                               LUTGATE	        106        100.0
+                                LUTCCU	         12        100.0
                                  IOREG	          2        100.0
-                                 IOBUF	         18        100.0
-                                PFUREG	         51        100.0
+                                 IOBUF	         19        100.0
+                                PFUREG	         43        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                 button_decoder_bounce	          1        34.7
-                     seven_seg_decoder	          1         5.6
-                           syncronizer	          1        16.9
+                 button_decoder_bounce	          1        64.4
+                     seven_seg_decoder	          1         5.9
+                           syncronizer	          1         0.8
 ---------------------------------------------------
 Report for cell syncronizer
    Instance path: top/MOD3
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         21        16.9
-                               LUTGATE	          1         1.0
-                                LUTCCU	         20        100.0
-                                PFUREG	         18        35.3
----------------------------------------------------
-Report for cell seven_seg_decoder
-   Instance path: top/MOD2
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	          7         5.6
-                               LUTGATE	          7         6.7
+                                  LUT4	          1         0.8
+                               LUTGATE	          1         0.9
 ---------------------------------------------------
 Report for cell button_decoder_bounce
    Instance path: top/MOD1
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         43        34.7
-                               LUTGATE	         43        41.3
-                                PFUREG	         29        56.9
+                                  LUT4	         76        64.4
+                               LUTGATE	         76        71.7
+                                PFUREG	         29        67.4
+---------------------------------------------------
+Report for cell seven_seg_decoder
+   Instance path: top/MOD2
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	          7         5.9
+                               LUTGATE	          7         6.6

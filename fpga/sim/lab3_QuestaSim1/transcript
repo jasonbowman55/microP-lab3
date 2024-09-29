@@ -8,20 +8,13 @@
 # Compile of button_decoder_bounce.sv was successful.
 # Compile of seven_seg_decoder.sv was successful.
 # Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv failed with 1 errors.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 1 failed with 1 error.
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
 # Compile of SystemVerilog.sv was successful.
 # Compile of testbench1.sv was successful.
 # Compile of debouncer.sv was successful.
 # 6 compiles, 0 failed with no errors.
 vsim -gui work.testbench1
 # vsim -gui work.testbench1 
-# Start time: 18:54:34 on Sep 28,2024
+# Start time: 22:26:17 on Sep 28,2024
 # Loading sv_std.std
 # Loading work.testbench1
 # Loading work.top
@@ -29,114 +22,33 @@ vsim -gui work.testbench1
 # Loading work.seven_seg_decoder
 # Loading work.syncronizer
 # Loading work.debouncer
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut File: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv Line: 21
-# ** Warning: (vsim-3722) C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv(21): [TFMPC] - Missing connection for port 'debug_clk'.
 add wave -position end sim:/testbench1/dut/*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Jason  Hostname: JASON  ProcessID: 9448
-#           Attempting to use alternate WLF file "./wlft6qvtrr".
+#           Attempting to use alternate WLF file "./wlftqm9x5f".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft6qvtrr
-run
-# Break key hit
-quit -sim
-# End time: 18:57:20 on Sep 28,2024, Elapsed time: 0:02:46
-# Errors: 0, Warnings: 8
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv was successful.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.testbench1
-# vsim -gui work.testbench1 
-# Start time: 18:57:32 on Sep 28,2024
-# Loading sv_std.std
-# Loading work.testbench1
-# Loading work.top
-# Loading work.button_decoder_bounce
-# Loading work.seven_seg_decoder
-# Loading work.syncronizer
-# Loading work.debouncer
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut File: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv Line: 21
-# ** Warning: (vsim-3722) C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv(21): [TFMPC] - Missing connection for port 'debug_clk'.
-add wave -position end sim:/testbench1/dut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Jason  Hostname: JASON  ProcessID: 9448
-#           Attempting to use alternate WLF file "./wlft3g80r4".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft3g80r4
-run
-quit -sim
-# End time: 19:02:48 on Sep 28,2024, Elapsed time: 0:05:16
-# Errors: 0, Warnings: 6
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv was successful.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.testbench1
-# vsim -gui work.testbench1 
-# Start time: 19:02:56 on Sep 28,2024
-# Loading sv_std.std
-# Loading work.testbench1
-# Loading work.top
-# Loading work.button_decoder_bounce
-# Loading work.seven_seg_decoder
-# Loading work.syncronizer
-# Loading work.debouncer
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut File: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv Line: 21
-# ** Warning: (vsim-3722) C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv(21): [TFMPC] - Missing connection for port 'debug_clk'.
-add wave -position end sim:/testbench1/dut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Jason  Hostname: JASON  ProcessID: 9448
-#           Attempting to use alternate WLF file "./wlft05yvqf".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft05yvqf
-run
+#           Using alternate file: ./wlftqm9x5f
 add wave -position end sim:/testbench1/dut/MOD1/*
+run
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut File: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv Line: 21
-# ** Warning: (vsim-3722) C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv(21): [TFMPC] - Missing connection for port 'debug_clk'.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# Compile of debouncer.sv was successful.
+# 6 compiles, 0 failed with no errors.
 run
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
 quit -sim
-# End time: 19:10:40 on Sep 28,2024, Elapsed time: 0:07:44
-# Errors: 0, Warnings: 3
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv failed with 1 errors.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 1 failed with 1 error.
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv failed with 1 errors.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 1 failed with 1 error.
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv was successful.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 0 failed with no errors.
+# End time: 22:29:45 on Sep 28,2024, Elapsed time: 0:03:28
+# Errors: 0, Warnings: 2
 vsim -gui work.testbench1
 # vsim -gui work.testbench1 
-# Start time: 19:11:30 on Sep 28,2024
+# Start time: 22:29:50 on Sep 28,2024
 # Loading sv_std.std
 # Loading work.testbench1
 # Loading work.top
@@ -147,101 +59,8 @@ vsim -gui work.testbench1
 add wave -position end sim:/testbench1/dut/*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Jason  Hostname: JASON  ProcessID: 9448
-#           Attempting to use alternate WLF file "./wlftx0k1in".
+#           Attempting to use alternate WLF file "./wlfts47851".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftx0k1in
+#           Using alternate file: ./wlfts47851
 add wave -position end sim:/testbench1/dut/MOD1/*
 run
-quit -sim
-# End time: 19:12:37 on Sep 28,2024, Elapsed time: 0:01:07
-# Errors: 0, Warnings: 6
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv was successful.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.testbench1
-# vsim -gui work.testbench1 
-# Start time: 19:12:46 on Sep 28,2024
-# Loading sv_std.std
-# Loading work.testbench1
-# Loading work.top
-# Loading work.button_decoder_bounce
-# Loading work.seven_seg_decoder
-# Loading work.syncronizer
-# Loading work.debouncer
-add wave -position end sim:/testbench1/dut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Jason  Hostname: JASON  ProcessID: 9448
-#           Attempting to use alternate WLF file "./wlftehhrt5".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftehhrt5
-add wave -position end sim:/testbench1/dut/MOD1/*
-run
-quit -sim
-# End time: 19:19:46 on Sep 28,2024, Elapsed time: 0:07:00
-# Errors: 0, Warnings: 4
-# Compile of button_decoder_bounce.sv failed with 27 errors.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv was successful.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 1 failed with 27 errors.
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv was successful.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.testbench1
-# vsim -gui work.testbench1 
-# Start time: 19:21:50 on Sep 28,2024
-# Loading sv_std.std
-# Loading work.testbench1
-# Loading work.top
-# Loading work.button_decoder_bounce
-# Loading work.seven_seg_decoder
-# Loading work.syncronizer
-# Loading work.debouncer
-add wave -position end sim:/testbench1/dut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Jason  Hostname: JASON  ProcessID: 9448
-#           Attempting to use alternate WLF file "./wlfta5e8ta".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfta5e8ta
-add wave -position end sim:/testbench1/dut/MOD1/*
-run
-quit -sim
-# End time: 19:24:30 on Sep 28,2024, Elapsed time: 0:02:40
-# Errors: 0, Warnings: 5
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv was successful.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.testbench1
-# vsim -gui work.testbench1 
-# Start time: 19:25:50 on Sep 28,2024
-# Loading sv_std.std
-# Loading work.testbench1
-# Loading work.top
-# Loading work.button_decoder_bounce
-# Loading work.seven_seg_decoder
-# Loading work.syncronizer
-# Loading work.debouncer
-add wave -position end sim:/testbench1/dut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Jason  Hostname: JASON  ProcessID: 9448
-#           Attempting to use alternate WLF file "./wlftwqqm77".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftwqqm77
-add wave -position end sim:/testbench1/dut/MOD1/*
-run
-# End time: 19:48:39 on Sep 28,2024, Elapsed time: 0:22:49
-# Errors: 0, Warnings: 4

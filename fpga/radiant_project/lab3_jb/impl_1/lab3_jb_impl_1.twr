@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.1.1.259.1
 
-Sat Sep 28 19:45:37 2024
+Sat Sep 28 22:40:19 2024
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -96,14 +96,14 @@ col[1]                                  |                     input
 col[2]                                  |                     input
 col[3]                                  |                     input
 reset                                   |                     input
+clk                                     |                    output
 osc[0]                                  |                    output
 osc[1]                                  |                    output
 seg[0]                                  |                    output
 seg[1]                                  |                    output
-seg[2]                                  |                    output
 -------------------------------------------------------------------
                                         |                          
-Number of I/O ports without constraint  |                        18
+Number of I/O ports without constraint  |                        19
                                         |                          
 -------------------------------------------------------------------
 
@@ -112,7 +112,7 @@ Define a clock on a top level port or a generated clock on a clock divider pin a
 -------------------------------------------------------------------
             Listing 1 Net(s)            |        Source pin        
 -------------------------------------------------------------------
-clk                                     |MOD3/counter_226_240__i18/Q
+clk_c                                   |   clk_slow_225_240__i10/Q
 -------------------------------------------------------------------
                                         |                          
 Number of clock nets without clock defi |                          
@@ -126,7 +126,7 @@ nition                                  |                         1
 Combinational Loops
 -------------------
 ++++ Loop1
-MOD3/counter_226_240__i18/Q	->	MOD3/counter_226_240__i18/CK
+clk_slow_225_240__i10/Q	->	clk_slow_225_240__i10/CK
 
 ===============================================================
 2  Setup at Speed Grade High-Performance_1.2V Corner at 100 Degrees

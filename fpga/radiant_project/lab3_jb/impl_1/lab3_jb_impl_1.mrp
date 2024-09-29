@@ -8,7 +8,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.1.1.259.1
-Mapped on: Sat Sep 28 19:45:24 2024
+Mapped on: Sat Sep 28 22:40:06 2024
 
 Design Information
 ------------------
@@ -22,21 +22,21 @@ Command line:   map -pdc C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/m
 Design Summary
 --------------
 
-   Number of slice registers:  51 out of  5280 (1%)
+   Number of slice registers:  43 out of  5280 (1%)
    Number of I/O registers:      2 out of   117 (2%)
-   Number of LUT4s:           124 out of  5280 (2%)
-      Number of logic LUT4s:              96
+   Number of LUT4s:           118 out of  5280 (2%)
+      Number of logic LUT4s:              98
       Number of inserted feedthru LUT4s:   8
-      Number of ripple logic:             10 (20 LUT4s)
-   Number of IO sites used:   18 out of 39 (46%)
-      Number of IO sites used for general PIO: 18
+      Number of ripple logic:              6 (12 LUT4s)
+   Number of IO sites used:   19 out of 39 (49%)
+      Number of IO sites used for general PIO: 19
       Number of IO sites used for I3C: 0 out of 2 (0%)
       (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 18 out of 36 (50%)
+      Number of IO sites used for PIO+I3C: 19 out of 36 (53%)
       Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 18 out of 39 (46%)
+      Number of IO sites used for PIO+I3C+OD+RGB: 19 out of 39 (49%)
    Number of DSPs:             0 out of 8 (0%)
    Number of I2Cs:             0 out of 2 (0%)
    Number of High Speed OSCs:  0 out of 1 (0%)
@@ -50,16 +50,16 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net clk: 45 loads, 45 rising, 0 falling (Driver: Pin
-     MOD3.counter_226_240__i18/Q)
-   Number of Clock Enables:  1
-      Net n3: 8 loads, 8 SLICEs
+      Net clk_c: 41 loads, 41 rising, 0 falling (Driver: Pin
+     clk_slow_225_240__i10/Q)
+   Number of Clock Enables:  3
+      Net MOD1.n1410: 2 loads, 2 SLICEs
+      Net MOD1.n3: 5 loads, 5 SLICEs
+      Net MOD1.n1409: 1 loads, 1 SLICEs
    Number of LSRs:  3
-      Net state[4]: 1 loads, 1 SLICEs
-      Net MOD3.n4: 10 loads, 10 SLICEs
+      Net n4: 6 loads, 6 SLICEs
       Net MOD1.state_FSM_illegal: 20 loads, 20 SLICEs
-   Top 10 highest fanout non-clock nets:
-      Net col_c_2: 26 loads
+      Net MOD1.state[4]: 1 loads, 1 SLICEs
 
                                     Page 1
 
@@ -69,15 +69,17 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
+   Top 10 highest fanout non-clock nets:
       Net MOD1.state_FSM_illegal: 20 loads
-      Net n767: 17 loads
-      Net state[4]: 13 loads
-      Net state[5]: 13 loads
-      Net state[6]: 12 loads
-      Net col_c_0: 10 loads
-      Net col_c_1: 10 loads
-      Net col_c_3: 10 loads
-      Net MOD3.n4: 10 loads
+      Net MOD1.n923: 19 loads
+      Net col_c_2: 18 loads
+      Net col_c_3: 18 loads
+      Net MOD1.state[5]: 16 loads
+      Net MOD1.state[6]: 14 loads
+      Net MOD1.state[4]: 13 loads
+      Net MOD1.state[7]: 10 loads
+      Net MOD1.n6: 9 loads
+      Net col_c_0: 8 loads
 
 
 
@@ -91,11 +93,11 @@ Design Errors/Criticals/Warnings
 --------------------------------
 
 WARNING <1026001> - map: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/m
-     icroP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/impl_1.pdc (19) : No
+     icroP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/impl_1.pdc (18) : No
      port matched 'debug_clk'.
 WARNING <1027013> - map: No port matched 'debug_clk'.
 WARNING <1026001> - map: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/m
-     icroP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/impl_1.pdc (19) :
+     icroP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/impl_1.pdc (18) :
      Can't resolve object 'debug_clk' in constraint 'ldc_set_location -site {28}
      [get_ports debug_clk]'.
 WARNING <1011001> - map: Remove invalid constraint 'ldc_set_location -site {28}
@@ -118,15 +120,13 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+-------+-------+-----------+
 | reset               | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
+| clk                 | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
 | osc[0]              | OUTPUT    |           | O     |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | osc[1]              | OUTPUT    |           | O     |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | seg[0]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| seg[1]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| seg[2]              | OUTPUT    |           |       |       |           |
 
                                     Page 2
 
@@ -136,6 +136,10 @@ IO (PIO) Attributes
 
 IO (PIO) Attributes (cont)
 --------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| seg[1]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| seg[2]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | seg[3]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
@@ -181,11 +185,7 @@ Run Time and Memory Usage
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
    Peak Memory Usage: 65 MB
-Checksum -- map: 377a33d411650e5a50615c531e64a79a25878489
-
-
-
-
+Checksum -- map: 8e1ee5a159ed29f9cfddb2d62550f85eada8f08b
 
 
 

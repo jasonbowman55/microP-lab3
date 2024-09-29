@@ -18,7 +18,7 @@ module testbench1 ();
  	  end
 
 
-	top dut(reset, clk, col, r_sel, seg, osc);
+	top dut(reset, clk, col, r_sel, seg, osc);//
 
 
 	initial begin
@@ -28,15 +28,22 @@ module testbench1 ();
 	end
 
 	initial begin
-		col = 4'b0000; #102;
-		col = 4'b0000; #100;
-		col = 4'b0001; #500;
-		col = 4'b0000; #100;
-		col = 4'b0010; #500;
-		col = 4'b0000; #100;
-		col = 4'b0100; #500;
-		col = 4'b0000; #100;
-		col = 4'b1000; #500;
+		col = 4'b1111; #102;
+		col = 4'b1111; #100;
+		col = 4'b1110; #500;
+		col = 4'b1111; #100;
+		col = 4'b1101; #500;
+		col = 4'b1111; #100;
+		col = 4'b1011; #500;
+		col = 4'b1111; #100;
+		col = 4'b0111; #500;
+		col = 4'b1110; #500;
+		col = 4'b1111; #100;
+		col = 4'b1101; #500;
+		col = 4'b1111; #100;
+		col = 4'b1011; #500;
+		col = 4'b1111; #100;
+		col = 4'b0111; #500;
 	end
 
 endmodule

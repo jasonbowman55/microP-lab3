@@ -61,12 +61,12 @@ always_comb begin
         S4: 
             nextstate = S8;
         S8: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S8;
             else 
                 nextstate = S0;
         S1: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S5;
             else 
                 nextstate = S14;
@@ -77,39 +77,39 @@ always_comb begin
         S5: 
             nextstate = S9;
         S9: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S9;
             else 
                 nextstate = S1;
         S2: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S6;
             else 
                 nextstate = S16;
         S16: 
-            nextstate = S17;  // Fixed typo from "nexstate"
+            nextstate = S17;  
         S17: 
             nextstate = S3;
         S6: 
             nextstate = S10;
         S10: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S10;
             else 
                 nextstate = S2;
         S3: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S7;
             else 
                 nextstate = S18;
         S18: 
-            nextstate = S19;  // Fixed typo from ":" to ";"/
+            nextstate = S19; 
         S19: 
             nextstate = S0;
         S7: 
             nextstate = S11;
         S11: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S11;
             else 
                 nextstate = S3;

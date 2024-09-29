@@ -14,7 +14,6 @@ module button_decoder_bounce (
 	logic [19:0] state, nextstate;
 	logic [3:0] button;
 	logic en;
-	logic [3:0] inv_col_sync;
 	
 	parameter S0 = 20'b00000000000000000001;
 	parameter S1 = 20'b00000000000000000010;
@@ -47,13 +46,11 @@ module button_decoder_bounce (
 			state <= nextstate;
 ///////////////////////////////////////////
 
-assign inv_col_sync = ~col_sync;
-
 // Cycling through states dead states between row scan
 always_comb begin
     case(state)
         S0: 
-            if (|inv_col_sync) 
+            if (col_sync != 4'b0000) 
                 nextstate = S4;
             else 
                 nextstate = S12;
@@ -64,12 +61,12 @@ always_comb begin
         S4: 
             nextstate = S8;
         S8: 
-            if (|inv_col_sync) 
+            if (col_sync != 4'b0000) 
                 nextstate = S8;
             else 
                 nextstate = S0;
         S1: 
-            if (|inv_col_sync) 
+            if (col_sync != 4'b0000) 
                 nextstate = S5;
             else 
                 nextstate = S14;
@@ -80,39 +77,39 @@ always_comb begin
         S5: 
             nextstate = S9;
         S9: 
-            if (|inv_col_sync) 
+            if (col_sync != 4'b0000) 
                 nextstate = S9;
             else 
                 nextstate = S1;
         S2: 
-            if (|inv_col_sync) 
+            if (col_sync != 4'b0000) 
                 nextstate = S6;
             else 
                 nextstate = S16;
         S16: 
-            nextstate = S17;  // Fixed typo from "nexstate"
+            nextstate = S17;  
         S17: 
             nextstate = S3;
         S6: 
             nextstate = S10;
         S10: 
-            if (|inv_col_sync) 
+            if (col_sync != 4'b0000) 
                 nextstate = S10;
             else 
                 nextstate = S2;
         S3: 
-            if (|inv_col_sync) 
+            if (col_sync != 4'b0000) 
                 nextstate = S7;
             else 
                 nextstate = S18;
         S18: 
-            nextstate = S19;  // Fixed typo from ":" to ";"
+            nextstate = S19; 
         S19: 
             nextstate = S0;
         S7: 
             nextstate = S11;
         S11: 
-            if (|inv_col_sync) 
+            if (col_sync != 4'b0000) 
                 nextstate = S11;
             else 
                 nextstate = S3;
@@ -144,7 +141,7 @@ end
 	always_comb begin
 		case(state)
 			S4:
-				case(~col_sync)
+				case(col_sync)
 					4'b0001: button = 4'h1;
 					4'b0010: button = 4'h2;
 					4'b0100: button = 4'h3;
@@ -152,7 +149,7 @@ end
 					default: button = 4'h0;
 				endcase
 			S5:
-				case(~col_sync)
+				case(col_sync)
 					4'b0001: button = 4'h4;
 					4'b0010: button = 4'h5;
 					4'b0100: button = 4'h6;
@@ -160,7 +157,7 @@ end
 					default: button = 4'h0;
 				endcase
 			S6:
-				case(~col_sync)
+				case(col_sync)
 					4'b0001: button = 4'h7;
 					4'b0010: button = 4'h8;
 					4'b0100: button = 4'h9;
@@ -168,7 +165,7 @@ end
 					default: button = 4'h0;
 				endcase
 			S7:
-				case(~col_sync)
+				case(col_sync)
 					4'b0001: button = 4'hF;
 					4'b0010: button = 4'h0;
 					4'b0100: button = 4'hE;
@@ -199,13 +196,15 @@ end
 /////////////////////////////////////////////
 
 // row scan based on state /////////////////////////////////////////////
-	always_comb begin
-		r_sel = (state == S0 || state == S4 || state == S8) ? 4'b1110 :
-				(state == S1 || state == S5 || state == S9) ? 4'b1101 :
-				(state == S2 || state == S6 || state == S10) ? 4'b1011 :
-				(state == S3 || state == S7 || state == S11) ? 4'b0111 :
-				4'b1111; // Default value
-	end
+always_comb begin
+    case(state)
+        S0, S4, S8, S12, S13: r_sel = 4'b1110;
+        S1, S5, S9, S14, S15: r_sel = 4'b1101;
+        S2, S6, S10, S16, S17: r_sel = 4'b1011;
+        S3, S7, S11, S18, S19: r_sel = 4'b0111;
+        default: r_sel = 4'b0000; // Default value
+    endcase
+end
 ////////////////////////////////////////////////////////////////////////
 
 endmodule
