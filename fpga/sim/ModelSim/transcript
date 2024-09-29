@@ -1,0 +1,207 @@
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 15:07:53 on Sep 26,2024
+# //  ModelSim DE-64 2022.3 Jul 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim DE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# ** Error: (vsim-3033) Instantiation of 'HSOSC' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut File: C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv Line: 26
+#         Searched libraries:
+#             C:/Users/jbowman/Desktop/microP-lab3/fpga/sim/ModelSim/work
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Error loading design
+# End time: 15:08:04 on Sep 26,2024, Elapsed time: 0:00:11
+# Errors: 1, Warnings: 6
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 15:08:27 on Sep 26,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+add wave -position end sim:/testbench1/dut/*
+run
+quit -sim
+# End time: 15:19:14 on Sep 26,2024, Elapsed time: 0:10:47
+# Errors: 0, Warnings: 2
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv failed with 2 errors.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 1 failed with 2 errors.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv failed with 1 errors.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 1 failed with 1 error.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 15:19:55 on Sep 26,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+add wave -position end sim:/testbench1/dut/*
+add wave -position end sim:/testbench1/dut/MOD1/*
+run
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 0 failed with no errors.
+run
+quit -sim
+# doVOpenFlatFile(): INTERNAL ERROR: page load failed for file C:/Users/jbowman/Desktop/microP-lab3/fpga/sim/ModelSim/work/testbench1/_primary.dbs (1:1 1:1 135 0 831 1727389308 0x10b:0x101)
+# End time: 15:22:02 on Sep 26,2024, Elapsed time: 0:02:07
+# Errors: 0, Warnings: 2
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 15:22:26 on Sep 26,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+add wave -position end sim:/testbench1/dut/*
+add wave -position end sim:/testbench1/dut/MOD1/*
+run
+quit -sim
+# End time: 15:43:40 on Sep 26,2024, Elapsed time: 0:21:14
+# Errors: 0, Warnings: 2
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv failed with 1 errors.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 1 failed with 1 error.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 15:44:23 on Sep 26,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (2) for port 'debounce'. The port definition is at: C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/debouncer.sv(5).
+#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut/MOD4 File: C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv Line: 62
+add wave -position end sim:/testbench1/dut/*
+add wave -position end sim:/testbench1/dut/MOD1/*
+run
+quit -sim
+# End time: 15:46:17 on Sep 26,2024, Elapsed time: 0:01:54
+# Errors: 0, Warnings: 4
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 15:46:25 on Sep 26,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (2) for port 'debounce'. The port definition is at: C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/debouncer.sv(5).
+#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut/MOD4 File: C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv Line: 62
+add wave -position end sim:/testbench1/dut/*
+add wave -position end sim:/testbench1/dut/MOD1/*
+run
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 0 failed with no errors.
+restart -f; run 10000
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testbench1
+# Loading work.top
+# ** Error: (vsim-3033) Instantiation of 'HSOSC' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut File: C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv Line: 32
+#         Searched libraries:
+#             C:/Users/jbowman/Desktop/microP-lab3/fpga/sim/ModelSim/work
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+# Loading work.syncronizer
+# Loading work.debouncer
+# No Design Loaded!
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of debouncer.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv failed with 1 errors.
+# Compile of testbench1.sv was successful.
+# 6 compiles, 1 failed with 1 error.

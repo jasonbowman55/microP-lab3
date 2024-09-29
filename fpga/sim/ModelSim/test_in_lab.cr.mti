@@ -1,0 +1,36 @@
+C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv {1 {vlog -work work -sv -stats=none C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv
+Model Technology ModelSim DE-64 vlog 2022.3 Compiler 2022.07 Jul 18 2022
+-- Compiling module button_decoder_bounce
+
+Top level modules:
+	button_decoder_bounce
+
+} {} {}} C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv {1 {vlog -work work -sv -stats=none C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv
+Model Technology ModelSim DE-64 vlog 2022.3 Compiler 2022.07 Jul 18 2022
+-- Compiling module seven_seg_decoder
+
+Top level modules:
+	seven_seg_decoder
+
+} {} {}} C:/Users/jbowman/Desktop/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv {1 {vlog -work work -sv -stats=none C:/Users/jbowman/Desktop/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv
+Model Technology ModelSim DE-64 vlog 2022.3 Compiler 2022.07 Jul 18 2022
+-- Compiling module testbench1
+
+Top level modules:
+	testbench1
+
+} {} {}} C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv {1 {vlog -work work -sv -stats=none C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv
+Model Technology ModelSim DE-64 vlog 2022.3 Compiler 2022.07 Jul 18 2022
+-- Compiling module syncronizer
+
+Top level modules:
+	syncronizer
+
+} {} {}} C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/debouncer.sv {1 {vlog -work work -sv -stats=none C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/debouncer.sv
+Model Technology ModelSim DE-64 vlog 2022.3 Compiler 2022.07 Jul 18 2022
+-- Compiling module debouncer
+
+Top level modules:
+	debouncer
+
+} {} {}}
