@@ -1,6 +1,6 @@
-Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.1.0.34.2
+Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.1.1.259.1
 
-Thu Sep 26 16:04:44 2024
+Sat Sep 28 18:22:11 2024
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -8,7 +8,7 @@ Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
 
-Command line:    timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt lab3_jb_impl_1.twr lab3_jb_impl_1.udb -gui -msgset C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/promote.xml
+Command line:    timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt lab3_jb_impl_1.twr lab3_jb_impl_1.udb -gui -msgset C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/promote.xml
 
 -----------------------------------------
 Design:          top
@@ -52,7 +52,7 @@ create_clock -name {int_osc} -period 41.6667 [get_pins {hf_osc/CLKHF }]
 
 1.2  Constraint Coverage
 ---------------------------
-Constraint Coverage: 11.9141%
+Constraint Coverage: 35.2601%
 
 
 1.3  Overall Summary
@@ -75,22 +75,22 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
           Listing 9 End Points          |           Type           
 -------------------------------------------------------------------
-clk_slow_245_259__i16/SR                |           No arrival time
-{clk_slow_245_259__i14/SR   clk_slow_245_259__i15/SR}                           
+{clk_slow_219_226__i6/SR   clk_slow_219_226__i7/SR}                           
                                         |           No arrival time
-{clk_slow_245_259__i12/SR   clk_slow_245_259__i13/SR}                           
+{clk_slow_219_226__i4/SR   clk_slow_219_226__i5/SR}                           
                                         |           No arrival time
-{clk_slow_245_259__i10/SR   clk_slow_245_259__i11/SR}                           
+{clk_slow_219_226__i2/SR   clk_slow_219_226__i3/SR}                           
                                         |           No arrival time
-{clk_slow_245_259__i8/SR   clk_slow_245_259__i9/SR}                           
+clk_slow_219_226__i1/SR                 |           No arrival time
+clk_slow_219_226__i16/SR                |           No arrival time
+{clk_slow_219_226__i14/SR   clk_slow_219_226__i15/SR}                           
                                         |           No arrival time
-{clk_slow_245_259__i6/SR   clk_slow_245_259__i7/SR}                           
+{clk_slow_219_226__i12/SR   clk_slow_219_226__i13/SR}                           
                                         |           No arrival time
-{clk_slow_245_259__i4/SR   clk_slow_245_259__i5/SR}                           
+{clk_slow_219_226__i10/SR   clk_slow_219_226__i11/SR}                           
                                         |           No arrival time
-{clk_slow_245_259__i2/SR   clk_slow_245_259__i3/SR}                           
+{clk_slow_219_226__i8/SR   clk_slow_219_226__i9/SR}                           
                                         |           No arrival time
-clk_slow_245_259__i1/SR                 |           No arrival time
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
@@ -112,21 +112,17 @@ create_generated_clock,
 ...
 
 -------------------------------------------------------------------
-     Listing 10 Start or End Points     |           Type           
+     Listing 6 Start or End Points      |           Type           
 -------------------------------------------------------------------
-col[0]                                  |                     input
-col[1]                                  |                     input
-col[2]                                  |                     input
-col[3]                                  |                     input
 reset                                   |                     input
-debug_clk                               |                    output
-osc[0]                                  |                    output
-osc[1]                                  |                    output
-seg[0]                                  |                    output
-seg[1]                                  |                    output
+r_sel[3]                                |                    output
+r_sel[2]                                |                    output
+r_sel[1]                                |                    output
+r_sel[0]                                |                    output
+clk                                     |                    output
 -------------------------------------------------------------------
                                         |                          
-Number of I/O ports without constraint  |                        19
+Number of I/O ports without constraint  |                         6
                                         |                          
 -------------------------------------------------------------------
 
@@ -135,7 +131,7 @@ Define a clock on a top level port or a generated clock on a clock divider pin a
 -------------------------------------------------------------------
             Listing 1 Net(s)            |        Source pin        
 -------------------------------------------------------------------
-debug_clk_c                             |   clk_slow_245_259__i16/Q
+clk_c                                   |   clk_slow_219_226__i16/Q
 -------------------------------------------------------------------
                                         |                          
 Number of clock nets without clock defi |                          
@@ -175,16 +171,16 @@ Clock Domain Crossing
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-clk_slow_245_259__i16/D                  |   31.591 ns 
-clk_slow_245_259__i15/D                  |   32.423 ns 
-clk_slow_245_259__i14/D                  |   32.700 ns 
-clk_slow_245_259__i13/D                  |   32.977 ns 
-clk_slow_245_259__i12/D                  |   33.254 ns 
-clk_slow_245_259__i11/D                  |   33.531 ns 
-clk_slow_245_259__i10/D                  |   33.808 ns 
-clk_slow_245_259__i9/D                   |   34.085 ns 
-clk_slow_245_259__i8/D                   |   34.362 ns 
-clk_slow_245_259__i7/D                   |   35.194 ns 
+clk_slow_219_226__i16/D                  |   31.591 ns 
+clk_slow_219_226__i15/D                  |   32.423 ns 
+clk_slow_219_226__i14/D                  |   32.700 ns 
+clk_slow_219_226__i13/D                  |   32.977 ns 
+clk_slow_219_226__i12/D                  |   33.254 ns 
+clk_slow_219_226__i11/D                  |   33.531 ns 
+clk_slow_219_226__i10/D                  |   33.808 ns 
+clk_slow_219_226__i9/D                   |   34.085 ns 
+clk_slow_219_226__i8/D                   |   34.362 ns 
+clk_slow_219_226__i7/D                   |   35.194 ns 
 -------------------------------------------------------
                                          |             
 Setup # of endpoints with negative slack:|           0 
@@ -207,8 +203,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : clk_slow_245_259__i1/Q  (SLICE_R13C3A)
-Path End         : clk_slow_245_259__i16/D  (SLICE_R13C5A)
+Path Begin       : clk_slow_219_226__i1/Q  (SLICE_R6C4A)
+Path End         : clk_slow_219_226__i16/D  (SLICE_R6C6A)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 17
@@ -223,64 +219,64 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 int_osc                                                      NET DELAY               5.499                  5.499  10      
-clk_slow_245_259__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_slow_245_259__i1/CK->clk_slow_245_259__i1/Q
-                                          SLICE_R13C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+clk_slow_219_226__i1/CK->clk_slow_219_226__i1/Q
+                                          SLICE_R6C4A        CLK_TO_Q1_DELAY         1.388                  6.887  1       
 n16                                                          NET DELAY               2.022                  8.909  1       
-clk_slow_245_259_add_4_1/C1->clk_slow_245_259_add_4_1/CO1
-                                          SLICE_R13C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n785                                                         NET DELAY               0.000                  9.252  2       
-clk_slow_245_259_add_4_3/CI0->clk_slow_245_259_add_4_3/CO0
-                                          SLICE_R13C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n1500                                                        NET DELAY               0.000                  9.529  2       
-clk_slow_245_259_add_4_3/CI1->clk_slow_245_259_add_4_3/CO1
-                                          SLICE_R13C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n787                                                         NET DELAY               0.000                  9.806  2       
-clk_slow_245_259_add_4_5/CI0->clk_slow_245_259_add_4_5/CO0
-                                          SLICE_R13C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n1503                                                        NET DELAY               0.000                 10.083  2       
-clk_slow_245_259_add_4_5/CI1->clk_slow_245_259_add_4_5/CO1
-                                          SLICE_R13C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n789                                                         NET DELAY               0.000                 10.360  2       
-clk_slow_245_259_add_4_7/CI0->clk_slow_245_259_add_4_7/CO0
-                                          SLICE_R13C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n1506                                                        NET DELAY               0.000                 10.637  2       
-clk_slow_245_259_add_4_7/CI1->clk_slow_245_259_add_4_7/CO1
-                                          SLICE_R13C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n791                                                         NET DELAY               0.555                 11.469  2       
-clk_slow_245_259_add_4_9/CI0->clk_slow_245_259_add_4_9/CO0
-                                          SLICE_R13C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n1509                                                        NET DELAY               0.000                 11.746  2       
-clk_slow_245_259_add_4_9/CI1->clk_slow_245_259_add_4_9/CO1
-                                          SLICE_R13C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n793                                                         NET DELAY               0.000                 12.023  2       
-clk_slow_245_259_add_4_11/CI0->clk_slow_245_259_add_4_11/CO0
-                                          SLICE_R13C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n1512                                                        NET DELAY               0.000                 12.300  2       
-clk_slow_245_259_add_4_11/CI1->clk_slow_245_259_add_4_11/CO1
-                                          SLICE_R13C4B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-n795                                                         NET DELAY               0.000                 12.577  2       
-clk_slow_245_259_add_4_13/CI0->clk_slow_245_259_add_4_13/CO0
-                                          SLICE_R13C4C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-n1515                                                        NET DELAY               0.000                 12.854  2       
-clk_slow_245_259_add_4_13/CI1->clk_slow_245_259_add_4_13/CO1
-                                          SLICE_R13C4C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-n797                                                         NET DELAY               0.000                 13.131  2       
-clk_slow_245_259_add_4_15/CI0->clk_slow_245_259_add_4_15/CO0
-                                          SLICE_R13C4D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-n1518                                                        NET DELAY               0.000                 13.408  2       
-clk_slow_245_259_add_4_15/CI1->clk_slow_245_259_add_4_15/CO1
-                                          SLICE_R13C4D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
-n799                                                         NET DELAY               1.216                 14.901  2       
-clk_slow_245_259_add_4_17/D0->clk_slow_245_259_add_4_17/S0
-                                          SLICE_R13C5A       D0_TO_F0_DELAY          0.476                 15.377  1       
+clk_slow_219_226_add_4_1/C1->clk_slow_219_226_add_4_1/CO1
+                                          SLICE_R6C4A        C1_TO_COUT1_DELAY       0.343                  9.252  2       
+n597                                                         NET DELAY               0.000                  9.252  2       
+clk_slow_219_226_add_4_3/CI0->clk_slow_219_226_add_4_3/CO0
+                                          SLICE_R6C4B        CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+n986                                                         NET DELAY               0.000                  9.529  2       
+clk_slow_219_226_add_4_3/CI1->clk_slow_219_226_add_4_3/CO1
+                                          SLICE_R6C4B        CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+n599                                                         NET DELAY               0.000                  9.806  2       
+clk_slow_219_226_add_4_5/CI0->clk_slow_219_226_add_4_5/CO0
+                                          SLICE_R6C4C        CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+n989                                                         NET DELAY               0.000                 10.083  2       
+clk_slow_219_226_add_4_5/CI1->clk_slow_219_226_add_4_5/CO1
+                                          SLICE_R6C4C        CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+n601                                                         NET DELAY               0.000                 10.360  2       
+clk_slow_219_226_add_4_7/CI0->clk_slow_219_226_add_4_7/CO0
+                                          SLICE_R6C4D        CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+n992                                                         NET DELAY               0.000                 10.637  2       
+clk_slow_219_226_add_4_7/CI1->clk_slow_219_226_add_4_7/CO1
+                                          SLICE_R6C4D        CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+n603                                                         NET DELAY               0.555                 11.469  2       
+clk_slow_219_226_add_4_9/CI0->clk_slow_219_226_add_4_9/CO0
+                                          SLICE_R6C5A        CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+n995                                                         NET DELAY               0.000                 11.746  2       
+clk_slow_219_226_add_4_9/CI1->clk_slow_219_226_add_4_9/CO1
+                                          SLICE_R6C5A        CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+n605                                                         NET DELAY               0.000                 12.023  2       
+clk_slow_219_226_add_4_11/CI0->clk_slow_219_226_add_4_11/CO0
+                                          SLICE_R6C5B        CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+n998                                                         NET DELAY               0.000                 12.300  2       
+clk_slow_219_226_add_4_11/CI1->clk_slow_219_226_add_4_11/CO1
+                                          SLICE_R6C5B        CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+n607                                                         NET DELAY               0.000                 12.577  2       
+clk_slow_219_226_add_4_13/CI0->clk_slow_219_226_add_4_13/CO0
+                                          SLICE_R6C5C        CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+n1001                                                        NET DELAY               0.000                 12.854  2       
+clk_slow_219_226_add_4_13/CI1->clk_slow_219_226_add_4_13/CO1
+                                          SLICE_R6C5C        CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+n609                                                         NET DELAY               0.000                 13.131  2       
+clk_slow_219_226_add_4_15/CI0->clk_slow_219_226_add_4_15/CO0
+                                          SLICE_R6C5D        CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+n1004                                                        NET DELAY               0.000                 13.408  2       
+clk_slow_219_226_add_4_15/CI1->clk_slow_219_226_add_4_15/CO1
+                                          SLICE_R6C5D        CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+n611                                                         NET DELAY               1.216                 14.901  2       
+clk_slow_219_226_add_4_17/D0->clk_slow_219_226_add_4_17/S0
+                                          SLICE_R6C6A        D0_TO_F0_DELAY          0.476                 15.377  1       
 n70                                                          NET DELAY               0.000                 15.377  1       
-clk_slow_245_259__i16/D                                      ENDPOINT                0.000                 15.377  1       
+clk_slow_219_226__i16/D                                      ENDPOINT                0.000                 15.377  1       
 
 
 Destination Clock Path
@@ -289,7 +285,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 41.666  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 41.666  10      
 int_osc                                                      NET DELAY               5.499                 47.165  10      
-clk_slow_245_259__i16/CK                                     CLOCK PIN               0.000                 47.165  1       
+clk_slow_219_226__i16/CK                                     CLOCK PIN               0.000                 47.165  1       
                                                              Uncertainty          -(0.000)                 47.165  
                                                              Setup time           -(0.198)                 46.967  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
@@ -303,8 +299,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i1/Q  (SLICE_R13C3A)
-Path End         : clk_slow_245_259__i15/D  (SLICE_R13C4D)
+Path Begin       : clk_slow_219_226__i1/Q  (SLICE_R6C4A)
+Path End         : clk_slow_219_226__i15/D  (SLICE_R6C5D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 16
@@ -319,61 +315,61 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 int_osc                                                      NET DELAY               5.499                  5.499  10      
-clk_slow_245_259__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_slow_245_259__i1/CK->clk_slow_245_259__i1/Q
-                                          SLICE_R13C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+clk_slow_219_226__i1/CK->clk_slow_219_226__i1/Q
+                                          SLICE_R6C4A        CLK_TO_Q1_DELAY         1.388                  6.887  1       
 n16                                                          NET DELAY               2.022                  8.909  1       
-clk_slow_245_259_add_4_1/C1->clk_slow_245_259_add_4_1/CO1
-                                          SLICE_R13C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n785                                                         NET DELAY               0.000                  9.252  2       
-clk_slow_245_259_add_4_3/CI0->clk_slow_245_259_add_4_3/CO0
-                                          SLICE_R13C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n1500                                                        NET DELAY               0.000                  9.529  2       
-clk_slow_245_259_add_4_3/CI1->clk_slow_245_259_add_4_3/CO1
-                                          SLICE_R13C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n787                                                         NET DELAY               0.000                  9.806  2       
-clk_slow_245_259_add_4_5/CI0->clk_slow_245_259_add_4_5/CO0
-                                          SLICE_R13C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n1503                                                        NET DELAY               0.000                 10.083  2       
-clk_slow_245_259_add_4_5/CI1->clk_slow_245_259_add_4_5/CO1
-                                          SLICE_R13C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n789                                                         NET DELAY               0.000                 10.360  2       
-clk_slow_245_259_add_4_7/CI0->clk_slow_245_259_add_4_7/CO0
-                                          SLICE_R13C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n1506                                                        NET DELAY               0.000                 10.637  2       
-clk_slow_245_259_add_4_7/CI1->clk_slow_245_259_add_4_7/CO1
-                                          SLICE_R13C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n791                                                         NET DELAY               0.555                 11.469  2       
-clk_slow_245_259_add_4_9/CI0->clk_slow_245_259_add_4_9/CO0
-                                          SLICE_R13C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n1509                                                        NET DELAY               0.000                 11.746  2       
-clk_slow_245_259_add_4_9/CI1->clk_slow_245_259_add_4_9/CO1
-                                          SLICE_R13C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n793                                                         NET DELAY               0.000                 12.023  2       
-clk_slow_245_259_add_4_11/CI0->clk_slow_245_259_add_4_11/CO0
-                                          SLICE_R13C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n1512                                                        NET DELAY               0.000                 12.300  2       
-clk_slow_245_259_add_4_11/CI1->clk_slow_245_259_add_4_11/CO1
-                                          SLICE_R13C4B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-n795                                                         NET DELAY               0.000                 12.577  2       
-clk_slow_245_259_add_4_13/CI0->clk_slow_245_259_add_4_13/CO0
-                                          SLICE_R13C4C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-n1515                                                        NET DELAY               0.000                 12.854  2       
-clk_slow_245_259_add_4_13/CI1->clk_slow_245_259_add_4_13/CO1
-                                          SLICE_R13C4C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-n797                                                         NET DELAY               0.000                 13.131  2       
-clk_slow_245_259_add_4_15/CI0->clk_slow_245_259_add_4_15/CO0
-                                          SLICE_R13C4D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-n1518                                                        NET DELAY               0.661                 14.069  2       
-clk_slow_245_259_add_4_15/D1->clk_slow_245_259_add_4_15/S1
-                                          SLICE_R13C4D       D1_TO_F1_DELAY          0.476                 14.545  1       
+clk_slow_219_226_add_4_1/C1->clk_slow_219_226_add_4_1/CO1
+                                          SLICE_R6C4A        C1_TO_COUT1_DELAY       0.343                  9.252  2       
+n597                                                         NET DELAY               0.000                  9.252  2       
+clk_slow_219_226_add_4_3/CI0->clk_slow_219_226_add_4_3/CO0
+                                          SLICE_R6C4B        CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+n986                                                         NET DELAY               0.000                  9.529  2       
+clk_slow_219_226_add_4_3/CI1->clk_slow_219_226_add_4_3/CO1
+                                          SLICE_R6C4B        CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+n599                                                         NET DELAY               0.000                  9.806  2       
+clk_slow_219_226_add_4_5/CI0->clk_slow_219_226_add_4_5/CO0
+                                          SLICE_R6C4C        CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+n989                                                         NET DELAY               0.000                 10.083  2       
+clk_slow_219_226_add_4_5/CI1->clk_slow_219_226_add_4_5/CO1
+                                          SLICE_R6C4C        CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+n601                                                         NET DELAY               0.000                 10.360  2       
+clk_slow_219_226_add_4_7/CI0->clk_slow_219_226_add_4_7/CO0
+                                          SLICE_R6C4D        CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+n992                                                         NET DELAY               0.000                 10.637  2       
+clk_slow_219_226_add_4_7/CI1->clk_slow_219_226_add_4_7/CO1
+                                          SLICE_R6C4D        CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+n603                                                         NET DELAY               0.555                 11.469  2       
+clk_slow_219_226_add_4_9/CI0->clk_slow_219_226_add_4_9/CO0
+                                          SLICE_R6C5A        CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+n995                                                         NET DELAY               0.000                 11.746  2       
+clk_slow_219_226_add_4_9/CI1->clk_slow_219_226_add_4_9/CO1
+                                          SLICE_R6C5A        CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+n605                                                         NET DELAY               0.000                 12.023  2       
+clk_slow_219_226_add_4_11/CI0->clk_slow_219_226_add_4_11/CO0
+                                          SLICE_R6C5B        CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+n998                                                         NET DELAY               0.000                 12.300  2       
+clk_slow_219_226_add_4_11/CI1->clk_slow_219_226_add_4_11/CO1
+                                          SLICE_R6C5B        CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+n607                                                         NET DELAY               0.000                 12.577  2       
+clk_slow_219_226_add_4_13/CI0->clk_slow_219_226_add_4_13/CO0
+                                          SLICE_R6C5C        CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+n1001                                                        NET DELAY               0.000                 12.854  2       
+clk_slow_219_226_add_4_13/CI1->clk_slow_219_226_add_4_13/CO1
+                                          SLICE_R6C5C        CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+n609                                                         NET DELAY               0.000                 13.131  2       
+clk_slow_219_226_add_4_15/CI0->clk_slow_219_226_add_4_15/CO0
+                                          SLICE_R6C5D        CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+n1004                                                        NET DELAY               0.661                 14.069  2       
+clk_slow_219_226_add_4_15/D1->clk_slow_219_226_add_4_15/S1
+                                          SLICE_R6C5D        D1_TO_F1_DELAY          0.476                 14.545  1       
 n71                                                          NET DELAY               0.000                 14.545  1       
-clk_slow_245_259__i15/D                                      ENDPOINT                0.000                 14.545  1       
+clk_slow_219_226__i15/D                                      ENDPOINT                0.000                 14.545  1       
 
 
 Destination Clock Path
@@ -382,7 +378,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 41.666  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 41.666  10      
 int_osc                                                      NET DELAY               5.499                 47.165  10      
-{clk_slow_245_259__i14/CK   clk_slow_245_259__i15/CK}
+{clk_slow_219_226__i14/CK   clk_slow_219_226__i15/CK}
                                                              CLOCK PIN               0.000                 47.165  1       
                                                              Uncertainty          -(0.000)                 47.165  
                                                              Setup time           -(0.198)                 46.967  
@@ -397,8 +393,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i1/Q  (SLICE_R13C3A)
-Path End         : clk_slow_245_259__i14/D  (SLICE_R13C4D)
+Path Begin       : clk_slow_219_226__i1/Q  (SLICE_R6C4A)
+Path End         : clk_slow_219_226__i14/D  (SLICE_R6C5D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 15
@@ -413,58 +409,58 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 int_osc                                                      NET DELAY               5.499                  5.499  10      
-clk_slow_245_259__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_slow_245_259__i1/CK->clk_slow_245_259__i1/Q
-                                          SLICE_R13C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+clk_slow_219_226__i1/CK->clk_slow_219_226__i1/Q
+                                          SLICE_R6C4A        CLK_TO_Q1_DELAY         1.388                  6.887  1       
 n16                                                          NET DELAY               2.022                  8.909  1       
-clk_slow_245_259_add_4_1/C1->clk_slow_245_259_add_4_1/CO1
-                                          SLICE_R13C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n785                                                         NET DELAY               0.000                  9.252  2       
-clk_slow_245_259_add_4_3/CI0->clk_slow_245_259_add_4_3/CO0
-                                          SLICE_R13C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n1500                                                        NET DELAY               0.000                  9.529  2       
-clk_slow_245_259_add_4_3/CI1->clk_slow_245_259_add_4_3/CO1
-                                          SLICE_R13C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n787                                                         NET DELAY               0.000                  9.806  2       
-clk_slow_245_259_add_4_5/CI0->clk_slow_245_259_add_4_5/CO0
-                                          SLICE_R13C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n1503                                                        NET DELAY               0.000                 10.083  2       
-clk_slow_245_259_add_4_5/CI1->clk_slow_245_259_add_4_5/CO1
-                                          SLICE_R13C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n789                                                         NET DELAY               0.000                 10.360  2       
-clk_slow_245_259_add_4_7/CI0->clk_slow_245_259_add_4_7/CO0
-                                          SLICE_R13C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n1506                                                        NET DELAY               0.000                 10.637  2       
-clk_slow_245_259_add_4_7/CI1->clk_slow_245_259_add_4_7/CO1
-                                          SLICE_R13C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n791                                                         NET DELAY               0.555                 11.469  2       
-clk_slow_245_259_add_4_9/CI0->clk_slow_245_259_add_4_9/CO0
-                                          SLICE_R13C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n1509                                                        NET DELAY               0.000                 11.746  2       
-clk_slow_245_259_add_4_9/CI1->clk_slow_245_259_add_4_9/CO1
-                                          SLICE_R13C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n793                                                         NET DELAY               0.000                 12.023  2       
-clk_slow_245_259_add_4_11/CI0->clk_slow_245_259_add_4_11/CO0
-                                          SLICE_R13C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n1512                                                        NET DELAY               0.000                 12.300  2       
-clk_slow_245_259_add_4_11/CI1->clk_slow_245_259_add_4_11/CO1
-                                          SLICE_R13C4B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-n795                                                         NET DELAY               0.000                 12.577  2       
-clk_slow_245_259_add_4_13/CI0->clk_slow_245_259_add_4_13/CO0
-                                          SLICE_R13C4C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-n1515                                                        NET DELAY               0.000                 12.854  2       
-clk_slow_245_259_add_4_13/CI1->clk_slow_245_259_add_4_13/CO1
-                                          SLICE_R13C4C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-n797                                                         NET DELAY               0.661                 13.792  2       
-clk_slow_245_259_add_4_15/D0->clk_slow_245_259_add_4_15/S0
-                                          SLICE_R13C4D       D0_TO_F0_DELAY          0.476                 14.268  1       
+clk_slow_219_226_add_4_1/C1->clk_slow_219_226_add_4_1/CO1
+                                          SLICE_R6C4A        C1_TO_COUT1_DELAY       0.343                  9.252  2       
+n597                                                         NET DELAY               0.000                  9.252  2       
+clk_slow_219_226_add_4_3/CI0->clk_slow_219_226_add_4_3/CO0
+                                          SLICE_R6C4B        CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+n986                                                         NET DELAY               0.000                  9.529  2       
+clk_slow_219_226_add_4_3/CI1->clk_slow_219_226_add_4_3/CO1
+                                          SLICE_R6C4B        CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+n599                                                         NET DELAY               0.000                  9.806  2       
+clk_slow_219_226_add_4_5/CI0->clk_slow_219_226_add_4_5/CO0
+                                          SLICE_R6C4C        CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+n989                                                         NET DELAY               0.000                 10.083  2       
+clk_slow_219_226_add_4_5/CI1->clk_slow_219_226_add_4_5/CO1
+                                          SLICE_R6C4C        CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+n601                                                         NET DELAY               0.000                 10.360  2       
+clk_slow_219_226_add_4_7/CI0->clk_slow_219_226_add_4_7/CO0
+                                          SLICE_R6C4D        CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+n992                                                         NET DELAY               0.000                 10.637  2       
+clk_slow_219_226_add_4_7/CI1->clk_slow_219_226_add_4_7/CO1
+                                          SLICE_R6C4D        CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+n603                                                         NET DELAY               0.555                 11.469  2       
+clk_slow_219_226_add_4_9/CI0->clk_slow_219_226_add_4_9/CO0
+                                          SLICE_R6C5A        CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+n995                                                         NET DELAY               0.000                 11.746  2       
+clk_slow_219_226_add_4_9/CI1->clk_slow_219_226_add_4_9/CO1
+                                          SLICE_R6C5A        CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+n605                                                         NET DELAY               0.000                 12.023  2       
+clk_slow_219_226_add_4_11/CI0->clk_slow_219_226_add_4_11/CO0
+                                          SLICE_R6C5B        CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+n998                                                         NET DELAY               0.000                 12.300  2       
+clk_slow_219_226_add_4_11/CI1->clk_slow_219_226_add_4_11/CO1
+                                          SLICE_R6C5B        CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+n607                                                         NET DELAY               0.000                 12.577  2       
+clk_slow_219_226_add_4_13/CI0->clk_slow_219_226_add_4_13/CO0
+                                          SLICE_R6C5C        CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+n1001                                                        NET DELAY               0.000                 12.854  2       
+clk_slow_219_226_add_4_13/CI1->clk_slow_219_226_add_4_13/CO1
+                                          SLICE_R6C5C        CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+n609                                                         NET DELAY               0.661                 13.792  2       
+clk_slow_219_226_add_4_15/D0->clk_slow_219_226_add_4_15/S0
+                                          SLICE_R6C5D        D0_TO_F0_DELAY          0.476                 14.268  1       
 n72                                                          NET DELAY               0.000                 14.268  1       
-clk_slow_245_259__i14/D                                      ENDPOINT                0.000                 14.268  1       
+clk_slow_219_226__i14/D                                      ENDPOINT                0.000                 14.268  1       
 
 
 Destination Clock Path
@@ -473,7 +469,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 41.666  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 41.666  10      
 int_osc                                                      NET DELAY               5.499                 47.165  10      
-{clk_slow_245_259__i14/CK   clk_slow_245_259__i15/CK}
+{clk_slow_219_226__i14/CK   clk_slow_219_226__i15/CK}
                                                              CLOCK PIN               0.000                 47.165  1       
                                                              Uncertainty          -(0.000)                 47.165  
                                                              Setup time           -(0.198)                 46.967  
@@ -488,8 +484,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i1/Q  (SLICE_R13C3A)
-Path End         : clk_slow_245_259__i13/D  (SLICE_R13C4C)
+Path Begin       : clk_slow_219_226__i1/Q  (SLICE_R6C4A)
+Path End         : clk_slow_219_226__i13/D  (SLICE_R6C5C)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 14
@@ -504,55 +500,55 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 int_osc                                                      NET DELAY               5.499                  5.499  10      
-clk_slow_245_259__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_slow_245_259__i1/CK->clk_slow_245_259__i1/Q
-                                          SLICE_R13C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+clk_slow_219_226__i1/CK->clk_slow_219_226__i1/Q
+                                          SLICE_R6C4A        CLK_TO_Q1_DELAY         1.388                  6.887  1       
 n16                                                          NET DELAY               2.022                  8.909  1       
-clk_slow_245_259_add_4_1/C1->clk_slow_245_259_add_4_1/CO1
-                                          SLICE_R13C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n785                                                         NET DELAY               0.000                  9.252  2       
-clk_slow_245_259_add_4_3/CI0->clk_slow_245_259_add_4_3/CO0
-                                          SLICE_R13C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n1500                                                        NET DELAY               0.000                  9.529  2       
-clk_slow_245_259_add_4_3/CI1->clk_slow_245_259_add_4_3/CO1
-                                          SLICE_R13C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n787                                                         NET DELAY               0.000                  9.806  2       
-clk_slow_245_259_add_4_5/CI0->clk_slow_245_259_add_4_5/CO0
-                                          SLICE_R13C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n1503                                                        NET DELAY               0.000                 10.083  2       
-clk_slow_245_259_add_4_5/CI1->clk_slow_245_259_add_4_5/CO1
-                                          SLICE_R13C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n789                                                         NET DELAY               0.000                 10.360  2       
-clk_slow_245_259_add_4_7/CI0->clk_slow_245_259_add_4_7/CO0
-                                          SLICE_R13C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n1506                                                        NET DELAY               0.000                 10.637  2       
-clk_slow_245_259_add_4_7/CI1->clk_slow_245_259_add_4_7/CO1
-                                          SLICE_R13C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n791                                                         NET DELAY               0.555                 11.469  2       
-clk_slow_245_259_add_4_9/CI0->clk_slow_245_259_add_4_9/CO0
-                                          SLICE_R13C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n1509                                                        NET DELAY               0.000                 11.746  2       
-clk_slow_245_259_add_4_9/CI1->clk_slow_245_259_add_4_9/CO1
-                                          SLICE_R13C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n793                                                         NET DELAY               0.000                 12.023  2       
-clk_slow_245_259_add_4_11/CI0->clk_slow_245_259_add_4_11/CO0
-                                          SLICE_R13C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n1512                                                        NET DELAY               0.000                 12.300  2       
-clk_slow_245_259_add_4_11/CI1->clk_slow_245_259_add_4_11/CO1
-                                          SLICE_R13C4B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-n795                                                         NET DELAY               0.000                 12.577  2       
-clk_slow_245_259_add_4_13/CI0->clk_slow_245_259_add_4_13/CO0
-                                          SLICE_R13C4C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-n1515                                                        NET DELAY               0.661                 13.515  2       
-clk_slow_245_259_add_4_13/D1->clk_slow_245_259_add_4_13/S1
-                                          SLICE_R13C4C       D1_TO_F1_DELAY          0.476                 13.991  1       
+clk_slow_219_226_add_4_1/C1->clk_slow_219_226_add_4_1/CO1
+                                          SLICE_R6C4A        C1_TO_COUT1_DELAY       0.343                  9.252  2       
+n597                                                         NET DELAY               0.000                  9.252  2       
+clk_slow_219_226_add_4_3/CI0->clk_slow_219_226_add_4_3/CO0
+                                          SLICE_R6C4B        CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+n986                                                         NET DELAY               0.000                  9.529  2       
+clk_slow_219_226_add_4_3/CI1->clk_slow_219_226_add_4_3/CO1
+                                          SLICE_R6C4B        CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+n599                                                         NET DELAY               0.000                  9.806  2       
+clk_slow_219_226_add_4_5/CI0->clk_slow_219_226_add_4_5/CO0
+                                          SLICE_R6C4C        CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+n989                                                         NET DELAY               0.000                 10.083  2       
+clk_slow_219_226_add_4_5/CI1->clk_slow_219_226_add_4_5/CO1
+                                          SLICE_R6C4C        CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+n601                                                         NET DELAY               0.000                 10.360  2       
+clk_slow_219_226_add_4_7/CI0->clk_slow_219_226_add_4_7/CO0
+                                          SLICE_R6C4D        CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+n992                                                         NET DELAY               0.000                 10.637  2       
+clk_slow_219_226_add_4_7/CI1->clk_slow_219_226_add_4_7/CO1
+                                          SLICE_R6C4D        CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+n603                                                         NET DELAY               0.555                 11.469  2       
+clk_slow_219_226_add_4_9/CI0->clk_slow_219_226_add_4_9/CO0
+                                          SLICE_R6C5A        CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+n995                                                         NET DELAY               0.000                 11.746  2       
+clk_slow_219_226_add_4_9/CI1->clk_slow_219_226_add_4_9/CO1
+                                          SLICE_R6C5A        CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+n605                                                         NET DELAY               0.000                 12.023  2       
+clk_slow_219_226_add_4_11/CI0->clk_slow_219_226_add_4_11/CO0
+                                          SLICE_R6C5B        CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+n998                                                         NET DELAY               0.000                 12.300  2       
+clk_slow_219_226_add_4_11/CI1->clk_slow_219_226_add_4_11/CO1
+                                          SLICE_R6C5B        CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+n607                                                         NET DELAY               0.000                 12.577  2       
+clk_slow_219_226_add_4_13/CI0->clk_slow_219_226_add_4_13/CO0
+                                          SLICE_R6C5C        CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+n1001                                                        NET DELAY               0.661                 13.515  2       
+clk_slow_219_226_add_4_13/D1->clk_slow_219_226_add_4_13/S1
+                                          SLICE_R6C5C        D1_TO_F1_DELAY          0.476                 13.991  1       
 n73                                                          NET DELAY               0.000                 13.991  1       
-clk_slow_245_259__i13/D                                      ENDPOINT                0.000                 13.991  1       
+clk_slow_219_226__i13/D                                      ENDPOINT                0.000                 13.991  1       
 
 
 Destination Clock Path
@@ -561,7 +557,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 41.666  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 41.666  10      
 int_osc                                                      NET DELAY               5.499                 47.165  10      
-{clk_slow_245_259__i12/CK   clk_slow_245_259__i13/CK}
+{clk_slow_219_226__i12/CK   clk_slow_219_226__i13/CK}
                                                              CLOCK PIN               0.000                 47.165  1       
                                                              Uncertainty          -(0.000)                 47.165  
                                                              Setup time           -(0.198)                 46.967  
@@ -576,8 +572,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i1/Q  (SLICE_R13C3A)
-Path End         : clk_slow_245_259__i12/D  (SLICE_R13C4C)
+Path Begin       : clk_slow_219_226__i1/Q  (SLICE_R6C4A)
+Path End         : clk_slow_219_226__i12/D  (SLICE_R6C5C)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 13
@@ -592,52 +588,52 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 int_osc                                                      NET DELAY               5.499                  5.499  10      
-clk_slow_245_259__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_slow_245_259__i1/CK->clk_slow_245_259__i1/Q
-                                          SLICE_R13C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+clk_slow_219_226__i1/CK->clk_slow_219_226__i1/Q
+                                          SLICE_R6C4A        CLK_TO_Q1_DELAY         1.388                  6.887  1       
 n16                                                          NET DELAY               2.022                  8.909  1       
-clk_slow_245_259_add_4_1/C1->clk_slow_245_259_add_4_1/CO1
-                                          SLICE_R13C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n785                                                         NET DELAY               0.000                  9.252  2       
-clk_slow_245_259_add_4_3/CI0->clk_slow_245_259_add_4_3/CO0
-                                          SLICE_R13C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n1500                                                        NET DELAY               0.000                  9.529  2       
-clk_slow_245_259_add_4_3/CI1->clk_slow_245_259_add_4_3/CO1
-                                          SLICE_R13C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n787                                                         NET DELAY               0.000                  9.806  2       
-clk_slow_245_259_add_4_5/CI0->clk_slow_245_259_add_4_5/CO0
-                                          SLICE_R13C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n1503                                                        NET DELAY               0.000                 10.083  2       
-clk_slow_245_259_add_4_5/CI1->clk_slow_245_259_add_4_5/CO1
-                                          SLICE_R13C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n789                                                         NET DELAY               0.000                 10.360  2       
-clk_slow_245_259_add_4_7/CI0->clk_slow_245_259_add_4_7/CO0
-                                          SLICE_R13C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n1506                                                        NET DELAY               0.000                 10.637  2       
-clk_slow_245_259_add_4_7/CI1->clk_slow_245_259_add_4_7/CO1
-                                          SLICE_R13C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n791                                                         NET DELAY               0.555                 11.469  2       
-clk_slow_245_259_add_4_9/CI0->clk_slow_245_259_add_4_9/CO0
-                                          SLICE_R13C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n1509                                                        NET DELAY               0.000                 11.746  2       
-clk_slow_245_259_add_4_9/CI1->clk_slow_245_259_add_4_9/CO1
-                                          SLICE_R13C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n793                                                         NET DELAY               0.000                 12.023  2       
-clk_slow_245_259_add_4_11/CI0->clk_slow_245_259_add_4_11/CO0
-                                          SLICE_R13C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n1512                                                        NET DELAY               0.000                 12.300  2       
-clk_slow_245_259_add_4_11/CI1->clk_slow_245_259_add_4_11/CO1
-                                          SLICE_R13C4B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-n795                                                         NET DELAY               0.661                 13.238  2       
-clk_slow_245_259_add_4_13/D0->clk_slow_245_259_add_4_13/S0
-                                          SLICE_R13C4C       D0_TO_F0_DELAY          0.476                 13.714  1       
+clk_slow_219_226_add_4_1/C1->clk_slow_219_226_add_4_1/CO1
+                                          SLICE_R6C4A        C1_TO_COUT1_DELAY       0.343                  9.252  2       
+n597                                                         NET DELAY               0.000                  9.252  2       
+clk_slow_219_226_add_4_3/CI0->clk_slow_219_226_add_4_3/CO0
+                                          SLICE_R6C4B        CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+n986                                                         NET DELAY               0.000                  9.529  2       
+clk_slow_219_226_add_4_3/CI1->clk_slow_219_226_add_4_3/CO1
+                                          SLICE_R6C4B        CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+n599                                                         NET DELAY               0.000                  9.806  2       
+clk_slow_219_226_add_4_5/CI0->clk_slow_219_226_add_4_5/CO0
+                                          SLICE_R6C4C        CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+n989                                                         NET DELAY               0.000                 10.083  2       
+clk_slow_219_226_add_4_5/CI1->clk_slow_219_226_add_4_5/CO1
+                                          SLICE_R6C4C        CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+n601                                                         NET DELAY               0.000                 10.360  2       
+clk_slow_219_226_add_4_7/CI0->clk_slow_219_226_add_4_7/CO0
+                                          SLICE_R6C4D        CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+n992                                                         NET DELAY               0.000                 10.637  2       
+clk_slow_219_226_add_4_7/CI1->clk_slow_219_226_add_4_7/CO1
+                                          SLICE_R6C4D        CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+n603                                                         NET DELAY               0.555                 11.469  2       
+clk_slow_219_226_add_4_9/CI0->clk_slow_219_226_add_4_9/CO0
+                                          SLICE_R6C5A        CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+n995                                                         NET DELAY               0.000                 11.746  2       
+clk_slow_219_226_add_4_9/CI1->clk_slow_219_226_add_4_9/CO1
+                                          SLICE_R6C5A        CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+n605                                                         NET DELAY               0.000                 12.023  2       
+clk_slow_219_226_add_4_11/CI0->clk_slow_219_226_add_4_11/CO0
+                                          SLICE_R6C5B        CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+n998                                                         NET DELAY               0.000                 12.300  2       
+clk_slow_219_226_add_4_11/CI1->clk_slow_219_226_add_4_11/CO1
+                                          SLICE_R6C5B        CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+n607                                                         NET DELAY               0.661                 13.238  2       
+clk_slow_219_226_add_4_13/D0->clk_slow_219_226_add_4_13/S0
+                                          SLICE_R6C5C        D0_TO_F0_DELAY          0.476                 13.714  1       
 n74                                                          NET DELAY               0.000                 13.714  1       
-clk_slow_245_259__i12/D                                      ENDPOINT                0.000                 13.714  1       
+clk_slow_219_226__i12/D                                      ENDPOINT                0.000                 13.714  1       
 
 
 Destination Clock Path
@@ -646,7 +642,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 41.666  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 41.666  10      
 int_osc                                                      NET DELAY               5.499                 47.165  10      
-{clk_slow_245_259__i12/CK   clk_slow_245_259__i13/CK}
+{clk_slow_219_226__i12/CK   clk_slow_219_226__i13/CK}
                                                              CLOCK PIN               0.000                 47.165  1       
                                                              Uncertainty          -(0.000)                 47.165  
                                                              Setup time           -(0.198)                 46.967  
@@ -661,8 +657,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i1/Q  (SLICE_R13C3A)
-Path End         : clk_slow_245_259__i11/D  (SLICE_R13C4B)
+Path Begin       : clk_slow_219_226__i1/Q  (SLICE_R6C4A)
+Path End         : clk_slow_219_226__i11/D  (SLICE_R6C5B)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 12
@@ -677,49 +673,49 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 int_osc                                                      NET DELAY               5.499                  5.499  10      
-clk_slow_245_259__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_slow_245_259__i1/CK->clk_slow_245_259__i1/Q
-                                          SLICE_R13C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+clk_slow_219_226__i1/CK->clk_slow_219_226__i1/Q
+                                          SLICE_R6C4A        CLK_TO_Q1_DELAY         1.388                  6.887  1       
 n16                                                          NET DELAY               2.022                  8.909  1       
-clk_slow_245_259_add_4_1/C1->clk_slow_245_259_add_4_1/CO1
-                                          SLICE_R13C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n785                                                         NET DELAY               0.000                  9.252  2       
-clk_slow_245_259_add_4_3/CI0->clk_slow_245_259_add_4_3/CO0
-                                          SLICE_R13C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n1500                                                        NET DELAY               0.000                  9.529  2       
-clk_slow_245_259_add_4_3/CI1->clk_slow_245_259_add_4_3/CO1
-                                          SLICE_R13C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n787                                                         NET DELAY               0.000                  9.806  2       
-clk_slow_245_259_add_4_5/CI0->clk_slow_245_259_add_4_5/CO0
-                                          SLICE_R13C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n1503                                                        NET DELAY               0.000                 10.083  2       
-clk_slow_245_259_add_4_5/CI1->clk_slow_245_259_add_4_5/CO1
-                                          SLICE_R13C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n789                                                         NET DELAY               0.000                 10.360  2       
-clk_slow_245_259_add_4_7/CI0->clk_slow_245_259_add_4_7/CO0
-                                          SLICE_R13C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n1506                                                        NET DELAY               0.000                 10.637  2       
-clk_slow_245_259_add_4_7/CI1->clk_slow_245_259_add_4_7/CO1
-                                          SLICE_R13C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n791                                                         NET DELAY               0.555                 11.469  2       
-clk_slow_245_259_add_4_9/CI0->clk_slow_245_259_add_4_9/CO0
-                                          SLICE_R13C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n1509                                                        NET DELAY               0.000                 11.746  2       
-clk_slow_245_259_add_4_9/CI1->clk_slow_245_259_add_4_9/CO1
-                                          SLICE_R13C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n793                                                         NET DELAY               0.000                 12.023  2       
-clk_slow_245_259_add_4_11/CI0->clk_slow_245_259_add_4_11/CO0
-                                          SLICE_R13C4B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n1512                                                        NET DELAY               0.661                 12.961  2       
-clk_slow_245_259_add_4_11/D1->clk_slow_245_259_add_4_11/S1
-                                          SLICE_R13C4B       D1_TO_F1_DELAY          0.476                 13.437  1       
+clk_slow_219_226_add_4_1/C1->clk_slow_219_226_add_4_1/CO1
+                                          SLICE_R6C4A        C1_TO_COUT1_DELAY       0.343                  9.252  2       
+n597                                                         NET DELAY               0.000                  9.252  2       
+clk_slow_219_226_add_4_3/CI0->clk_slow_219_226_add_4_3/CO0
+                                          SLICE_R6C4B        CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+n986                                                         NET DELAY               0.000                  9.529  2       
+clk_slow_219_226_add_4_3/CI1->clk_slow_219_226_add_4_3/CO1
+                                          SLICE_R6C4B        CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+n599                                                         NET DELAY               0.000                  9.806  2       
+clk_slow_219_226_add_4_5/CI0->clk_slow_219_226_add_4_5/CO0
+                                          SLICE_R6C4C        CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+n989                                                         NET DELAY               0.000                 10.083  2       
+clk_slow_219_226_add_4_5/CI1->clk_slow_219_226_add_4_5/CO1
+                                          SLICE_R6C4C        CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+n601                                                         NET DELAY               0.000                 10.360  2       
+clk_slow_219_226_add_4_7/CI0->clk_slow_219_226_add_4_7/CO0
+                                          SLICE_R6C4D        CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+n992                                                         NET DELAY               0.000                 10.637  2       
+clk_slow_219_226_add_4_7/CI1->clk_slow_219_226_add_4_7/CO1
+                                          SLICE_R6C4D        CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+n603                                                         NET DELAY               0.555                 11.469  2       
+clk_slow_219_226_add_4_9/CI0->clk_slow_219_226_add_4_9/CO0
+                                          SLICE_R6C5A        CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+n995                                                         NET DELAY               0.000                 11.746  2       
+clk_slow_219_226_add_4_9/CI1->clk_slow_219_226_add_4_9/CO1
+                                          SLICE_R6C5A        CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+n605                                                         NET DELAY               0.000                 12.023  2       
+clk_slow_219_226_add_4_11/CI0->clk_slow_219_226_add_4_11/CO0
+                                          SLICE_R6C5B        CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+n998                                                         NET DELAY               0.661                 12.961  2       
+clk_slow_219_226_add_4_11/D1->clk_slow_219_226_add_4_11/S1
+                                          SLICE_R6C5B        D1_TO_F1_DELAY          0.476                 13.437  1       
 n75                                                          NET DELAY               0.000                 13.437  1       
-clk_slow_245_259__i11/D                                      ENDPOINT                0.000                 13.437  1       
+clk_slow_219_226__i11/D                                      ENDPOINT                0.000                 13.437  1       
 
 
 Destination Clock Path
@@ -728,7 +724,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 41.666  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 41.666  10      
 int_osc                                                      NET DELAY               5.499                 47.165  10      
-{clk_slow_245_259__i10/CK   clk_slow_245_259__i11/CK}
+{clk_slow_219_226__i10/CK   clk_slow_219_226__i11/CK}
                                                              CLOCK PIN               0.000                 47.165  1       
                                                              Uncertainty          -(0.000)                 47.165  
                                                              Setup time           -(0.198)                 46.967  
@@ -743,8 +739,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i1/Q  (SLICE_R13C3A)
-Path End         : clk_slow_245_259__i10/D  (SLICE_R13C4B)
+Path Begin       : clk_slow_219_226__i1/Q  (SLICE_R6C4A)
+Path End         : clk_slow_219_226__i10/D  (SLICE_R6C5B)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 11
@@ -759,46 +755,46 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 int_osc                                                      NET DELAY               5.499                  5.499  10      
-clk_slow_245_259__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_slow_245_259__i1/CK->clk_slow_245_259__i1/Q
-                                          SLICE_R13C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+clk_slow_219_226__i1/CK->clk_slow_219_226__i1/Q
+                                          SLICE_R6C4A        CLK_TO_Q1_DELAY         1.388                  6.887  1       
 n16                                                          NET DELAY               2.022                  8.909  1       
-clk_slow_245_259_add_4_1/C1->clk_slow_245_259_add_4_1/CO1
-                                          SLICE_R13C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n785                                                         NET DELAY               0.000                  9.252  2       
-clk_slow_245_259_add_4_3/CI0->clk_slow_245_259_add_4_3/CO0
-                                          SLICE_R13C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n1500                                                        NET DELAY               0.000                  9.529  2       
-clk_slow_245_259_add_4_3/CI1->clk_slow_245_259_add_4_3/CO1
-                                          SLICE_R13C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n787                                                         NET DELAY               0.000                  9.806  2       
-clk_slow_245_259_add_4_5/CI0->clk_slow_245_259_add_4_5/CO0
-                                          SLICE_R13C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n1503                                                        NET DELAY               0.000                 10.083  2       
-clk_slow_245_259_add_4_5/CI1->clk_slow_245_259_add_4_5/CO1
-                                          SLICE_R13C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n789                                                         NET DELAY               0.000                 10.360  2       
-clk_slow_245_259_add_4_7/CI0->clk_slow_245_259_add_4_7/CO0
-                                          SLICE_R13C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n1506                                                        NET DELAY               0.000                 10.637  2       
-clk_slow_245_259_add_4_7/CI1->clk_slow_245_259_add_4_7/CO1
-                                          SLICE_R13C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n791                                                         NET DELAY               0.555                 11.469  2       
-clk_slow_245_259_add_4_9/CI0->clk_slow_245_259_add_4_9/CO0
-                                          SLICE_R13C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n1509                                                        NET DELAY               0.000                 11.746  2       
-clk_slow_245_259_add_4_9/CI1->clk_slow_245_259_add_4_9/CO1
-                                          SLICE_R13C4A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n793                                                         NET DELAY               0.661                 12.684  2       
-clk_slow_245_259_add_4_11/D0->clk_slow_245_259_add_4_11/S0
-                                          SLICE_R13C4B       D0_TO_F0_DELAY          0.476                 13.160  1       
+clk_slow_219_226_add_4_1/C1->clk_slow_219_226_add_4_1/CO1
+                                          SLICE_R6C4A        C1_TO_COUT1_DELAY       0.343                  9.252  2       
+n597                                                         NET DELAY               0.000                  9.252  2       
+clk_slow_219_226_add_4_3/CI0->clk_slow_219_226_add_4_3/CO0
+                                          SLICE_R6C4B        CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+n986                                                         NET DELAY               0.000                  9.529  2       
+clk_slow_219_226_add_4_3/CI1->clk_slow_219_226_add_4_3/CO1
+                                          SLICE_R6C4B        CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+n599                                                         NET DELAY               0.000                  9.806  2       
+clk_slow_219_226_add_4_5/CI0->clk_slow_219_226_add_4_5/CO0
+                                          SLICE_R6C4C        CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+n989                                                         NET DELAY               0.000                 10.083  2       
+clk_slow_219_226_add_4_5/CI1->clk_slow_219_226_add_4_5/CO1
+                                          SLICE_R6C4C        CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+n601                                                         NET DELAY               0.000                 10.360  2       
+clk_slow_219_226_add_4_7/CI0->clk_slow_219_226_add_4_7/CO0
+                                          SLICE_R6C4D        CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+n992                                                         NET DELAY               0.000                 10.637  2       
+clk_slow_219_226_add_4_7/CI1->clk_slow_219_226_add_4_7/CO1
+                                          SLICE_R6C4D        CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+n603                                                         NET DELAY               0.555                 11.469  2       
+clk_slow_219_226_add_4_9/CI0->clk_slow_219_226_add_4_9/CO0
+                                          SLICE_R6C5A        CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+n995                                                         NET DELAY               0.000                 11.746  2       
+clk_slow_219_226_add_4_9/CI1->clk_slow_219_226_add_4_9/CO1
+                                          SLICE_R6C5A        CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+n605                                                         NET DELAY               0.661                 12.684  2       
+clk_slow_219_226_add_4_11/D0->clk_slow_219_226_add_4_11/S0
+                                          SLICE_R6C5B        D0_TO_F0_DELAY          0.476                 13.160  1       
 n76                                                          NET DELAY               0.000                 13.160  1       
-clk_slow_245_259__i10/D                                      ENDPOINT                0.000                 13.160  1       
+clk_slow_219_226__i10/D                                      ENDPOINT                0.000                 13.160  1       
 
 
 Destination Clock Path
@@ -807,7 +803,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 41.666  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 41.666  10      
 int_osc                                                      NET DELAY               5.499                 47.165  10      
-{clk_slow_245_259__i10/CK   clk_slow_245_259__i11/CK}
+{clk_slow_219_226__i10/CK   clk_slow_219_226__i11/CK}
                                                              CLOCK PIN               0.000                 47.165  1       
                                                              Uncertainty          -(0.000)                 47.165  
                                                              Setup time           -(0.198)                 46.967  
@@ -822,8 +818,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i1/Q  (SLICE_R13C3A)
-Path End         : clk_slow_245_259__i9/D  (SLICE_R13C4A)
+Path Begin       : clk_slow_219_226__i1/Q  (SLICE_R6C4A)
+Path End         : clk_slow_219_226__i9/D  (SLICE_R6C5A)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 10
@@ -838,43 +834,43 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 int_osc                                                      NET DELAY               5.499                  5.499  10      
-clk_slow_245_259__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_slow_245_259__i1/CK->clk_slow_245_259__i1/Q
-                                          SLICE_R13C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+clk_slow_219_226__i1/CK->clk_slow_219_226__i1/Q
+                                          SLICE_R6C4A        CLK_TO_Q1_DELAY         1.388                  6.887  1       
 n16                                                          NET DELAY               2.022                  8.909  1       
-clk_slow_245_259_add_4_1/C1->clk_slow_245_259_add_4_1/CO1
-                                          SLICE_R13C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n785                                                         NET DELAY               0.000                  9.252  2       
-clk_slow_245_259_add_4_3/CI0->clk_slow_245_259_add_4_3/CO0
-                                          SLICE_R13C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n1500                                                        NET DELAY               0.000                  9.529  2       
-clk_slow_245_259_add_4_3/CI1->clk_slow_245_259_add_4_3/CO1
-                                          SLICE_R13C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n787                                                         NET DELAY               0.000                  9.806  2       
-clk_slow_245_259_add_4_5/CI0->clk_slow_245_259_add_4_5/CO0
-                                          SLICE_R13C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n1503                                                        NET DELAY               0.000                 10.083  2       
-clk_slow_245_259_add_4_5/CI1->clk_slow_245_259_add_4_5/CO1
-                                          SLICE_R13C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n789                                                         NET DELAY               0.000                 10.360  2       
-clk_slow_245_259_add_4_7/CI0->clk_slow_245_259_add_4_7/CO0
-                                          SLICE_R13C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n1506                                                        NET DELAY               0.000                 10.637  2       
-clk_slow_245_259_add_4_7/CI1->clk_slow_245_259_add_4_7/CO1
-                                          SLICE_R13C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n791                                                         NET DELAY               0.555                 11.469  2       
-clk_slow_245_259_add_4_9/CI0->clk_slow_245_259_add_4_9/CO0
-                                          SLICE_R13C4A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n1509                                                        NET DELAY               0.661                 12.407  2       
-clk_slow_245_259_add_4_9/D1->clk_slow_245_259_add_4_9/S1
-                                          SLICE_R13C4A       D1_TO_F1_DELAY          0.476                 12.883  1       
+clk_slow_219_226_add_4_1/C1->clk_slow_219_226_add_4_1/CO1
+                                          SLICE_R6C4A        C1_TO_COUT1_DELAY       0.343                  9.252  2       
+n597                                                         NET DELAY               0.000                  9.252  2       
+clk_slow_219_226_add_4_3/CI0->clk_slow_219_226_add_4_3/CO0
+                                          SLICE_R6C4B        CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+n986                                                         NET DELAY               0.000                  9.529  2       
+clk_slow_219_226_add_4_3/CI1->clk_slow_219_226_add_4_3/CO1
+                                          SLICE_R6C4B        CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+n599                                                         NET DELAY               0.000                  9.806  2       
+clk_slow_219_226_add_4_5/CI0->clk_slow_219_226_add_4_5/CO0
+                                          SLICE_R6C4C        CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+n989                                                         NET DELAY               0.000                 10.083  2       
+clk_slow_219_226_add_4_5/CI1->clk_slow_219_226_add_4_5/CO1
+                                          SLICE_R6C4C        CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+n601                                                         NET DELAY               0.000                 10.360  2       
+clk_slow_219_226_add_4_7/CI0->clk_slow_219_226_add_4_7/CO0
+                                          SLICE_R6C4D        CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+n992                                                         NET DELAY               0.000                 10.637  2       
+clk_slow_219_226_add_4_7/CI1->clk_slow_219_226_add_4_7/CO1
+                                          SLICE_R6C4D        CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+n603                                                         NET DELAY               0.555                 11.469  2       
+clk_slow_219_226_add_4_9/CI0->clk_slow_219_226_add_4_9/CO0
+                                          SLICE_R6C5A        CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+n995                                                         NET DELAY               0.661                 12.407  2       
+clk_slow_219_226_add_4_9/D1->clk_slow_219_226_add_4_9/S1
+                                          SLICE_R6C5A        D1_TO_F1_DELAY          0.476                 12.883  1       
 n77                                                          NET DELAY               0.000                 12.883  1       
-clk_slow_245_259__i9/D                                       ENDPOINT                0.000                 12.883  1       
+clk_slow_219_226__i9/D                                       ENDPOINT                0.000                 12.883  1       
 
 
 Destination Clock Path
@@ -883,7 +879,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 41.666  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 41.666  10      
 int_osc                                                      NET DELAY               5.499                 47.165  10      
-{clk_slow_245_259__i8/CK   clk_slow_245_259__i9/CK}
+{clk_slow_219_226__i8/CK   clk_slow_219_226__i9/CK}
                                                              CLOCK PIN               0.000                 47.165  1       
                                                              Uncertainty          -(0.000)                 47.165  
                                                              Setup time           -(0.198)                 46.967  
@@ -898,8 +894,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i1/Q  (SLICE_R13C3A)
-Path End         : clk_slow_245_259__i8/D  (SLICE_R13C4A)
+Path Begin       : clk_slow_219_226__i1/Q  (SLICE_R6C4A)
+Path End         : clk_slow_219_226__i8/D  (SLICE_R6C5A)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 9
@@ -914,40 +910,40 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 int_osc                                                      NET DELAY               5.499                  5.499  10      
-clk_slow_245_259__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_slow_245_259__i1/CK->clk_slow_245_259__i1/Q
-                                          SLICE_R13C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+clk_slow_219_226__i1/CK->clk_slow_219_226__i1/Q
+                                          SLICE_R6C4A        CLK_TO_Q1_DELAY         1.388                  6.887  1       
 n16                                                          NET DELAY               2.022                  8.909  1       
-clk_slow_245_259_add_4_1/C1->clk_slow_245_259_add_4_1/CO1
-                                          SLICE_R13C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n785                                                         NET DELAY               0.000                  9.252  2       
-clk_slow_245_259_add_4_3/CI0->clk_slow_245_259_add_4_3/CO0
-                                          SLICE_R13C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n1500                                                        NET DELAY               0.000                  9.529  2       
-clk_slow_245_259_add_4_3/CI1->clk_slow_245_259_add_4_3/CO1
-                                          SLICE_R13C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n787                                                         NET DELAY               0.000                  9.806  2       
-clk_slow_245_259_add_4_5/CI0->clk_slow_245_259_add_4_5/CO0
-                                          SLICE_R13C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n1503                                                        NET DELAY               0.000                 10.083  2       
-clk_slow_245_259_add_4_5/CI1->clk_slow_245_259_add_4_5/CO1
-                                          SLICE_R13C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n789                                                         NET DELAY               0.000                 10.360  2       
-clk_slow_245_259_add_4_7/CI0->clk_slow_245_259_add_4_7/CO0
-                                          SLICE_R13C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n1506                                                        NET DELAY               0.000                 10.637  2       
-clk_slow_245_259_add_4_7/CI1->clk_slow_245_259_add_4_7/CO1
-                                          SLICE_R13C3D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n791                                                         NET DELAY               1.216                 12.130  2       
-clk_slow_245_259_add_4_9/D0->clk_slow_245_259_add_4_9/S0
-                                          SLICE_R13C4A       D0_TO_F0_DELAY          0.476                 12.606  1       
+clk_slow_219_226_add_4_1/C1->clk_slow_219_226_add_4_1/CO1
+                                          SLICE_R6C4A        C1_TO_COUT1_DELAY       0.343                  9.252  2       
+n597                                                         NET DELAY               0.000                  9.252  2       
+clk_slow_219_226_add_4_3/CI0->clk_slow_219_226_add_4_3/CO0
+                                          SLICE_R6C4B        CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+n986                                                         NET DELAY               0.000                  9.529  2       
+clk_slow_219_226_add_4_3/CI1->clk_slow_219_226_add_4_3/CO1
+                                          SLICE_R6C4B        CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+n599                                                         NET DELAY               0.000                  9.806  2       
+clk_slow_219_226_add_4_5/CI0->clk_slow_219_226_add_4_5/CO0
+                                          SLICE_R6C4C        CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+n989                                                         NET DELAY               0.000                 10.083  2       
+clk_slow_219_226_add_4_5/CI1->clk_slow_219_226_add_4_5/CO1
+                                          SLICE_R6C4C        CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+n601                                                         NET DELAY               0.000                 10.360  2       
+clk_slow_219_226_add_4_7/CI0->clk_slow_219_226_add_4_7/CO0
+                                          SLICE_R6C4D        CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+n992                                                         NET DELAY               0.000                 10.637  2       
+clk_slow_219_226_add_4_7/CI1->clk_slow_219_226_add_4_7/CO1
+                                          SLICE_R6C4D        CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+n603                                                         NET DELAY               1.216                 12.130  2       
+clk_slow_219_226_add_4_9/D0->clk_slow_219_226_add_4_9/S0
+                                          SLICE_R6C5A        D0_TO_F0_DELAY          0.476                 12.606  1       
 n78                                                          NET DELAY               0.000                 12.606  1       
-clk_slow_245_259__i8/D                                       ENDPOINT                0.000                 12.606  1       
+clk_slow_219_226__i8/D                                       ENDPOINT                0.000                 12.606  1       
 
 
 Destination Clock Path
@@ -956,7 +952,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 41.666  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 41.666  10      
 int_osc                                                      NET DELAY               5.499                 47.165  10      
-{clk_slow_245_259__i8/CK   clk_slow_245_259__i9/CK}
+{clk_slow_219_226__i8/CK   clk_slow_219_226__i9/CK}
                                                              CLOCK PIN               0.000                 47.165  1       
                                                              Uncertainty          -(0.000)                 47.165  
                                                              Setup time           -(0.198)                 46.967  
@@ -971,8 +967,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i1/Q  (SLICE_R13C3A)
-Path End         : clk_slow_245_259__i7/D  (SLICE_R13C3D)
+Path Begin       : clk_slow_219_226__i1/Q  (SLICE_R6C4A)
+Path End         : clk_slow_219_226__i7/D  (SLICE_R6C4D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 8
@@ -987,37 +983,37 @@ Name                                      Cell/Site Name     Delay Name         
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
 int_osc                                                      NET DELAY               5.499                  5.499  10      
-clk_slow_245_259__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN               0.000                  5.499  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-clk_slow_245_259__i1/CK->clk_slow_245_259__i1/Q
-                                          SLICE_R13C3A       CLK_TO_Q1_DELAY         1.388                  6.887  1       
+clk_slow_219_226__i1/CK->clk_slow_219_226__i1/Q
+                                          SLICE_R6C4A        CLK_TO_Q1_DELAY         1.388                  6.887  1       
 n16                                                          NET DELAY               2.022                  8.909  1       
-clk_slow_245_259_add_4_1/C1->clk_slow_245_259_add_4_1/CO1
-                                          SLICE_R13C3A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n785                                                         NET DELAY               0.000                  9.252  2       
-clk_slow_245_259_add_4_3/CI0->clk_slow_245_259_add_4_3/CO0
-                                          SLICE_R13C3B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n1500                                                        NET DELAY               0.000                  9.529  2       
-clk_slow_245_259_add_4_3/CI1->clk_slow_245_259_add_4_3/CO1
-                                          SLICE_R13C3B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n787                                                         NET DELAY               0.000                  9.806  2       
-clk_slow_245_259_add_4_5/CI0->clk_slow_245_259_add_4_5/CO0
-                                          SLICE_R13C3C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n1503                                                        NET DELAY               0.000                 10.083  2       
-clk_slow_245_259_add_4_5/CI1->clk_slow_245_259_add_4_5/CO1
-                                          SLICE_R13C3C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n789                                                         NET DELAY               0.000                 10.360  2       
-clk_slow_245_259_add_4_7/CI0->clk_slow_245_259_add_4_7/CO0
-                                          SLICE_R13C3D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n1506                                                        NET DELAY               0.661                 11.298  2       
-clk_slow_245_259_add_4_7/D1->clk_slow_245_259_add_4_7/S1
-                                          SLICE_R13C3D       D1_TO_F1_DELAY          0.476                 11.774  1       
+clk_slow_219_226_add_4_1/C1->clk_slow_219_226_add_4_1/CO1
+                                          SLICE_R6C4A        C1_TO_COUT1_DELAY       0.343                  9.252  2       
+n597                                                         NET DELAY               0.000                  9.252  2       
+clk_slow_219_226_add_4_3/CI0->clk_slow_219_226_add_4_3/CO0
+                                          SLICE_R6C4B        CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+n986                                                         NET DELAY               0.000                  9.529  2       
+clk_slow_219_226_add_4_3/CI1->clk_slow_219_226_add_4_3/CO1
+                                          SLICE_R6C4B        CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+n599                                                         NET DELAY               0.000                  9.806  2       
+clk_slow_219_226_add_4_5/CI0->clk_slow_219_226_add_4_5/CO0
+                                          SLICE_R6C4C        CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+n989                                                         NET DELAY               0.000                 10.083  2       
+clk_slow_219_226_add_4_5/CI1->clk_slow_219_226_add_4_5/CO1
+                                          SLICE_R6C4C        CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+n601                                                         NET DELAY               0.000                 10.360  2       
+clk_slow_219_226_add_4_7/CI0->clk_slow_219_226_add_4_7/CO0
+                                          SLICE_R6C4D        CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+n992                                                         NET DELAY               0.661                 11.298  2       
+clk_slow_219_226_add_4_7/D1->clk_slow_219_226_add_4_7/S1
+                                          SLICE_R6C4D        D1_TO_F1_DELAY          0.476                 11.774  1       
 n79                                                          NET DELAY               0.000                 11.774  1       
-clk_slow_245_259__i7/D                                       ENDPOINT                0.000                 11.774  1       
+clk_slow_219_226__i7/D                                       ENDPOINT                0.000                 11.774  1       
 
 
 Destination Clock Path
@@ -1026,7 +1022,7 @@ Name                                      Cell/Site Name     Delay Name         
                                                              CONSTRAINT              0.000                 41.666  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 41.666  10      
 int_osc                                                      NET DELAY               5.499                 47.165  10      
-{clk_slow_245_259__i6/CK   clk_slow_245_259__i7/CK}
+{clk_slow_219_226__i6/CK   clk_slow_219_226__i7/CK}
                                                              CLOCK PIN               0.000                 47.165  1       
                                                              Uncertainty          -(0.000)                 47.165  
                                                              Setup time           -(0.198)                 46.967  
@@ -1056,16 +1052,16 @@ Path Slack  (Passed)                                                            
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-clk_slow_245_259__i7/D                   |    1.913 ns 
-clk_slow_245_259__i8/D                   |    1.913 ns 
-clk_slow_245_259__i9/D                   |    1.913 ns 
-clk_slow_245_259__i10/D                  |    1.913 ns 
-clk_slow_245_259__i11/D                  |    1.913 ns 
-clk_slow_245_259__i12/D                  |    1.913 ns 
-clk_slow_245_259__i13/D                  |    1.913 ns 
-clk_slow_245_259__i14/D                  |    1.913 ns 
-clk_slow_245_259__i15/D                  |    1.913 ns 
-clk_slow_245_259__i16/D                  |    1.913 ns 
+clk_slow_219_226__i14/D                  |    1.913 ns 
+clk_slow_219_226__i15/D                  |    1.913 ns 
+clk_slow_219_226__i16/D                  |    1.913 ns 
+clk_slow_219_226__i1/D                   |    1.913 ns 
+clk_slow_219_226__i2/D                   |    1.913 ns 
+clk_slow_219_226__i3/D                   |    1.913 ns 
+clk_slow_219_226__i4/D                   |    1.913 ns 
+clk_slow_219_226__i5/D                   |    1.913 ns 
+clk_slow_219_226__i6/D                   |    1.913 ns 
+clk_slow_219_226__i7/D                   |    1.913 ns 
 -------------------------------------------------------
                                          |             
 Hold # of endpoints with negative slack: |           0 
@@ -1088,8 +1084,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : clk_slow_245_259__i7/Q  (SLICE_R13C3D)
-Path End         : clk_slow_245_259__i7/D  (SLICE_R13C3D)
+Path Begin       : clk_slow_219_226__i14/Q  (SLICE_R6C5D)
+Path End         : clk_slow_219_226__i14/D  (SLICE_R6C5D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1104,20 +1100,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i6/CK   clk_slow_245_259__i7/CK}
+{clk_slow_219_226__i14/CK   clk_slow_219_226__i15/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_slow_245_259__i7/CK->clk_slow_245_259__i7/Q
-                                          SLICE_R13C3D       CLK_TO_Q1_DELAY  0.779                  3.863  1       
-n10                                                          NET DELAY        0.882                  4.745  1       
-clk_slow_245_259_add_4_7/C1->clk_slow_245_259_add_4_7/S1
-                                          SLICE_R13C3D       C1_TO_F1_DELAY   0.252                  4.997  1       
-n79                                                          NET DELAY        0.000                  4.997  1       
-clk_slow_245_259__i7/D                                       ENDPOINT         0.000                  4.997  1       
+clk_slow_219_226__i14/CK->clk_slow_219_226__i14/Q
+                                          SLICE_R6C5D        CLK_TO_Q0_DELAY  0.779                  3.863  1       
+n3                                                           NET DELAY        0.882                  4.745  1       
+clk_slow_219_226_add_4_15/C0->clk_slow_219_226_add_4_15/S0
+                                          SLICE_R6C5D        C0_TO_F0_DELAY   0.252                  4.997  1       
+n72                                                          NET DELAY        0.000                  4.997  1       
+clk_slow_219_226__i14/D                                      ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1126,7 +1122,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i6/CK   clk_slow_245_259__i7/CK}
+{clk_slow_219_226__i14/CK   clk_slow_219_226__i15/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1141,8 +1137,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i8/Q  (SLICE_R13C4A)
-Path End         : clk_slow_245_259__i8/D  (SLICE_R13C4A)
+Path Begin       : clk_slow_219_226__i15/Q  (SLICE_R6C5D)
+Path End         : clk_slow_219_226__i15/D  (SLICE_R6C5D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1157,20 +1153,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i8/CK   clk_slow_245_259__i9/CK}
+{clk_slow_219_226__i14/CK   clk_slow_219_226__i15/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_slow_245_259__i8/CK->clk_slow_245_259__i8/Q
-                                          SLICE_R13C4A       CLK_TO_Q0_DELAY  0.779                  3.863  1       
-n9                                                           NET DELAY        0.882                  4.745  1       
-clk_slow_245_259_add_4_9/C0->clk_slow_245_259_add_4_9/S0
-                                          SLICE_R13C4A       C0_TO_F0_DELAY   0.252                  4.997  1       
-n78                                                          NET DELAY        0.000                  4.997  1       
-clk_slow_245_259__i8/D                                       ENDPOINT         0.000                  4.997  1       
+clk_slow_219_226__i15/CK->clk_slow_219_226__i15/Q
+                                          SLICE_R6C5D        CLK_TO_Q1_DELAY  0.779                  3.863  1       
+n2                                                           NET DELAY        0.882                  4.745  1       
+clk_slow_219_226_add_4_15/C1->clk_slow_219_226_add_4_15/S1
+                                          SLICE_R6C5D        C1_TO_F1_DELAY   0.252                  4.997  1       
+n71                                                          NET DELAY        0.000                  4.997  1       
+clk_slow_219_226__i15/D                                      ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1179,7 +1175,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i8/CK   clk_slow_245_259__i9/CK}
+{clk_slow_219_226__i14/CK   clk_slow_219_226__i15/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1194,8 +1190,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i9/Q  (SLICE_R13C4A)
-Path End         : clk_slow_245_259__i9/D  (SLICE_R13C4A)
+Path Begin       : clk_slow_219_226__i16/Q  (SLICE_R6C6A)
+Path End         : clk_slow_219_226__i16/D  (SLICE_R6C6A)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1210,20 +1206,19 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i8/CK   clk_slow_245_259__i9/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
+clk_slow_219_226__i16/CK                                     CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_slow_245_259__i9/CK->clk_slow_245_259__i9/Q
-                                          SLICE_R13C4A       CLK_TO_Q1_DELAY  0.779                  3.863  1       
-n8                                                           NET DELAY        0.882                  4.745  1       
-clk_slow_245_259_add_4_9/C1->clk_slow_245_259_add_4_9/S1
-                                          SLICE_R13C4A       C1_TO_F1_DELAY   0.252                  4.997  1       
-n77                                                          NET DELAY        0.000                  4.997  1       
-clk_slow_245_259__i9/D                                       ENDPOINT         0.000                  4.997  1       
+clk_slow_219_226__i16/CK->clk_slow_219_226__i16/Q
+                                          SLICE_R6C6A        CLK_TO_Q0_DELAY  0.779                  3.863  7       
+clk_c                                                        NET DELAY        0.882                  4.745  7       
+clk_slow_219_226_add_4_17/C0->clk_slow_219_226_add_4_17/S0
+                                          SLICE_R6C6A        C0_TO_F0_DELAY   0.252                  4.997  1       
+n70                                                          NET DELAY        0.000                  4.997  1       
+clk_slow_219_226__i16/D                                      ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1232,8 +1227,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i8/CK   clk_slow_245_259__i9/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
+clk_slow_219_226__i16/CK                                     CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1247,8 +1241,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i10/Q  (SLICE_R13C4B)
-Path End         : clk_slow_245_259__i10/D  (SLICE_R13C4B)
+Path Begin       : clk_slow_219_226__i1/Q  (SLICE_R6C4A)
+Path End         : clk_slow_219_226__i1/D  (SLICE_R6C4A)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1263,20 +1257,19 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i10/CK   clk_slow_245_259__i11/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_slow_245_259__i10/CK->clk_slow_245_259__i10/Q
-                                          SLICE_R13C4B       CLK_TO_Q0_DELAY  0.779                  3.863  1       
-n7                                                           NET DELAY        0.882                  4.745  1       
-clk_slow_245_259_add_4_11/C0->clk_slow_245_259_add_4_11/S0
-                                          SLICE_R13C4B       C0_TO_F0_DELAY   0.252                  4.997  1       
-n76                                                          NET DELAY        0.000                  4.997  1       
-clk_slow_245_259__i10/D                                      ENDPOINT         0.000                  4.997  1       
+clk_slow_219_226__i1/CK->clk_slow_219_226__i1/Q
+                                          SLICE_R6C4A        CLK_TO_Q1_DELAY  0.779                  3.863  1       
+n16                                                          NET DELAY        0.882                  4.745  1       
+clk_slow_219_226_add_4_1/C1->clk_slow_219_226_add_4_1/S1
+                                          SLICE_R6C4A        C1_TO_F1_DELAY   0.252                  4.997  1       
+n85                                                          NET DELAY        0.000                  4.997  1       
+clk_slow_219_226__i1/D                                       ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1285,8 +1278,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i10/CK   clk_slow_245_259__i11/CK}
-                                                             CLOCK PIN        0.000                  3.084  1       
+clk_slow_219_226__i1/CK                                      CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1300,8 +1292,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i11/Q  (SLICE_R13C4B)
-Path End         : clk_slow_245_259__i11/D  (SLICE_R13C4B)
+Path Begin       : clk_slow_219_226__i2/Q  (SLICE_R6C4B)
+Path End         : clk_slow_219_226__i2/D  (SLICE_R6C4B)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1316,20 +1308,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i10/CK   clk_slow_245_259__i11/CK}
+{clk_slow_219_226__i2/CK   clk_slow_219_226__i3/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_slow_245_259__i11/CK->clk_slow_245_259__i11/Q
-                                          SLICE_R13C4B       CLK_TO_Q1_DELAY  0.779                  3.863  1       
-n6                                                           NET DELAY        0.882                  4.745  1       
-clk_slow_245_259_add_4_11/C1->clk_slow_245_259_add_4_11/S1
-                                          SLICE_R13C4B       C1_TO_F1_DELAY   0.252                  4.997  1       
-n75                                                          NET DELAY        0.000                  4.997  1       
-clk_slow_245_259__i11/D                                      ENDPOINT         0.000                  4.997  1       
+clk_slow_219_226__i2/CK->clk_slow_219_226__i2/Q
+                                          SLICE_R6C4B        CLK_TO_Q0_DELAY  0.779                  3.863  1       
+n15                                                          NET DELAY        0.882                  4.745  1       
+clk_slow_219_226_add_4_3/C0->clk_slow_219_226_add_4_3/S0
+                                          SLICE_R6C4B        C0_TO_F0_DELAY   0.252                  4.997  1       
+n84                                                          NET DELAY        0.000                  4.997  1       
+clk_slow_219_226__i2/D                                       ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1338,7 +1330,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i10/CK   clk_slow_245_259__i11/CK}
+{clk_slow_219_226__i2/CK   clk_slow_219_226__i3/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1353,8 +1345,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i12/Q  (SLICE_R13C4C)
-Path End         : clk_slow_245_259__i12/D  (SLICE_R13C4C)
+Path Begin       : clk_slow_219_226__i3/Q  (SLICE_R6C4B)
+Path End         : clk_slow_219_226__i3/D  (SLICE_R6C4B)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1369,20 +1361,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i12/CK   clk_slow_245_259__i13/CK}
+{clk_slow_219_226__i2/CK   clk_slow_219_226__i3/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_slow_245_259__i12/CK->clk_slow_245_259__i12/Q
-                                          SLICE_R13C4C       CLK_TO_Q0_DELAY  0.779                  3.863  1       
-n5                                                           NET DELAY        0.882                  4.745  1       
-clk_slow_245_259_add_4_13/C0->clk_slow_245_259_add_4_13/S0
-                                          SLICE_R13C4C       C0_TO_F0_DELAY   0.252                  4.997  1       
-n74                                                          NET DELAY        0.000                  4.997  1       
-clk_slow_245_259__i12/D                                      ENDPOINT         0.000                  4.997  1       
+clk_slow_219_226__i3/CK->clk_slow_219_226__i3/Q
+                                          SLICE_R6C4B        CLK_TO_Q1_DELAY  0.779                  3.863  1       
+n14                                                          NET DELAY        0.882                  4.745  1       
+clk_slow_219_226_add_4_3/C1->clk_slow_219_226_add_4_3/S1
+                                          SLICE_R6C4B        C1_TO_F1_DELAY   0.252                  4.997  1       
+n83                                                          NET DELAY        0.000                  4.997  1       
+clk_slow_219_226__i3/D                                       ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1391,7 +1383,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i12/CK   clk_slow_245_259__i13/CK}
+{clk_slow_219_226__i2/CK   clk_slow_219_226__i3/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1406,8 +1398,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i13/Q  (SLICE_R13C4C)
-Path End         : clk_slow_245_259__i13/D  (SLICE_R13C4C)
+Path Begin       : clk_slow_219_226__i4/Q  (SLICE_R6C4C)
+Path End         : clk_slow_219_226__i4/D  (SLICE_R6C4C)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1422,20 +1414,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i12/CK   clk_slow_245_259__i13/CK}
+{clk_slow_219_226__i4/CK   clk_slow_219_226__i5/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_slow_245_259__i13/CK->clk_slow_245_259__i13/Q
-                                          SLICE_R13C4C       CLK_TO_Q1_DELAY  0.779                  3.863  1       
-n4_adj_64                                                    NET DELAY        0.882                  4.745  1       
-clk_slow_245_259_add_4_13/C1->clk_slow_245_259_add_4_13/S1
-                                          SLICE_R13C4C       C1_TO_F1_DELAY   0.252                  4.997  1       
-n73                                                          NET DELAY        0.000                  4.997  1       
-clk_slow_245_259__i13/D                                      ENDPOINT         0.000                  4.997  1       
+clk_slow_219_226__i4/CK->clk_slow_219_226__i4/Q
+                                          SLICE_R6C4C        CLK_TO_Q0_DELAY  0.779                  3.863  1       
+n13                                                          NET DELAY        0.882                  4.745  1       
+clk_slow_219_226_add_4_5/C0->clk_slow_219_226_add_4_5/S0
+                                          SLICE_R6C4C        C0_TO_F0_DELAY   0.252                  4.997  1       
+n82                                                          NET DELAY        0.000                  4.997  1       
+clk_slow_219_226__i4/D                                       ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1444,7 +1436,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i12/CK   clk_slow_245_259__i13/CK}
+{clk_slow_219_226__i4/CK   clk_slow_219_226__i5/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1459,8 +1451,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i14/Q  (SLICE_R13C4D)
-Path End         : clk_slow_245_259__i14/D  (SLICE_R13C4D)
+Path Begin       : clk_slow_219_226__i5/Q  (SLICE_R6C4C)
+Path End         : clk_slow_219_226__i5/D  (SLICE_R6C4C)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1475,20 +1467,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i14/CK   clk_slow_245_259__i15/CK}
+{clk_slow_219_226__i4/CK   clk_slow_219_226__i5/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_slow_245_259__i14/CK->clk_slow_245_259__i14/Q
-                                          SLICE_R13C4D       CLK_TO_Q0_DELAY  0.779                  3.863  1       
-n3                                                           NET DELAY        0.882                  4.745  1       
-clk_slow_245_259_add_4_15/C0->clk_slow_245_259_add_4_15/S0
-                                          SLICE_R13C4D       C0_TO_F0_DELAY   0.252                  4.997  1       
-n72                                                          NET DELAY        0.000                  4.997  1       
-clk_slow_245_259__i14/D                                      ENDPOINT         0.000                  4.997  1       
+clk_slow_219_226__i5/CK->clk_slow_219_226__i5/Q
+                                          SLICE_R6C4C        CLK_TO_Q1_DELAY  0.779                  3.863  1       
+n12                                                          NET DELAY        0.882                  4.745  1       
+clk_slow_219_226_add_4_5/C1->clk_slow_219_226_add_4_5/S1
+                                          SLICE_R6C4C        C1_TO_F1_DELAY   0.252                  4.997  1       
+n81                                                          NET DELAY        0.000                  4.997  1       
+clk_slow_219_226__i5/D                                       ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1497,7 +1489,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i14/CK   clk_slow_245_259__i15/CK}
+{clk_slow_219_226__i4/CK   clk_slow_219_226__i5/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1512,8 +1504,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i15/Q  (SLICE_R13C4D)
-Path End         : clk_slow_245_259__i15/D  (SLICE_R13C4D)
+Path Begin       : clk_slow_219_226__i6/Q  (SLICE_R6C4D)
+Path End         : clk_slow_219_226__i6/D  (SLICE_R6C4D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1528,20 +1520,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i14/CK   clk_slow_245_259__i15/CK}
+{clk_slow_219_226__i6/CK   clk_slow_219_226__i7/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_slow_245_259__i15/CK->clk_slow_245_259__i15/Q
-                                          SLICE_R13C4D       CLK_TO_Q1_DELAY  0.779                  3.863  1       
-n2                                                           NET DELAY        0.882                  4.745  1       
-clk_slow_245_259_add_4_15/C1->clk_slow_245_259_add_4_15/S1
-                                          SLICE_R13C4D       C1_TO_F1_DELAY   0.252                  4.997  1       
-n71                                                          NET DELAY        0.000                  4.997  1       
-clk_slow_245_259__i15/D                                      ENDPOINT         0.000                  4.997  1       
+clk_slow_219_226__i6/CK->clk_slow_219_226__i6/Q
+                                          SLICE_R6C4D        CLK_TO_Q0_DELAY  0.779                  3.863  1       
+n11                                                          NET DELAY        0.882                  4.745  1       
+clk_slow_219_226_add_4_7/C0->clk_slow_219_226_add_4_7/S0
+                                          SLICE_R6C4D        C0_TO_F0_DELAY   0.252                  4.997  1       
+n80                                                          NET DELAY        0.000                  4.997  1       
+clk_slow_219_226__i6/D                                       ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1550,7 +1542,7 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-{clk_slow_245_259__i14/CK   clk_slow_245_259__i15/CK}
+{clk_slow_219_226__i6/CK   clk_slow_219_226__i7/CK}
                                                              CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
@@ -1565,8 +1557,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : clk_slow_245_259__i16/Q  (SLICE_R13C5A)
-Path End         : clk_slow_245_259__i16/D  (SLICE_R13C5A)
+Path Begin       : clk_slow_219_226__i7/Q  (SLICE_R6C4D)
+Path End         : clk_slow_219_226__i7/D  (SLICE_R6C4D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1581,19 +1573,20 @@ Name                                      Cell/Site Name     Delay Name       In
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-clk_slow_245_259__i16/CK                                     CLOCK PIN        0.000                  3.084  1       
+{clk_slow_219_226__i6/CK   clk_slow_219_226__i7/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-clk_slow_245_259__i16/CK->clk_slow_245_259__i16/Q
-                                          SLICE_R13C5A       CLK_TO_Q0_DELAY  0.779                  3.863  25      
-MOD1/debug_clk_c                                             NET DELAY        0.882                  4.745  25      
-clk_slow_245_259_add_4_17/C0->clk_slow_245_259_add_4_17/S0
-                                          SLICE_R13C5A       C0_TO_F0_DELAY   0.252                  4.997  1       
-n70                                                          NET DELAY        0.000                  4.997  1       
-clk_slow_245_259__i16/D                                      ENDPOINT         0.000                  4.997  1       
+clk_slow_219_226__i7/CK->clk_slow_219_226__i7/Q
+                                          SLICE_R6C4D        CLK_TO_Q1_DELAY  0.779                  3.863  1       
+n10                                                          NET DELAY        0.882                  4.745  1       
+clk_slow_219_226_add_4_7/C1->clk_slow_219_226_add_4_7/S1
+                                          SLICE_R6C4D        C1_TO_F1_DELAY   0.252                  4.997  1       
+n79                                                          NET DELAY        0.000                  4.997  1       
+clk_slow_219_226__i7/D                                       ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
@@ -1602,7 +1595,8 @@ Name                                      Cell/Site Name     Delay Name       In
                                                              CONSTRAINT       0.000                  0.000  1       
 hf_osc/CLKHF                              HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
 int_osc                                                      NET DELAY        3.084                  3.084  11      
-clk_slow_245_259__i16/CK                                     CLOCK PIN        0.000                  3.084  1       
+{clk_slow_219_226__i6/CK   clk_slow_219_226__i7/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  

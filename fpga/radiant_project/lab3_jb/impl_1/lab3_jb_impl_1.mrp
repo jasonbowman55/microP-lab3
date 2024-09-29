@@ -7,35 +7,36 @@ Device:  iCE40UP5K
 Package: SG48
 Performance Grade:  High-Performance_1.2V
 
-Mapper:    version Radiant Software (64-bit) 2024.1.0.34.2
-Mapped on: Thu Sep 26 16:04:34 2024
+Mapper:    version Radiant Software (64-bit) 2024.1.1.259.1
+Mapped on: Sat Sep 28 18:21:57 2024
 
 Design Information
 ------------------
 
-Command line:   map -pdc C:/Users/jbowman/Desktop/microP-lab3/fpga/radiant_proje
-     ct/lab3_jb/source/impl_1/impl_1.pdc -i lab3_jb_impl_1_syn.udb -o
-     lab3_jb_impl_1_map.udb -mp lab3_jb_impl_1.mrp -hierrpt -gui -msgset C:/User
-     s/jbowman/Desktop/microP-lab3/fpga/radiant_project/lab3_jb/promote.xml
+Command line:   map -pdc C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/m
+     icroP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/impl_1.pdc -i
+     lab3_jb_impl_1_syn.udb -o lab3_jb_impl_1_map.udb -mp lab3_jb_impl_1.mrp
+     -hierrpt -gui -msgset C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs
+     /microP-lab3/fpga/radiant_project/lab3_jb/promote.xml
 
 Design Summary
 --------------
 
-   Number of slice registers:  54 out of  5280 (1%)
-   Number of I/O registers:      2 out of   117 (2%)
-   Number of LUT4s:           130 out of  5280 (2%)
-      Number of logic LUT4s:              94
-      Number of inserted feedthru LUT4s:  12
-      Number of ripple logic:             12 (24 LUT4s)
-   Number of IO sites used:   19 out of 39 (49%)
-      Number of IO sites used for general PIO: 19
+   Number of slice registers:  25 out of  5280 (<1%)
+   Number of I/O registers:      0 out of   117 (0%)
+   Number of LUT4s:            47 out of  5280 (1%)
+      Number of logic LUT4s:              28
+      Number of inserted feedthru LUT4s:   1
+      Number of ripple logic:              9 (18 LUT4s)
+   Number of IO sites used:   6 out of 39 (15%)
+      Number of IO sites used for general PIO: 6
       Number of IO sites used for I3C: 0 out of 2 (0%)
       (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 19 out of 36 (53%)
+      Number of IO sites used for PIO+I3C: 6 out of 36 (17%)
       Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 19 out of 39 (49%)
+      Number of IO sites used for PIO+I3C+OD+RGB: 6 out of 39 (15%)
    Number of DSPs:             0 out of 8 (0%)
    Number of I2Cs:             0 out of 2 (0%)
    Number of High Speed OSCs:  1 out of 1 (100%)
@@ -49,17 +50,16 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  2
-      Net debug_clk_c: 38 loads, 38 rising, 0 falling (Driver: Pin
-     clk_slow_245_259__i16/Q)
       Net int_osc: 9 loads, 9 rising, 0 falling (Driver: Pin hf_osc/CLKHF)
-   Number of Clock Enables:  2
+      Net clk_c: 9 loads, 9 rising, 0 falling (Driver: Pin
+     clk_slow_219_226__i16/Q)
+   Number of Clock Enables:  1
       Net VCC_net: 1 loads, 0 SLICEs
-      Net MOD1.n3: 8 loads, 8 SLICEs
-   Number of LSRs:  3
-      Net n4: 12 loads, 12 SLICEs
-      Net MOD1.state_FSM_illegal: 20 loads, 20 SLICEs
-      Net MOD1.state[4]: 1 loads, 1 SLICEs
+   Number of LSRs:  2
+      Net n4: 9 loads, 9 SLICEs
+      Net state_FSM_illegal: 8 loads, 8 SLICEs
    Top 10 highest fanout non-clock nets:
+      Net n4: 9 loads
 
                                     Page 1
 
@@ -69,16 +69,15 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net MOD1.state_FSM_illegal: 20 loads
-      Net MOD1.state[5]: 16 loads
-      Net col_sync_c_3: 15 loads
-      Net col_sync_c_2: 14 loads
-      Net MOD1.state[6]: 13 loads
-      Net col_sync_c_1: 12 loads
-      Net MOD1.n5: 12 loads
-      Net MOD1.state[4]: 12 loads
-      Net n4: 12 loads
-      Net col_sync_c_0: 10 loads
+      Net state[2]: 9 loads
+      Net state[1]: 8 loads
+      Net state[6]: 8 loads
+      Net state_FSM_illegal: 8 loads
+      Net state[0]: 7 loads
+      Net n145: 6 loads
+      Net n447: 6 loads
+      Net state[10]: 5 loads
+      Net state[11]: 5 loads
 
 
 
@@ -100,52 +99,17 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| col[0]              | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| col[1]              | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| col[2]              | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| col[3]              | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| reset               | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| debug_clk           | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| osc[0]              | OUTPUT    |           | O     |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| osc[1]              | OUTPUT    |           | O     |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| seg[0]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| seg[1]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| seg[2]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| seg[3]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| seg[4]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| seg[5]              | OUTPUT    |           |       |       |           |
-
-                                    Page 2
-
-
-
-
-
-IO (PIO) Attributes (cont)
---------------------------
-+---------------------+-----------+-----------+-------+-------+-----------+
-| seg[6]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| r_sel[0]            | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| r_sel[1]            | OUTPUT    |           |       |       |           |
+| r_sel[3]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | r_sel[2]            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| r_sel[3]            | OUTPUT    |           |       |       |           |
+| r_sel[1]            | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| r_sel[0]            | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| clk                 | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| reset               | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 Removed logic
@@ -163,20 +127,23 @@ OSC 1:                                 Pin/Node Value
   OSC Output:                          NODE     int_osc
   DIV Setting:                                  01
 
+
+                                    Page 2
+
+
+
+
+
 ASIC Components
 ---------------
 
 Instance Name: hf_osc
          Type: HFOSC
-Instance Name: osc_i2
-         Type: IOLOGIC
-Instance Name: osc_i1
-         Type: IOLOGIC
 
 Constraint Summary
 ------------------
 
-   Total number of constraints: 20
+   Total number of constraints: 7
    Total number of constraints dropped: 0
 
 Run Time and Memory Usage
@@ -184,8 +151,41 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 65 MB
-Checksum -- map: aa198fbed08cd9909157b4ef5e02d74c7ea9946d
+   Peak Memory Usage: 64 MB
+Checksum -- map: e9e2c8738dc8437d173c20b14ca11ec70f8ec23
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
