@@ -47,57 +47,87 @@ module button_decoder_bounce (
 ///////////////////////////////////////////
 
 // Cycling through states dead states between row scan
-always_comb
+always_comb begin
     case(state)
-        // row 1
-        S0: nextstate = S12; // dead states
-        S12: nextstate = S13;
-        S13: if(r_sel == 4'b1111) nextstate = S4;
-            else nextstate = S1;
-        S4: nextstate = S8;
-        S8: if (r_sel == 4'b1111) nextstate = S8;
-            else nextstate = S0;
-
-        // row 2
-        S1: nextstate = S14; // dead states
-        S14: nextstate = S15;
-        S15: if(r_sel == 4'b1111) nextstate = S5;
-            else nextstate = S2;
-        S5: nextstate = S9;
-        S9: if (r_sel == 4'b1111) nextstate = S9;
-            else nextstate = S1;
-
-        // row 3
-        S2: nextstate = S16; // dead states
-        S16: nextstate = S17;
-        S17: if(r_sel == 4'b1111) nextstate = S6;
-            else nextstate = S3;
-        S6: nextstate = S10;
-        S10: if (r_sel == 4'b1111) nextstate = S10;
-            else nextstate = S2;
-
-        // row 4
-        S3: nextstate = S18; // dead states
-        S18: nextstate = S19;
-        S19: if(r_sel == 4'b1111) nextstate = S7;
-            else nextstate = S0;
-        S7: nextstate = S11;
-        S11: if (r_sel == 4'b1111) nextstate = S11;
-            else nextstate = S3;
-
-        default: nextstate = S0;   
+        S0: 
+            if (col_sync != 4'b0000) 
+                nextstate = S4;
+            else 
+                nextstate = S12;
+        S12: 
+            nextstate = S13;
+        S13: 
+            nextstate = S1;
+        S4: 
+            nextstate = S8;
+        S8: 
+            if (col_sync != 4'b0000) 
+                nextstate = S8;
+            else 
+                nextstate = S0;
+        S1: 
+            if (col_sync != 4'b0000) 
+                nextstate = S5;
+            else 
+                nextstate = S14;
+        S14: 
+            nextstate = S15;
+        S15: 
+            nextstate = S2;
+        S5: 
+            nextstate = S9;
+        S9: 
+            if (col_sync != 4'b0000) 
+                nextstate = S9;
+            else 
+                nextstate = S1;
+        S2: 
+            if (col_sync != 4'b0000) 
+                nextstate = S6;
+            else 
+                nextstate = S16;
+        S16: 
+            nextstate = S17;  // Fixed typo from "nexstate"
+        S17: 
+            nextstate = S3;
+        S6: 
+            nextstate = S10;
+        S10: 
+            if (col_sync != 4'b0000) 
+                nextstate = S10;
+            else 
+                nextstate = S2;
+        S3: 
+            if (col_sync != 4'b0000) 
+                nextstate = S7;
+            else 
+                nextstate = S18;
+        S18: 
+            nextstate = S19;  // Fixed typo from ":" to ";"/
+        S19: 
+            nextstate = S0;
+        S7: 
+            nextstate = S11;
+        S11: 
+            if (col_sync != 4'b0000) 
+                nextstate = S11;
+            else 
+                nextstate = S3;
+        default: 
+            nextstate = S0;   
     endcase
-/////////////////////////////////////////////////////////////////////////
-
-	always_comb begin
-		case(state)
-			S4, S5, S6, S7: en = 1'b1;
-			default: en = 1'b0;
-		endcase
-	end
+end
 
 
 //////////////////////////////////////////////
+
+always_comb begin
+	case(state)
+		S4, S5, S6, S7: en = 1'b1;
+		default en = 1'b0;
+	endcase
+end
+
 
 always_ff @(posedge clk) begin
 	if (en) begin
@@ -166,13 +196,15 @@ end
 /////////////////////////////////////////////
 
 // row scan based on state /////////////////////////////////////////////
-	always_comb begin
-		r_sel = (state == S0 || state == S4 || state == S8) ? 4'b1110 :
-				(state == S1 || state == S5 || state == S9) ? 4'b1101 :
-				(state == S2 || state == S6 || state == S10) ? 4'b1011 :
-				(state == S3 || state == S7 || state == S11) ? 4'b0111 :
-				4'b1111; // Default value
-	end
+always_comb begin
+    case(state)
+        S0, S4, S8, S12, S13: r_sel = 4'b1110;
+        S1, S5, S9, S14, S15: r_sel = 4'b1101;
+        S2, S6, S10, S16, S17: r_sel = 4'b1011;
+        S3, S7, S11, S18, S19: r_sel = 4'b0111;
+        default: r_sel = 4'b0000; // Default value
+    endcase
+end
 ////////////////////////////////////////////////////////////////////////
 
 endmodule
