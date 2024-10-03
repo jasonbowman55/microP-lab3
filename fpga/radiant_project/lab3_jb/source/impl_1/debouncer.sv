@@ -7,7 +7,7 @@ module debouncer (
 	
 
 
-	always_ff @(posedge clk) begin
+	always_ff @(posedge clk) begin // not using debounce for debugging purposes
 		if (!reset) begin
 			debounce = 1'b0;
 		end else if (|col_sync) begin

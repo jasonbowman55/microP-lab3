@@ -5,7 +5,7 @@
 
 module top (
 	input logic reset,
-//	input logic clk,
+//	input logic clk, //used for simulation
 	input logic [3:0] col,
 	output logic [3:0] r_sel,
 	output logic [6:0] seg,
