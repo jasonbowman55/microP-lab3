@@ -8,7 +8,7 @@ module syncronizer (
 
 //logic [3:0] n1;
 	assign col_sync = ~col;
-// syncronizing col inputs ////////
+// syncronizing col inputs //////// taken out for debugging purposes
 //always_ff @(posedge clk) begin
 //	if (!reset) begin
 //		col_sync <= 4'b0000;
