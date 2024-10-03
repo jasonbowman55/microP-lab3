@@ -22,7 +22,7 @@ logic  debounce;
 logic [3:0] right;
 logic [3:0] left;
 //logic clk;
-logic [24:0] clk_slow;
+//logic [24:0] clk_slow;
 
 //assign debug_clk = clk;
 
@@ -30,17 +30,17 @@ logic [24:0] clk_slow;
 
 // HSOSC instantiation //////////////////////////////////// TAKEN OUT FOR MODEL SIM
 HSOSC #(.CLKHF_DIV(2'b01)) 
-	hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
+	hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk));
 ///////////////////////////////////////////////////////
-assign clk = clk_slow[9];
+//assign clk = clk_slow[9];
 
-	always_ff @(posedge clk) begin
-		if (!reset) begin
-			clk_slow = 25'h0;
-		end else begin
-			clk_slow = clk_slow + 25'h1;
-		end
-	end
+	//always_ff @(posedge clk) begin
+		//if (!reset) begin
+			//clk_slow = 25'h0;
+		//end else begin
+			//clk_slow = clk_slow + 25'h1;
+		//end
+	//end
 
 
 always_ff @(posedge clk) begin
