@@ -21,11 +21,11 @@ logic [3:0] col_sync;
 logic [3:0] select;
 logic  debounce;
 logic [3:0] right;
-logic [3:0] left;//logic clk;
-logic [24:0] clk_slow;
+logic [3:0] left;logic clk;
+//logic [24:0] clk_slow;
 
-assign clk_debug = clk;
-logic int_osc;
+//assign clk_debug = clk;
+//logic int_osc;
 
 //assign debug_clk = clk;
 

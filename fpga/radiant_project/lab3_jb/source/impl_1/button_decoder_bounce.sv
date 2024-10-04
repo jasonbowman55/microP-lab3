@@ -120,32 +120,32 @@ end
 
 //////////////////////////////////////////////
 
-//always_comb begin
-	//case(state)
-		//S4, S5, S6, S7: en = 1'b1;
-		//default en = 1'b0;
-	//endcase
+always_comb begin
+	case(state)
+		S4, S5, S6, S7: en = 1'b1;
+		default en = 1'b0;
+	endcase
+end
+
+//logic [6:0] debug_counter;
+
+//always_ff @(posedge clk) begin
+	//if (!reset) begin
+		//debug_counter = 7'h0;
+	//end
+	//else if (state == S4 || state == S5 || state == S6 || state == S7) begin
+		//debug_counter = debug_counter + 1;
+	//end
 //end
 
-logic [6:0] debug_counter;
-
-always_ff @(posedge clk) begin
-	if (!reset) begin
-		debug_counter = 7'h0;
-	end
-	else if (state == S8 || state == S9 || state == S10 || state == S11) begin
-		debug_counter = debug_counter + 1;
-	end
-end
-
-always_ff @(posedge clk) begin
-	if (debug_counter != 7'b1111111) begin
-		en = 1'b0;
-	end
-	else if (debug_counter == 7'b1111111) begin
-		en = 1'b1;
-	end
-end
+//always_ff @(posedge clk) begin
+	//if (debug_counter != 7'b1111111) begin
+		//en = 1'b0;
+	//end
+	//else if (debug_counter == 7'b1111111) begin
+		//en = 1'b1;
+	//end
+//end
 			
 
 always_ff @(posedge clk) begin

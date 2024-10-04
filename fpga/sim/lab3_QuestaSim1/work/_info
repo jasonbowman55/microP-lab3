@@ -47,53 +47,53 @@ R9
 R2
 vbutton_decoder_bounce
 Z10 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z11 !s110 1727587773
+Z11 !s110 1728019069
 !i10b 1
-!s100 PWQc3]okH>[QYTc?GW8f;2
+!s100 o_gBF9hZl^an<hE=>B2<f1
 Z12 !s11b Dg1SIo80bB@j0V0VzS_@n1
-Il^E@6Mo@f5A>5US3H>zgT0
+IfPoYZ]a_lNBo<_zi5lUXe2
 Z13 VDg1SIo80bB@j0V0VzS_@n1
 S1
 Z14 dC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1
-w1727587517
+w1728018848
 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv
 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv
-!i122 522
-L0 1 210
+!i122 552
+L0 1 229
 Z15 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z16 !s108 1727587773.000000
+!s108 1728019068.000000
 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/button_decoder_bounce.sv|
 !i113 1
-Z17 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z16 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R8
 vdebouncer
 R10
-!s110 1727587774
+R11
 !i10b 1
-!s100 G9FLa__b=_^zOU;X@gRTm3
+!s100 <0eKg?nI_RPcnIoP2iVGn2
 R12
-IO`g2oc^`Lce2FRG_76HU>1
+I[J2cObehl_agVGo>7VC9f3
 R13
 S1
 R14
-Z18 w1727574361
+w1728017339
 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/debouncer.sv
 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/debouncer.sv
-!i122 527
+!i122 557
 L0 1 22
 R15
 r1
 !s85 0
 31
-R16
+Z17 !s108 1728019069.000000
 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/debouncer.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/debouncer.sv|
 !i113 1
-R17
+R16
 R8
 vseven_seg_decoder
 R10
@@ -105,20 +105,20 @@ I=JWTVm>7djLT1JMaJ@VmL2
 R13
 S1
 R14
-R18
+w1728018062
 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv
 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv
-!i122 523
+!i122 553
 L0 1 28
 R15
 r1
 !s85 0
 31
-R16
+R17
 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/seven_seg_decoder.sv|
 !i113 1
-R17
+R16
 R8
 vsyncronizer
 R10
@@ -130,20 +130,20 @@ I<=]jikUZc6[AD@Co9eB4M1
 R13
 S1
 R14
-w1727575951
+w1727995005
 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv
 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv
-!i122 524
+!i122 554
 L0 1 34
 R15
 r1
 !s85 0
 31
-R16
+R17
 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/syncronizer.sv|
 !i113 1
-R17
+R16
 R8
 vSystemVerilog
 R10
@@ -156,8 +156,8 @@ R13
 S1
 R14
 w1727295693
-Z19 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv
-Z20 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv
+Z18 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv
+Z19 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv
 !i122 225
 L0 6 60
 R15
@@ -165,10 +165,10 @@ r1
 !s85 0
 31
 !s108 1727296419.000000
-Z21 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv|
-Z22 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv|
+Z20 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv|
+Z21 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv|
 !i113 1
-R17
+R16
 R8
 n@system@verilog
 vtestbench1
@@ -181,20 +181,20 @@ InNU^j8Ch@SLn<1c87B2TA3
 R13
 S1
 R14
-w1727587771
-Z23 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv
-Z24 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv
-!i122 526
+w1728019066
+Z22 8C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv
+Z23 FC:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv
+!i122 556
 L0 5 45
 R15
 r1
 !s85 0
 31
-R16
-Z25 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv|
+R17
+Z24 !s107 C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv|
 !i113 1
-R17
+R16
 R8
 vtestbench2
 2C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv
@@ -206,8 +206,8 @@ ISXcWN]z0j]9:2?mf@_mTV0
 S1
 R14
 w1727134786
+R22
 R23
-R24
 !i122 18
 L0 5 33
 R13
@@ -216,33 +216,33 @@ r1
 !s85 0
 31
 !s108 1727135078.000000
-R25
+R24
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv|
 !i113 0
-R17
+R16
 R8
 vtop
 R10
 R11
 !i10b 1
-!s100 oj]Rj<FNfmk7znnDN3i5c1
+!s100 4kF]BAz9mL_P8HNE]_8fD0
 R12
-I;k9OVeWEdIAlfi^Aa9<O32
+IXf6]Qc4=UVHUdYV71je1]1
 R13
 S1
 R14
-w1727587569
+w1728018333
+R18
 R19
-R20
-!i122 525
-L0 6 65
+!i122 555
+L0 6 72
 R15
 r1
 !s85 0
 31
-R16
-R21
-R22
-!i113 1
 R17
+R20
+R21
+!i113 1
+R16
 R8

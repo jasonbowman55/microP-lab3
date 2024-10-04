@@ -9,7 +9,6 @@ module button_decoder_bounce (
 	output logic [3:0] r_sel
 	);
 
-
 // defining state variables /////
 	logic [19:0] state, nextstate;
 	logic [3:0] button;
@@ -50,7 +49,7 @@ module button_decoder_bounce (
 always_comb begin
     case(state)
         S0: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S4;
             else 
                 nextstate = S12;
@@ -61,12 +60,12 @@ always_comb begin
         S4: 
             nextstate = S8;
         S8: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S8;
             else 
                 nextstate = S0;
         S1: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S5;
             else 
                 nextstate = S14;
@@ -77,12 +76,12 @@ always_comb begin
         S5: 
             nextstate = S9;
         S9: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S9;
             else 
                 nextstate = S1;
         S2: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S6;
             else 
                 nextstate = S16;
@@ -93,12 +92,12 @@ always_comb begin
         S6: 
             nextstate = S10;
         S10: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S10;
             else 
                 nextstate = S2;
         S3: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S7;
             else 
                 nextstate = S18;
@@ -109,7 +108,7 @@ always_comb begin
         S7: 
             nextstate = S11;
         S11: 
-            if (col_sync != 4'b0000) 
+            if (|col_sync) 
                 nextstate = S11;
             else 
                 nextstate = S3;
@@ -121,13 +120,33 @@ end
 
 //////////////////////////////////////////////
 
-always_comb begin
-	case(state)
-		S4, S5, S6, S7: en = 1'b1;
-		default en = 1'b0;
-	endcase
+//always_comb begin
+	//case(state)
+		//S4, S5, S6, S7: en = 1'b1;
+		//default en = 1'b0;
+	//endcase
+//end
+
+logic [6:0] debug_counter;
+
+always_ff @(posedge clk) begin
+	if (!reset) begin
+		debug_counter = 7'h0;
+	end
+	else if (state == S4 || state == S5 || state == S6 || state == S7) begin
+		debug_counter = debug_counter + 1;
+	end
 end
 
+always_ff @(posedge clk) begin
+	if (debug_counter != 7'b1111111) begin
+		en = 1'b0;
+	end
+	else if (debug_counter == 7'b1111111) begin
+		en = 1'b1;
+	end
+end
+			
 
 always_ff @(posedge clk) begin
 	if (en) begin
