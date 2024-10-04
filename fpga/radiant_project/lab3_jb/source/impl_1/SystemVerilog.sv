@@ -9,9 +9,10 @@ module top (
 	input logic [3:0] col,
 	output logic [3:0] r_sel,
 	output logic [6:0] seg,
-	output logic [1:0] osc,
-	output logic clk
-	//output logic debug_clk
+	output logic [1:0] osc
+	//output logic clk_debug,
+	//output logic [3:0] state_debug
+	//output logic debug_clk//
 
 	);
 
@@ -20,27 +21,31 @@ logic [3:0] col_sync;
 logic [3:0] select;
 logic  debounce;
 logic [3:0] right;
-logic [3:0] left;
-//logic clk;
-//logic [24:0] clk_slow;
+logic [3:0] left;//logic clk;
+logic [24:0] clk_slow;
+
+assign clk_debug = clk;
+logic int_osc;
 
 //assign debug_clk = clk;
 
 //logic clk; TAKEN OUT FOR MODEL SIM/
 
 // HSOSC instantiation //////////////////////////////////// TAKEN OUT FOR MODEL SIM
-HSOSC #(.CLKHF_DIV(2'b01)) 
-	hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk));
+LSOSC #() 
+	lf_osc (.CLKLFPU(1'b1), .CLKLFEN(1'b1), .CLKLF(clk));
 ///////////////////////////////////////////////////////
-//assign clk = clk_slow[9];
 
-	//always_ff @(posedge clk) begin
+	//always_ff @(posedge int_osc) begin
 		//if (!reset) begin
 			//clk_slow = 25'h0;
 		//end else begin
-			//clk_slow = clk_slow + 25'h1;
+			//clk_slow = clk_slow + 1;
 		//end
 	//end
+	
+	//assign clk = clk_slow[9];
+
 
 
 always_ff @(posedge clk) begin
