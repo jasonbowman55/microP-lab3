@@ -5,22 +5,6 @@
 # Compile of testbench1.sv was successful.
 # Compile of debouncer.sv was successful.
 # 6 compiles, 0 failed with no errors.
-vsim -gui work.testbench1
-# vsim -gui work.testbench1 
-# Start time: 22:05:08 on Oct 03,2024
-# Loading sv_std.std
-# Loading work.testbench1
-# Loading work.top
-# ** Error: (vsim-3033) Instantiation of 'LSOSC' failed. The design unit was not found.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench1/dut File: C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/radiant_project/lab3_jb/source/impl_1/SystemVerilog.sv Line: 36
-#         Searched libraries:
-#             C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/work
-# Loading work.button_decoder_bounce
-# Loading work.seven_seg_decoder
-# Loading work.syncronizer
-# Error loading design
-# End time: 22:05:08 on Oct 03,2024, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 2
 # Compile of button_decoder_bounce.sv was successful.
 # Compile of seven_seg_decoder.sv was successful.
 # Compile of syncronizer.sv was successful.
@@ -30,7 +14,7 @@ vsim -gui work.testbench1
 # 6 compiles, 0 failed with no errors.
 vsim -gui work.testbench1
 # vsim -gui work.testbench1 
-# Start time: 22:05:41 on Oct 03,2024
+# Start time: 17:59:14 on Oct 05,2024
 # Loading sv_std.std
 # Loading work.testbench1
 # Loading work.top
@@ -40,89 +24,14 @@ vsim -gui work.testbench1
 add wave -position end sim:/testbench1/dut/*
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Jason  Hostname: JASON  ProcessID: 9448
-#           Attempting to use alternate WLF file "./wlftx6jxya".
+#           Attempting to use alternate WLF file "./wlfttc43nh".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftx6jxya
+#           Using alternate file: ./wlfttc43nh
 add wave -position end sim:/testbench1/dut/MOD1/*
 run
-quit -sim
-# End time: 22:10:23 on Oct 03,2024, Elapsed time: 0:04:42
-# Errors: 0, Warnings: 4
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv was successful.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.testbench1
-# vsim -gui work.testbench1 
-# Start time: 22:10:36 on Oct 03,2024
-# Loading sv_std.std
-# Loading work.testbench1
-# Loading work.top
-# Loading work.button_decoder_bounce
-# Loading work.seven_seg_decoder
-# Loading work.syncronizer
-add wave -position end sim:/testbench1/dut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Jason  Hostname: JASON  ProcessID: 9448
-#           Attempting to use alternate WLF file "./wlftrjw2gb".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftrjw2gb
-add wave -position end sim:/testbench1/dut/MOD1/*
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 run
-quit -sim
-# End time: 22:15:44 on Oct 03,2024, Elapsed time: 0:05:08
-# Errors: 0, Warnings: 4
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv was successful.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.testbench1
-# vsim -gui work.testbench1 
-# Start time: 22:15:57 on Oct 03,2024
-# Loading sv_std.std
-# Loading work.testbench1
-# Loading work.top
-# Loading work.button_decoder_bounce
-# Loading work.seven_seg_decoder
-# Loading work.syncronizer
-add wave -position end sim:/testbench1/dut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Jason  Hostname: JASON  ProcessID: 9448
-#           Attempting to use alternate WLF file "./wlft4a3aa7".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft4a3aa7
-add wave -position end sim:/testbench1/dut/MOD1/*
-run
-quit -sim
-# End time: 22:17:33 on Oct 03,2024, Elapsed time: 0:01:36
-# Errors: 0, Warnings: 4
-# Compile of button_decoder_bounce.sv was successful.
-# Compile of seven_seg_decoder.sv was successful.
-# Compile of syncronizer.sv was successful.
-# Compile of SystemVerilog.sv was successful.
-# Compile of testbench1.sv was successful.
-# Compile of debouncer.sv was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.testbench1
-# vsim -gui work.testbench1 
-# Start time: 22:17:55 on Oct 03,2024
-# Loading sv_std.std
-# Loading work.testbench1
-# Loading work.top
-# Loading work.button_decoder_bounce
-# Loading work.seven_seg_decoder
-# Loading work.syncronizer
-add wave -position end sim:/testbench1/dut/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Jason  Hostname: JASON  ProcessID: 9448
-#           Attempting to use alternate WLF file "./wlftdsd920".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftdsd920
-add wave -position end sim:/testbench1/dut/MOD1/*
-run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 

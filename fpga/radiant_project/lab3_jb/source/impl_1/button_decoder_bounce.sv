@@ -45,121 +45,7 @@ module button_decoder_bounce (
 			state <= nextstate;
 ///////////////////////////////////////////
 
-// Cycling through states dead states between row scan
-<<<<<<< HEAD
-=======
-always_comb begin
-    case(state)
-        S0: 
-            if (|col_sync) 
-                nextstate = S4;
-            else 
-                nextstate = S12;
-        S12: 
-            nextstate = S13;
-        S13: 
-            nextstate = S1;
-        S4: 
-            nextstate = S8;
-        S8: 
-            if (|col_sync) 
-                nextstate = S8;
-            else 
-                nextstate = S0;
-        S1: 
-            if (|col_sync) 
-                nextstate = S5;
-            else 
-                nextstate = S14;
-        S14: 
-            nextstate = S15;
-        S15: 
-            nextstate = S2;
-        S5: 
-            nextstate = S9;
-        S9: 
-            if (|col_sync) 
-                nextstate = S9;
-            else 
-                nextstate = S1;
-        S2: 
-            if (|col_sync) 
-                nextstate = S6;
-            else 
-                nextstate = S16;
-        S16: 
-            nextstate = S17;  
-        S17: 
-            nextstate = S3;
-        S6: 
-            nextstate = S10;
-        S10: 
-            if (|col_sync) 
-                nextstate = S10;
-            else 
-                nextstate = S2;
-        S3: 
-            if (|col_sync) 
-                nextstate = S7;
-            else 
-                nextstate = S18;
-        S18: 
-            nextstate = S19; 
-        S19: 
-            nextstate = S0;
-        S7: 
-            nextstate = S11;
-        S11: 
-            if (|col_sync) 
-                nextstate = S11;
-            else 
-                nextstate = S3;
-        default: 
-            nextstate = S0;   
-    endcase
-end
-
-
-//////////////////////////////////////////////
-
-always_comb begin
-	case(state)
-		S4, S5, S6, S7: en = 1'b1;
-		default en = 1'b0;
-	endcase
-end
-
-//logic [6:0] debug_counter;
-
-//always_ff @(posedge clk) begin
-	//if (!reset) begin
-		//debug_counter = 7'h0;
-	//end
-	//else if (state == S4 || state == S5 || state == S6 || state == S7) begin
-		//debug_counter = debug_counter + 1;
-	//end
-//end
-
-//always_ff @(posedge clk) begin
-	//if (debug_counter != 7'b1111111) begin
-		//en = 1'b0;
-	//end
-	//else if (debug_counter == 7'b1111111) begin
-		//en = 1'b1;
-	//end
-//end
-			
-
-always_ff @(posedge clk) begin
-	if (en) begin
-		left = right;
-		right = button;
-	end
-end
-		
-
-// logic to determine what button is pressed/
->>>>>>> a2ca23015e4dd29db3c50d4224e5e04c9fc90304
+// Cycling through states dead states between row scan//
 	always_comb begin
 		case(state)
 			S0: 
@@ -258,7 +144,7 @@ end
 			end
 			
 			// if the debouncer is full, then enable seg assignments
-			if (debounce_counter == 7'b0000100) begin // Debounce perameter
+			if (debounce_counter == 7'b0000001) begin // Debounce perameter
 				en <= 1'b1;
 			end else begin
 				en <= 1'b0;

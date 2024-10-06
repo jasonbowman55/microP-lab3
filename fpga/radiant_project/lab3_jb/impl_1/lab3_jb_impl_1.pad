@@ -6,16 +6,17 @@ Performance Grade:      High-Performance_1.2V
 PACKAGE:          SG48
 Package Status:                     Preliminary    Version 1.5
 
-Thu Oct  3 22:35:24 2024
+Sat Oct  5 18:05:00 2024
 
 Pinout by Port Name:
 +-----------+----------+--------------+-------+------------------------------------------+
 | Port Name | Pin/Bank | Buffer Type  | Site  | Properties                               |
 +-----------+----------+--------------+-------+------------------------------------------+
+| clk       | 46/2     | LVCMOS33_IN  | PL6A  | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
 | col[0]    | 12/1     | LVCMOS33_IN  | PL19A | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
 | col[1]    | 3/2      | LVCMOS33_IN  | PL10B | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
 | col[2]    | 45/2     | LVCMOS33_IN  | PL8B  | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
-| col[3]    | 46/2     | LVCMOS33_IN  | PL6A  | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
+| col[3]    | 18/1     | LVCMOS33_IN  | PL23B | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
 | osc[0]    | 10/1     | LVCMOS33_OUT | PL17A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 | osc[1]    | 21/1     | LVCMOS33_OUT | PL19B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 | r_sel[0]  | 13/1     | LVCMOS33_OUT | PL20A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
@@ -58,7 +59,7 @@ Pinout by Pin Number:
 | 15/1     |     unused, PULL:UP |            |              | PL25A | SPISCK           |
 | 16/1     |     unused, PULL:UP |            |              | PL25B | SPI_SS           |
 | 17/1     |     unused, PULL:UP |            |              | PL24B | SPI_SI           |
-| 18/1     |     unused, PULL:UP |            |              | PL23B |                  |
+| 18/1     | col[3]              |            | LVCMOS33_IN  | PL23B |                  |
 | 19/1     | seg[1]              | LOCATED    | LVCMOS33_OUT | PL22B |                  |
 | 20/1     | r_sel[3]            | LOCATED    | LVCMOS33_OUT | PL20B | PCLKT1_0         |
 | 21/1     | osc[1]              | LOCATED    | LVCMOS33_OUT | PL19B |                  |
@@ -81,7 +82,7 @@ Pinout by Pin Number:
 | 43/0     |     unused, PULL:UP |            |              | PR10A |                  |
 | 44/2     | r_sel[1]            | LOCATED    | LVCMOS33_OUT | PL7B  | PCLKT2_0         |
 | 45/2     | col[2]              | LOCATED    | LVCMOS33_IN  | PL8B  |                  |
-| 46/2     | col[3]              | LOCATED    | LVCMOS33_IN  | PL6A  |                  |
+| 46/2     | clk                 | LOCATED    | LVCMOS33_IN  | PL6A  |                  |
 | 47/2     | seg[6]              | LOCATED    | LVCMOS33_OUT | PL7A  |                  |
 | 48/2     | seg[2]              | LOCATED    | LVCMOS33_OUT | PL8A  |                  |
 | PL6B/2   |     unused, PULL:UP |            |              | PL6B  |                  |
@@ -106,10 +107,11 @@ Pinout by Pin Number:
 
 Locate Constraints for each Pin: 
 
+ldc_set_location -site {46} [ get_ports {clk} ]
 ldc_set_location -site {12} [ get_ports {col[0]} ]
 ldc_set_location -site {3} [ get_ports {col[1]} ]
 ldc_set_location -site {45} [ get_ports {col[2]} ]
-ldc_set_location -site {46} [ get_ports {col[3]} ]
+ldc_set_location -site {18} [ get_ports {col[3]} ]
 ldc_set_location -site {10} [ get_ports {osc[0]} ]
 ldc_set_location -site {21} [ get_ports {osc[1]} ]
 ldc_set_location -site {13} [ get_ports {r_sel[0]} ]
@@ -131,5 +133,5 @@ ldc_set_location -site {47} [ get_ports {seg[6]} ]
 
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-Thu Oct  3 22:35:24 2024
+Sat Oct  5 18:05:00 2024
 

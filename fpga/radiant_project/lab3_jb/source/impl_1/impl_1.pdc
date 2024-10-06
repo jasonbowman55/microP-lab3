@@ -15,8 +15,4 @@ ldc_set_location -site {2} [get_ports {seg[4]}]
 ldc_set_location -site {47} [get_ports {seg[6]}]
 ldc_set_location -site {11} [get_ports {seg[5]}]
 ldc_set_location -site {34} [get_ports reset]
-<<<<<<< HEAD
 ldc_set_location -site {46} [get_ports clk]
-=======
-ldc_set_location -site {46} [get_ports {col[3]}]
->>>>>>> a2ca23015e4dd29db3c50d4224e5e04c9fc90304
