@@ -1,6 +1,6 @@
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-Sun Oct  6 12:10:01 2024
+Sun Oct  6 12:23:40 2024
 
 Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -hsp m -exp parPathBased=ON \
 	lab3_jb_impl_1_map.udb lab3_jb_impl_1.udb 
@@ -18,7 +18,7 @@ Total (real) run time for 1-seed: 7 secs
 par done!
 
 Lattice Place and Route Report for Design "lab3_jb_impl_1_map.udb"
-Sun Oct  6 12:10:01 2024
+Sun Oct  6 12:23:40 2024
 
 PAR: Place And Route Radiant Software (64-bit) 2024.1.1.259.1.
 Command Line: par -w -t 1 -cores 1 -hsp m -exp parPathBased=ON \
@@ -126,7 +126,7 @@ Checksum -- place: 1e70a4f8d81935f2b1f19f56cda26d9ddbfa325b
 Writing design to file lab3_jb_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 12:10:06 10/06/24
+Start NBR router at 12:23:45 10/06/24
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -155,7 +155,7 @@ Primary clocks (1 used out of 8 available):
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
 
-Start NBR section for initial routing at 12:10:07 10/06/24
+Start NBR section for initial routing at 12:23:46 10/06/24
 Level 4, iteration 1
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Routing in Serial Mode ......
@@ -166,7 +166,7 @@ Estimated worst slack/total negative slack<setup>: 99984.879ns/0.000ns; real tim
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 12:10:07 10/06/24
+Start NBR section for normal routing at 12:23:46 10/06/24
 Level 4, iteration 1
 1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
 Estimated worst slack/total negative slack<setup>: 99984.879ns/0.000ns; real time: 0 secs 
@@ -177,9 +177,9 @@ Level 4, iteration 3
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
 Estimated worst slack/total negative slack<setup>: 99984.879ns/0.000ns; real time: 0 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 12:10:07 10/06/24
+Start NBR section for setup/hold timing optimization with effort level 3 at 12:23:46 10/06/24
 
-Start NBR section for post-routing at 12:10:08 10/06/24
+Start NBR section for post-routing at 12:23:47 10/06/24
 
 End NBR router with 0 unrouted connection(s)
 
@@ -208,7 +208,7 @@ Note: user must run 'timing' for timing closure signoff.
 
 Total CPU  Time: 5 secs 
 Total REAL Time: 7 secs 
-Peak Memory Usage: 127.90 MB
+Peak Memory Usage: 127.82 MB
 
 
 par done!
