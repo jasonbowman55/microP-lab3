@@ -1,1 +1,0 @@
-{C:/Lattice Radiant/questasim/win64/VisualizerRls/bin/viscom.exe} -nolock -quiet -jmem_size 393216 work.testbench1 -quiet -auto_acc_if_foreign -work work -allow_unnamed -o _opt -id 1-d85ed30b0771-66f1fec9-127-1bb8 +__design_bin_path+C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1
