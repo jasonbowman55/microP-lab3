@@ -6,13 +6,13 @@
 module top (
 	input logic reset,
 //	input logic clk, //used for simulation
-	input logic [3:0] col,
+	input logic [3:0] col_sync,
 	output logic [3:0] r_sel,
 	output logic [6:0] seg,
-	output logic [1:0] osc
+	output logic [1:0] osc,
 	//output logic clk_debug,
 	//output logic [3:0] state_debug
-	//output logic clk
+	output logic clk
 
 	);
 
@@ -42,13 +42,19 @@ always_ff @(posedge clk) begin
     end
 end
 
+always_ff @(posedge clk) begin
+    if (!reset)
+	counter <= 25'h0; //CHANGE
+    else
+        counter <= counter + 25'h1;
+end
 
 // instantiated submodules
 button_decoder_bounce MOD1 (reset, col_sync, clk, counter, right, left, r_sel);
 
 seven_seg_decoder MOD2 (select, seg);
 
-syncronizer MOD3 (reset, col, clk, col_sync, counter);
+//syncronizer MOD3 (reset, col, clk, col_sync, counter);
 
 //debouncer MOD4 (reset, clk, col_sync, debounce);
 ///////////////////////////

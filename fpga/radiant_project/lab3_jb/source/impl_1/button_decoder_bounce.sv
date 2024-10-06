@@ -3,7 +3,6 @@ module button_decoder_bounce (
 	input logic [3:0] col_sync,
 	input logic clk,
 	input logic [24:0] counter,
-	//input logic debounce,
 	output logic [3:0] right,
 	output logic [3:0] left,
 	output logic [3:0] r_sel
@@ -49,7 +48,7 @@ module button_decoder_bounce (
 	always_comb begin
 		case(state)
 			S0: 
-				if (|col_sync) 
+				if (col_sync != 4'b1111) 
 					nextstate = S4;
 				else 
 					nextstate = S12;
@@ -60,12 +59,12 @@ module button_decoder_bounce (
 			S4: 
 				nextstate = S8;
 			S8: 
-				if (|col_sync) 
+				if (col_sync != 4'b1111)
 					nextstate = S8;
 				else 
 					nextstate = S0;
 			S1: 
-				if (|col_sync) 
+				if (col_sync != 4'b1111)
 					nextstate = S5;
 				else 
 					nextstate = S14;
@@ -76,12 +75,12 @@ module button_decoder_bounce (
 			S5: 
 				nextstate = S9;
 			S9: 
-				if (|col_sync) 
+				if (col_sync != 4'b1111)
 					nextstate = S9;
 				else 
 					nextstate = S1;
 			S2: 
-				if (|col_sync) 
+				if (col_sync != 4'b1111)
 					nextstate = S6;
 				else 
 					nextstate = S16;
@@ -92,12 +91,12 @@ module button_decoder_bounce (
 			S6: 
 				nextstate = S10;
 			S10: 
-				if (|col_sync) 
+				if (col_sync != 4'b1111)
 					nextstate = S10;
 				else 
 					nextstate = S2;
 			S3: 
-				if (|col_sync) 
+				if (col_sync != 4'b1111)
 					nextstate = S7;
 				else 
 					nextstate = S18;
@@ -108,7 +107,7 @@ module button_decoder_bounce (
 			S7: 
 				nextstate = S11;
 			S11: 
-				if (|col_sync) 
+				if (col_sync != 4'b1111)
 					nextstate = S11;
 				else 
 					nextstate = S3;
@@ -128,33 +127,29 @@ module button_decoder_bounce (
 /////////////////////////////////////////////
 
 // debouncer code////////////////////////////////////////////////////////////////
-logic [6:0] debounce_counter;
-//logic [3:0] r_sel;
+	logic [6:0] debounce_counter;
 
-always_ff @(posedge clk) begin
-    if (!reset) begin
-        debounce_counter <= 7'h0;
-        en <= 1'b0;
-        r_sel <= 4'b0000; // Initialize r_sel on reset
-    end else begin
-        // State-based r_sel assignment
-
-        // Debounce counter logic
-        if (state == S8 || state == S9 || state == S10 || state == S11) begin
-            debounce_counter <= debounce_counter + 1;
-        end else begin
-            debounce_counter <= 7'h0; // Reset counter if not in final states
-        end
-        
-        // Enable seg assignments if debounce_counter has reached the threshold
-        if (debounce_counter == 7'b0000001) begin // Debounce parameter
-            en <= 1'b1;
-        end else begin
-            en <= 1'b0;
-        end
-    end
-end
-
+	always_ff @(posedge clk) begin
+		if (!reset) begin
+			debounce_counter <= 7'h0;
+			en <= 1'b0;
+		end else begin
+			// if in final state, increment 
+			if (state == S8 || state == S9 || state == S10 || state == S11) begin
+				debounce_counter <= debounce_counter + 1;
+			end
+			else if (!(state == S8 || state == S9 || state == S10 || state == S11)) begin
+				debounce_counter <= 7'h0;
+			end
+			
+			// if the debouncer is full, then enable seg assignments
+			if (debounce_counter == 7'b0000001) begin // Debounce perameter
+				en <= 1'b1;
+			end else begin
+				en <= 1'b0;
+			end
+		end
+	end
 ///////////////////////////////////////////////////////////////////////////////////
 			
 // if en is true, assign new segs
@@ -213,7 +208,7 @@ always_comb begin
         S1, S5, S9, S14, S15: r_sel = 4'b1101;
         S2, S6, S10, S16, S17: r_sel = 4'b1011;
         S3, S7, S11, S18, S19: r_sel = 4'b0111;
-        default: r_sel = 4'b0000;
+        default: r_sel = 4'b1111;
     endcase
 end
 ////////////////////////////////////////////////////////////////////////
