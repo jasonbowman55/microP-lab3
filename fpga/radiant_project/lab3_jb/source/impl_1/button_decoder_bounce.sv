@@ -138,13 +138,6 @@ always_ff @(posedge clk) begin
         r_sel <= 4'b0000; // Initialize r_sel on reset
     end else begin
         // State-based r_sel assignment
-        case(state)
-            S0, S4, S8, S12, S13: r_sel <= 4'b1110;
-            S1, S5, S9, S14, S15: r_sel <= 4'b1101;
-            S2, S6, S10, S16, S17: r_sel <= 4'b1011;
-            S3, S7, S11, S18, S19: r_sel <= 4'b0111;
-            default: r_sel <= 4'b0000;
-        endcase
 
         // Debounce counter logic
         if (state == S8 || state == S9 || state == S10 || state == S11) begin
@@ -214,15 +207,15 @@ end
 ///////////////////////////////////////////////
 
 // row scan based on state /////////////////////////////////////////////
-//always_comb begin
-    //case(state)
-        //S0, S4, S8, S12, S13: r_sel = 4'b1110;
-        //S1, S5, S9, S14, S15: r_sel = 4'b1101;
-        //S2, S6, S10, S16, S17: r_sel = 4'b1011;
-        //S3, S7, S11, S18, S19: r_sel = 4'b0111;
-        //default: r_sel = 4'b0000;
-    //endcase
-//end
+always_comb begin
+    case(state)
+        S0, S4, S8, S12, S13: r_sel = 4'b1110;
+        S1, S5, S9, S14, S15: r_sel = 4'b1101;
+        S2, S6, S10, S16, S17: r_sel = 4'b1011;
+        S3, S7, S11, S18, S19: r_sel = 4'b0111;
+        default: r_sel = 4'b0000;
+    endcase
+end
 ////////////////////////////////////////////////////////////////////////
 
 endmodule
