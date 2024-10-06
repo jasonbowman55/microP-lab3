@@ -5,7 +5,6 @@
 
 module top (
 	input logic reset,
-	input logic int_osc, // ADDED FOR SIM
 	input logic [3:0] col_sync,
 	output logic [3:0] rows,
 	output logic [6:0] seg,
@@ -20,8 +19,8 @@ module top (
  ///////////////////////////////
 
 // Internal low-speed oscillator//////////////////////////////////
-//   LSOSC #() 
- //        lf_osc (.CLKLFPU(1'b1), .CLKLFEN(1'b1), .CLKLF(int_osc)); //TAKEN OUT FOR SIM
+   LSOSC #() 
+         lf_osc (.CLKLFPU(1'b1), .CLKLFEN(1'b1), .CLKLF(int_osc));
 //////////////////////////////////////////////////////////////////
 
 // Counter block //////////////////////
@@ -114,7 +113,7 @@ module button_decoder_bounce (
 	logic [12:0] dbOFF;
 ///////////////////////////////////////
 
-// fsm /////////////////////////////////////////////// LENGTHOF db CHANGED FOR SIM
+// fsm ///////////////////////////////////////////////
 	always_comb begin
 		case(state)
 			S0: 
@@ -127,7 +126,7 @@ module button_decoder_bounce (
 			S13: 
 				nextstate = S1;
 			S4:
-				if (dbON == 10'b0000000010)
+				if (dbON == 10'b1111111111)
 					nextstate = S20;
 				else
 					nextstate = S4;
@@ -135,7 +134,7 @@ module button_decoder_bounce (
 			S8: 
 				if (col_sync != 4'b1111)
 					nextstate = S8;
-				else if (dbOFF == 13'b0000000000010)
+				else if (dbOFF == 13'b1111111111111)
 					nextstate = S0;
 			S1: 
 				if (col_sync != 4'b1111)
@@ -147,7 +146,7 @@ module button_decoder_bounce (
 			S15: 
 				nextstate = S2;
 			S5:
-				if (dbON == 10'b0000000010)
+				if (dbON == 10'b1111111111)
 					nextstate = S21;
 				else
 					nextstate = S5;
@@ -155,7 +154,7 @@ module button_decoder_bounce (
 			S9: 
 				if (col_sync != 4'b1111)
 					nextstate = S9;
-				else if (dbOFF == 13'b0000000000010)
+				else if (dbOFF == 13'b1111111111111)
 					nextstate = S1;
 			S2: 
 				if (col_sync != 4'b1111)
@@ -167,7 +166,7 @@ module button_decoder_bounce (
 			S17: 
 				nextstate = S3;
 			S6:
-				if (dbON == 10'b0000000010)
+				if (dbON == 10'b1111111111)
 					nextstate = S22;
 				else
 					nextstate = S6;
@@ -175,7 +174,7 @@ module button_decoder_bounce (
 			S10: 
 				if (col_sync != 4'b1111)
 					nextstate = S10;
-				else if (dbOFF == 13'b0000000000010)
+				else if (dbOFF == 13'b1111111111111)
 					nextstate = S2;
 			S3: 
 				if (col_sync != 4'b1111)
@@ -187,7 +186,7 @@ module button_decoder_bounce (
 			S19: 
 				nextstate = S0;
 			S7:
-				if (dbON == 10'b0000000010)
+				if (dbON == 10'b1111111111)
 					nextstate = S23;
 				else
 					nextstate = S7;
@@ -195,7 +194,7 @@ module button_decoder_bounce (
 			S11: 
 				if (col_sync != 4'b1111)
 					nextstate = S11;
-				else if (dbOFF == 13'b0000000000010)
+				else if (dbOFF == 13'b1111111111111)
 					nextstate = S3;
 			default: 
 				nextstate = S0;   
@@ -226,7 +225,7 @@ end
 			
 // assign new assignmets if debounced
 	always_ff @(posedge clk) begin
-		if (dbON == 8'b0000000010) begin
+		if (dbON == 8'b11111111) begin
 			left = right;
 			right = button;
 		end
