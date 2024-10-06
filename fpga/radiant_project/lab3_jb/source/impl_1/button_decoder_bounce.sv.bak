@@ -10,31 +10,31 @@ module button_decoder_bounce (
 	);
 
 // defining state variables /////
-	logic [19:0] state, nextstate;
+	logic [4:0] state, nextstate;
 	logic [3:0] button;
 	logic en;
 	
-	parameter S0 = 20'b00000000000000000001;
-	parameter S1 = 20'b00000000000000000010;
-	parameter S2 = 20'b00000000000000000100;
-	parameter S3 = 20'b00000000000000001000;
-	parameter S4 = 20'b00000000000000010000;
-	parameter S5 = 20'b00000000000000100000;
-	parameter S6 = 20'b00000000000001000000;
-	parameter S7 = 20'b00000000000010000000;
-	parameter S8 = 20'b00000000000100000000;
-	parameter S9 = 20'b00000000001000000000;
-	parameter S10 = 20'b00000000010000000000;
-	parameter S11 = 20'b00000000100000000000;
-	// below are all dead states
-	parameter S12 = 20'b00000001000000000000;
-	parameter S13 = 20'b00000010000000000000;
-	parameter S14 = 20'b00000100000000000000;
-	parameter S15 = 20'b00001000000000000000;
-	parameter S16 = 20'b00010000000000000000;
-	parameter S17 = 20'b00100000000000000000;
-	parameter S18 = 20'b01000000000000000000;
-	parameter S19 = 20'b10000000000000000000;
+	parameter S0 = 5'b00000; // State 0
+	parameter S1 = 5'b00001; // State 1
+	parameter S2 = 5'b00010; // State 2
+	parameter S3 = 5'b00011; // State 3
+	parameter S4 = 5'b00100; // State 4
+	parameter S5 = 5'b00101; // State 5
+	parameter S6 = 5'b00110; // State 6
+	parameter S7 = 5'b00111; // State 7
+	parameter S8 = 5'b01000; // State 8
+	parameter S9 = 5'b01001; // State 9
+	parameter S10 = 5'b01010; // State 10
+	parameter S11 = 5'b01011; // State 11
+	parameter S12 = 5'b01100; // State 12 (dead)
+	parameter S13 = 5'b01101; // State 13 (dead)
+	parameter S14 = 5'b01110; // State 14 (dead)
+	parameter S15 = 5'b01111; // State 15 (dead)
+	parameter S16 = 5'b10000; // State 16 (dead)
+	parameter S17 = 5'b10001; // State 17 (dead)
+	parameter S18 = 5'b10010; // State 18 (dead)
+	parameter S19 = 5'b10011; // State 19 (dead)
+
 ///////////////////////////////////
 
 // next state = nextstate on every clk edge
@@ -46,6 +46,8 @@ module button_decoder_bounce (
 ///////////////////////////////////////////
 
 // Cycling through states dead states between row scan
+<<<<<<< HEAD
+=======
 always_comb begin
     case(state)
         S0: 
@@ -157,9 +159,127 @@ end
 		
 
 // logic to determine what button is pressed/
+>>>>>>> a2ca23015e4dd29db3c50d4224e5e04c9fc90304
 	always_comb begin
 		case(state)
-			S4:
+			S0: 
+				if (|col_sync) 
+					nextstate = S4;
+				else 
+					nextstate = S12;
+			S12: 
+				nextstate = S13;
+			S13: 
+				nextstate = S1;
+			S4: 
+				nextstate = S8;
+			S8: 
+				if (|col_sync) 
+					nextstate = S8;
+				else 
+					nextstate = S0;
+			S1: 
+				if (|col_sync) 
+					nextstate = S5;
+				else 
+					nextstate = S14;
+			S14: 
+				nextstate = S15;
+			S15: 
+				nextstate = S2;
+			S5: 
+				nextstate = S9;
+			S9: 
+				if (|col_sync) 
+					nextstate = S9;
+				else 
+					nextstate = S1;
+			S2: 
+				if (|col_sync) 
+					nextstate = S6;
+				else 
+					nextstate = S16;
+			S16: 
+				nextstate = S17;  
+			S17: 
+				nextstate = S3;
+			S6: 
+				nextstate = S10;
+			S10: 
+				if (|col_sync) 
+					nextstate = S10;
+				else 
+					nextstate = S2;
+			S3: 
+				if (|col_sync) 
+					nextstate = S7;
+				else 
+					nextstate = S18;
+			S18: 
+				nextstate = S19; 
+			S19: 
+				nextstate = S0;
+			S7: 
+				nextstate = S11;
+			S11: 
+				if (|col_sync) 
+					nextstate = S11;
+				else 
+					nextstate = S3;
+			default: 
+				nextstate = S0;   
+		endcase
+	end
+/////////////////////////////////////////////////////////
+
+//enable to switch seg when at certain states
+	//always_comb begin
+		//case(state)
+			//S4, S5, S6, S7: en = 1'b1;
+			//default en = 1'b0;
+		//endcase
+	//end
+/////////////////////////////////////////////
+
+// debouncer code////////////////////////////////////////////////////////////////
+	logic [6:0] debounce_counter;
+
+	always_ff @(posedge clk) begin
+		if (!reset) begin
+			debounce_counter <= 7'h0;
+			en <= 1'b0;
+		end else begin
+			// if in final state, increment 
+			if (state == S8 || state == S9 || state == S10 || state == S11) begin
+				debounce_counter <= debounce_counter + 1;
+			end
+			else if (!(state == S8 || state == S9 || state == S10 || state == S11)) begin
+				debounce_counter <= debounce_counter + 0;
+			end
+			
+			// if the debouncer is full, then enable seg assignments
+			if (debounce_counter == 7'b0000001) begin
+				en <= 1'b1;
+			end else begin
+				en <= 1'b0;
+			end
+		end
+	end
+///////////////////////////////////////////////////////////////////////////////////
+			
+// if en is true, assign new segs
+	always_ff @(posedge clk) begin
+		if (en) begin
+			left = right;
+			right = button;
+		end
+	end
+//////////////////////////////////
+
+// logic to determine what button is pressed
+	always_comb begin
+		case(state)
+			S8:
 				case(col_sync)
 					4'b0001: button = 4'h1;
 					4'b0010: button = 4'h2;
@@ -167,7 +287,7 @@ end
 					4'b1000: button = 4'hA;
 					default: button = 4'h0;
 				endcase
-			S5:
+			S9:
 				case(col_sync)
 					4'b0001: button = 4'h4;
 					4'b0010: button = 4'h5;
@@ -175,7 +295,7 @@ end
 					4'b1000: button = 4'hB;
 					default: button = 4'h0;
 				endcase
-			S6:
+			S10:
 				case(col_sync)
 					4'b0001: button = 4'h7;
 					4'b0010: button = 4'h8;
@@ -183,7 +303,7 @@ end
 					4'b1000: button = 4'hC;
 					default: button = 4'h0;
 				endcase
-			S7:
+			S11:
 				case(col_sync)
 					4'b0001: button = 4'hF;
 					4'b0010: button = 4'h0;
@@ -195,24 +315,6 @@ end
 		endcase
 	end
 ///////////////////////////////////////////////
-
-// assigning new seg vals when pressed //////
-	//always_ff @(posedge clk) begin
-		// counter[#] controlls toggle speed
-	//	if (!reset) begin
-	//		left <= 4'h0;
-	//		right <= 4'h0; 
-	//	end else if (left != button) begin
-		//	if (debounce == 1'b1) begin
-		//		left <= right;
-		//		right <= button;
-		//	end
-		//end else begin
-		//	left <= left;
-		//	right <= button;
-		//end
-	//end
-/////////////////////////////////////////////
 
 // row scan based on state /////////////////////////////////////////////
 always_comb begin
