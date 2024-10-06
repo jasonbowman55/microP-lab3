@@ -128,29 +128,40 @@ module button_decoder_bounce (
 /////////////////////////////////////////////
 
 // debouncer code////////////////////////////////////////////////////////////////
-	logic [6:0] debounce_counter;
+logic [6:0] debounce_counter;
+//logic [3:0] r_sel;
 
-	always_ff @(posedge clk) begin
-		if (!reset) begin
-			debounce_counter <= 7'h0;
-			en <= 1'b0;
-		end else begin
-			// if in final state, increment 
-			if (state == S8 || state == S9 || state == S10 || state == S11) begin
-				debounce_counter <= debounce_counter + 1;
-			end
-			else if (!(state == S8 || state == S9 || state == S10 || state == S11)) begin
-				debounce_counter <= 7'h0;
-			end
-			
-			// if the debouncer is full, then enable seg assignments
-			if (debounce_counter == 7'b0000001) begin // Debounce perameter
-				en <= 1'b1;
-			end else begin
-				en <= 1'b0;
-			end
-		end
-	end
+always_ff @(posedge clk) begin
+    if (!reset) begin
+        debounce_counter <= 7'h0;
+        en <= 1'b0;
+        r_sel <= 4'b0000; // Initialize r_sel on reset
+    end else begin
+        // State-based r_sel assignment
+        case(state)
+            S0, S4, S8, S12, S13: r_sel <= 4'b1110;
+            S1, S5, S9, S14, S15: r_sel <= 4'b1101;
+            S2, S6, S10, S16, S17: r_sel <= 4'b1011;
+            S3, S7, S11, S18, S19: r_sel <= 4'b0111;
+            default: r_sel <= 4'b0000;
+        endcase
+
+        // Debounce counter logic
+        if (state == S8 || state == S9 || state == S10 || state == S11) begin
+            debounce_counter <= debounce_counter + 1;
+        end else begin
+            debounce_counter <= 7'h0; // Reset counter if not in final states
+        end
+        
+        // Enable seg assignments if debounce_counter has reached the threshold
+        if (debounce_counter == 7'b0000001) begin // Debounce parameter
+            en <= 1'b1;
+        end else begin
+            en <= 1'b0;
+        end
+    end
+end
+
 ///////////////////////////////////////////////////////////////////////////////////
 			
 // if en is true, assign new segs
@@ -203,15 +214,15 @@ module button_decoder_bounce (
 ///////////////////////////////////////////////
 
 // row scan based on state /////////////////////////////////////////////
-always_comb begin
-    case(state)
-        S0, S4, S8, S12, S13: r_sel = 4'b1110;
-        S1, S5, S9, S14, S15: r_sel = 4'b1101;
-        S2, S6, S10, S16, S17: r_sel = 4'b1011;
-        S3, S7, S11, S18, S19: r_sel = 4'b0111;
-        default: r_sel = 4'b0000;
-    endcase
-end
+//always_comb begin
+    //case(state)
+        //S0, S4, S8, S12, S13: r_sel = 4'b1110;
+        //S1, S5, S9, S14, S15: r_sel = 4'b1101;
+        //S2, S6, S10, S16, S17: r_sel = 4'b1011;
+        //S3, S7, S11, S18, S19: r_sel = 4'b0111;
+        //default: r_sel = 4'b0000;
+    //endcase
+//end
 ////////////////////////////////////////////////////////////////////////
 
 endmodule
