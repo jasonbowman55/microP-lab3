@@ -8,7 +8,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.1.1.259.1
-Mapped on: Sun Oct  6 12:23:33 2024
+Mapped on: Sun Oct  6 13:14:32 2024
 
 Design Information
 ------------------
@@ -22,12 +22,12 @@ Command line:   map -pdc C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/m
 Design Summary
 --------------
 
-   Number of slice registers:  48 out of  5280 (1%)
+   Number of slice registers:  47 out of  5280 (1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           148 out of  5280 (3%)
-      Number of logic LUT4s:             105
+   Number of LUT4s:           128 out of  5280 (2%)
+      Number of logic LUT4s:              86
       Number of inserted feedthru LUT4s:   5
-      Number of replicated LUT4s:          6
+      Number of replicated LUT4s:          5
       Number of ripple logic:             16 (32 LUT4s)
    Number of IO sites used:   18 out of 39 (46%)
       Number of IO sites used for general PIO: 18
@@ -51,14 +51,14 @@ Design Summary
    Number of EBRs:             1 out of 30 (3%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net int_osc: 37 loads, 37 rising, 0 falling (Driver: Pin lf_osc/CLKLF)
+      Net int_osc: 36 loads, 36 rising, 0 falling (Driver: Pin lf_osc/CLKLF)
    Number of Clock Enables:  2
       Net VCC_net: 4 loads, 0 SLICEs
-      Net fsm.n587: 4 loads, 4 SLICEs
+      Net fsm.n308: 4 loads, 4 SLICEs
    Number of LSRs:  3
-      Net select_6__N_10[5]: 9 loads, 9 SLICEs
-      Net fsm.n595: 6 loads, 6 SLICEs
-      Net fsm.n594: 7 loads, 7 SLICEs
+      Net n311: 13 loads, 13 SLICEs
+      Net n559: 6 loads, 6 SLICEs
+      Net fsm.n560: 7 loads, 7 SLICEs
    Top 10 highest fanout non-clock nets:
 
                                     Page 1
@@ -69,16 +69,16 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net select[1]: 16 loads
-      Net select[2]: 16 loads
-      Net fsm.state[0]: 15 loads
-      Net fsm.state[2]: 15 loads
-      Net reset_c: 14 loads
-      Net select[6]: 13 loads
-      Net fsm.state[3]: 12 loads
-      Net select[0]: 12 loads
+      Net reset_c: 18 loads
+      Net fsm.state[0]: 14 loads
+      Net fsm.state[3]: 13 loads
+      Net n311: 13 loads
+      Net fsm.state[2]: 12 loads
       Net fsm.state[1]: 11 loads
-      Net select[3]: 10 loads
+      Net fsm.state[4]: 10 loads
+      Net col_sync_c_2: 9 loads
+      Net col_sync_c_3: 9 loads
+      Net col_sync_c_0: 8 loads
 
 
 
@@ -122,11 +122,11 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+-------+-------+-----------+
 | seg[3]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| rows[1]             | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| rows[2]             | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 | seg[4]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| seg[5]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| seg[6]              | OUTPUT    |           |       |       |           |
 
                                     Page 2
 
@@ -137,13 +137,13 @@ IO (PIO) Attributes
 IO (PIO) Attributes (cont)
 --------------------------
 +---------------------+-----------+-----------+-------+-------+-----------+
-| rows[3]             | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| seg[5]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| seg[6]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 | rows[0]             | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rows[1]             | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rows[2]             | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rows[3]             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 Removed logic
@@ -180,7 +180,7 @@ Run Time and Memory Usage
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
    Peak Memory Usage: 66 MB
-Checksum -- map: 1c20f4ea12783be7ffd3094c6030099465a5e133
+Checksum -- map: a967218cbce8751bf7a569f8741afd91272d20fa
 
 
 

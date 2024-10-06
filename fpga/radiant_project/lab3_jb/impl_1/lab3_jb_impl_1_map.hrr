@@ -3,30 +3,30 @@ Report for cell top
    Instance path: top
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        148        100.0
-                               LUTGATE	        116        100.0
+                                  LUT4	        128        100.0
+                               LUTGATE	         96        100.0
                                 LUTCCU	         32        100.0
                                  IOBUF	         18        100.0
-                                PFUREG	         48        100.0
+                                PFUREG	         47        100.0
                                    EBR	          1        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                 button_decoder_bounce	          1        63.5
-                     seven_seg_decoder	          1        18.9
+                 button_decoder_bounce	          1        73.4
+                     seven_seg_decoder	          1         5.5
 ---------------------------------------------------
 Report for cell seven_seg_decoder
    Instance path: top/segs
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         28        18.9
-                               LUTGATE	         28        24.1
+                                  LUT4	          7         5.5
+                               LUTGATE	          7         7.3
 ---------------------------------------------------
 Report for cell button_decoder_bounce
    Instance path: top/fsm
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         94        63.5
-                               LUTGATE	         68        58.6
+                                  LUT4	         94        73.4
+                               LUTGATE	         68        70.8
                                 LUTCCU	         26        81.2
-                                PFUREG	         36        75.0
+                                PFUREG	         36        76.6
                                    EBR	          1        100.0

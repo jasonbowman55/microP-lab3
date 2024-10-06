@@ -1,27 +1,27 @@
 ----------------------------------------------------------------------
 Report for cell top.TECH
-Register bits:  48 of 5280 (0.909%)
+Register bits:  47 of 5280 (0.890%)
 I/O cells:      18
                                   Cell usage:
                                cell     count   Res Usage(%)
                               EBR_B         1          100.0
                                CCU2        16          100.0
-                            FD1P3XZ        48          100.0
+                            FD1P3XZ        47          100.0
                                  IB         5          100.0
                          LSOSC_CORE         1          100.0
-                               LUT4       104          100.0
+                               LUT4        85          100.0
                                  OB        13          100.0
 SUB MODULES
               button_decoder_bounce         1
                   seven_seg_decoder         1
-                              TOTAL       190
+                              TOTAL       170
 ----------------------------------------------------------------------
 Report for cell seven_seg_decoder.v1
 Instance Path : segs
                                   Cell usage:
                                cell     count   Res Usage(%)
-                               LUT4        29           27.9
-                              TOTAL        29
+                               LUT4         7            8.2
+                              TOTAL         7
 ----------------------------------------------------------------------
 Report for cell button_decoder_bounce.v1
 Instance Path : fsm
@@ -29,6 +29,6 @@ Instance Path : fsm
                                cell     count   Res Usage(%)
                               EBR_B         1          100.0
                                 FA2        13           81.2
-                            FD1P3XZ        36           75.0
-                               LUT4        69           66.3
-                              TOTAL       119
+                            FD1P3XZ        36           76.6
+                               LUT4        70           82.4
+                              TOTAL       120

@@ -12,10 +12,10 @@ module top (
 );
 
 // initialize inter-module logic
-	logic [6:0] right;
-	logic [6:0] left;
+	logic [3:0] right;
+	logic [3:0] left;
 	logic [24:0] counter;
-	logic [6:0] select;
+	logic [3:0] select;
  ///////////////////////////////
 
 // Internal low-speed oscillator//////////////////////////////////
@@ -64,14 +64,14 @@ module button_decoder_bounce (
 	input logic reset,
 	input logic [3:0] col_sync,
 	input logic clk,
-	output logic [6:0] right,
-	output logic [6:0] left,
+	output logic [3:0] right,
+	output logic [3:0] left,
 	output logic [3:0] r_sel
 	);
 
 // defining state variables /////
 	logic [4:0] state, nextstate;
-	logic [6:0] button;
+	logic [4:0] button;
 	logic en;
 
 	parameter S0 = 5'b00000; // State 0
@@ -225,9 +225,13 @@ end
 			
 // assign new assignmets if debounced
 	always_ff @(posedge clk) begin
-		if (dbON == 8'b11111111) begin
-			left = right;
-			right = button;
+		if (!reset) begin
+			left <= 4'b0000;
+			right <= 4'b0000;
+		end
+		else if (dbON == 8'b11111111) begin
+			left <= right;
+			right <= button;
 		end
 	end
 /////////////////////////////////////
@@ -286,7 +290,7 @@ endmodule
 //*********************************
 
 module seven_seg_decoder (
-	input logic [6:0] select,
+	input logic [3:0] select,
 	output logic [6:0] seg
 	);
 // 7-seg decoder ////////////////////////////////////////
