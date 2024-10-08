@@ -1,0 +1,76 @@
+# Reading pref.tcl
+# //  Questa Lattice OEM Edition-64
+# //  Version 2024.2 win64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+project open C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/lab3_QuestaSim
+# Loading project lab3_QuestaSim
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.testbench1 -voptargs=+acc
+# vsim -gui work.testbench1 -voptargs="+acc" 
+# Start time: 16:56:26 on Sep 23,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.testbench1(fast)
+# Loading work.SystemVerilog(fast)
+# Loading work.button_decoder_bounce(fast)
+# Loading work.seven_seg_decoder(fast)
+# Loading work.syncronizer(fast)
+add wave -position end sim:/testbench1/duttop/*
+run -all
+# Break key hit
+# Break in Module testbench1 at C:/Users/spenc/OneDrive/Documents/Desktop/HMC/microPs/microP-lab3/fpga/sim/lab3_QuestaSim1/testbench1.sv line 17
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.testbench1(fast)
+# Loading work.SystemVerilog(fast)
+# Loading work.button_decoder_bounce(fast)
+# Loading work.seven_seg_decoder(fast)
+# Loading work.syncronizer(fast)
+run
+add wave -position end sim:/testbench1/#ALWAYS#14/*
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.testbench1(fast)
+# Loading work.SystemVerilog(fast)
+# Loading work.button_decoder_bounce(fast)
+# Loading work.seven_seg_decoder(fast)
+# Loading work.syncronizer(fast)
+run
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of button_decoder_bounce.sv was successful.
+# Compile of seven_seg_decoder.sv was successful.
+# Compile of syncronizer.sv was successful.
+# Compile of SystemVerilog.sv was successful.
+# Compile of testbench1.sv failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
+# Compile of testbench1.sv failed with 1 errors.
+# End time: 17:06:47 on Sep 23,2024, Elapsed time: 0:10:21
+# Errors: 0, Warnings: 5

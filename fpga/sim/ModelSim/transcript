@@ -1,0 +1,17 @@
+# Compile of SystemVerilog.sv was successful with warnings.
+# Compile of testbench1.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.testbench1
+# vsim -gui work.testbench1 
+# Start time: 12:17:26 on Oct 06,2024
+# Loading sv_std.std
+# Loading work.testbench1
+# Loading work.top
+# Loading work.button_decoder_bounce
+# Loading work.seven_seg_decoder
+add wave -position end sim:/testbench1/dut/*
+add wave -position end sim:/testbench1/dut/fsm/*
+add wave -position end sim:/testbench1/dut/segs/*
+run
+# End time: 12:21:05 on Oct 06,2024, Elapsed time: 0:03:39
+# Errors: 0, Warnings: 6
